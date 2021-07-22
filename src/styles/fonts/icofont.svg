@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<defs>
+<font id="icofont" horiz-adv-x="1000" >
+<font-face font-family="IcoFont" font-weight="400" font-style="Regular" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="heart" horiz-adv-x="1000" unicode="&#xef45;" d="M500 595c16 28 36 52 60 72 90 73 230 66 311-17 64-66 80-145 55-232-19-68-56-126-100-180-73-87-160-155-255-215-21-13-43-26-64-38-3-2-9-3-12-1-109 62-211 134-296 227-52 55-94 117-119 189-21 60-25 120 1 179 34 76 94 123 177 135 104 14 185-25 240-116 0-1 1-1 2-3z" />
+</font>
+</defs>
+</svg>

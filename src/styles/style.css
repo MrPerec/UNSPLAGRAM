@@ -1,0 +1,22 @@
+.html, .body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial;
+	height: 0;
+}
+
+.fixed-container {
+    /*width: 960px;*/
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.text_center{
+	text-align: center;
+    margin: 10px 0;	
+}
+
+.line{
+	margin: 0;
+}

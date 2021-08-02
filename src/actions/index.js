@@ -38,7 +38,7 @@ export function addPostPhoto(state) {
 				dispatch({ 
 					type: ADD_POST_PHOTO,
 					id: uuid,
-					urlsSmall: item.urls.small,
+					urlsThumb: item.urls.thumb,
 					alt_description: item.alt_description,
 					userName: item.user.name,
 					userLinksHtml: item.user.links.html,

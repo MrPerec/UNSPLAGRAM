@@ -12,9 +12,9 @@ export default function PhotosPostsList({photoPost, addPostPhoto}){
 		let keysContents = ``;
 		for (const key in obj) keysContents += obj[key];
 		if (keysContents !== ``){
-			const {id, urlsSmall, alt_description, userName, userLinksHtml, created_at, likes} = obj;
+			const {id, urlsThumb, alt_description, userName, userLinksHtml, created_at, likes} = obj;
 			const postOfPhoto = { 
-				urlsSmall,
+				urlsThumb,
 				alt_description,
 				userName,
 				userLinksHtml,

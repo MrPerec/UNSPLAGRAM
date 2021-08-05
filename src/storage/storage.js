@@ -1,7 +1,5 @@
 `use strict`;
 
-import {addPostPhoto} from '../actions';
-
 export function getPosts() {
 	try{
 		const state = [{}]

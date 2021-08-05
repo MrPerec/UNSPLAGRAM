@@ -9,6 +9,7 @@ export default function PhotoPostAdd({addPostPhoto}){
 	console.log(postOfPhoto);*/
 	
 	const onButtonClick = () => addPostPhoto();
+	
 	return (
 		<div className='button_container'>
  			<button className='button' onClick={onButtonClick}>Загрузить еще</button>

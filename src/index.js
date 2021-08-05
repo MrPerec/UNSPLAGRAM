@@ -1,7 +1,7 @@
 `use strict`;
 
 import React from 'react';
-import ReactDOM  from 'react-dom';
+import {render}  from 'react-dom';
 import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 
@@ -14,6 +14,9 @@ import {addPostPhoto} from './actions';
 const initialState = getPosts();
 
 const store = createStore( rootReducer, initialState, applyMiddleware(thunk) );*/
+
+const $rootElem = document.querySelector(`.js-root`);
+
 const store = createStore( rootReducer, applyMiddleware(thunk) );
 store.dispatch( addPostPhoto() )
 
@@ -21,4 +24,9 @@ store.dispatch( addPostPhoto() )
 // console.log(`It is index.js`);
 // console.log(store.getState())
 
-ReactDOM.render( <App store={store} />, document.querySelector(`.js-root`) );
+render( 
+    <App 
+        store={store}
+    />, 
+    $rootElem 
+);

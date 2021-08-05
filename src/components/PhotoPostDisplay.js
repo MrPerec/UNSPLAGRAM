@@ -8,7 +8,14 @@ import '../styles/icofont-heart.min.css';
 export default function PhotoPostDisplay({postOfPhoto}){
 	// console.log(`It is the component PhotoPostDisplay`);
 	// console.log(postOfPhoto);
-	const {urlsThumb, alt_description, userName, userLinksHtml, created_at, likes} = postOfPhoto;
+	const {
+		urlsThumb, 
+		alt_description, 
+		userName, 
+		userLinksHtml, 
+		created_at, 
+		likes
+	} = postOfPhoto;
 	
 	return (
 		<div className='post_container'>

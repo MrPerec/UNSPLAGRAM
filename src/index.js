@@ -20,6 +20,18 @@ const $rootElem = document.querySelector(`.js-root`);
 const store = createStore( rootReducer, applyMiddleware(thunk) );
 store.dispatch( addPostPhoto() )
 
+const addPostPhotoEndOfScroll = () =>{
+    let scrollHeight = Math.max(
+        document.body.scrollHeight, document.documentElement.scrollHeight, 
+        document.body.offsetHeight,	document.documentElement.offsetHeight, 
+        document.body.clientHeight, document.documentElement.clientHeight
+    );
+    if (scrollHeight - innerHeight === pageYOffset) return store.dispatch( addPostPhoto() )
+}
+
+window.addEventListener('scroll', addPostPhotoEndOfScroll)
+
+
 // store.subscribe( () => console.log( store.getState() ));
 // console.log(`It is index.js`);
 // console.log(store.getState())

@@ -1,5 +1,4 @@
 `use strict`;
-// debugger;
 
 import {createApi} from 'unsplash-js';
 import {ADD_POST_PHOTO} from '../types/types.js';
@@ -13,13 +12,8 @@ const unsplashApi = createApi({
 });
 
 const requestToApi = api => {
-// const requestToApi = (api, pageNum) => {
-	// return api.photos.get({ photoId: 'eOLpJytrbsQ' }).then(result => {
-	// return api.photos.getRandom({count: 10}).then(result => {
 	return api.photos.list({page: pageNumber++, perPage: 10}).then(result => {
-		// console.log(pageNumber)
 		if (result.errors) return alert(`error occurred: ${result.errors[0]}`);
-		// console.log(result.response.results);
 		return result.response.results;
 	});
 }
@@ -30,11 +24,9 @@ export function addPostPhoto(state) {
 
 	return function(dispatch){
 		requestToApi(unsplashApi).then(response => {
-			// console.log(response); 
 			response.forEach( (item) =>{
 				const uuid = getUuid();
 				item.created_at = item.created_at.substr(START_POSITION, LENGTH).replace(SYMBOL_T, SYMBOL_SPACE);
-				// console.log(item.created_at)
 				dispatch({ 
 					type: ADD_POST_PHOTO,
 					id: uuid,

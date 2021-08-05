@@ -3,7 +3,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/post.css';
-import '../styles/icofont-heart.min.css';
+// import '../styles/icofont-heart.min.css';
+// import '../styles/icons.css';
+import '../styles/font/flaticon.css';
 
 export default function PhotoPostDisplay({postOfPhoto}){
 	// console.log(`It is the component PhotoPostDisplay`);
@@ -36,11 +38,17 @@ export default function PhotoPostDisplay({postOfPhoto}){
 				title={alt_description}
 			/>
 			{/*<div>{userName}</div>*/}
-			<a href={userLinksHtml} target='_blank'	rel='noopener noreferrer'>{userName}</a>
 			<div>
-				<time dateTime={created_at}>Published on {created_at} </time>
+				<a href={userLinksHtml} target='_blank'	rel='noopener noreferrer'>{userName}</a>
 			</div>
-			<div className='icofont-heart'> {likes}</div> 
+			<div>
+				<time dateTime={created_at} className="font_style">Published on {created_at} </time>
+			</div>
+			<div className='flex-container'>
+				<i className='flaticon-heart flaticon-heart_style'></i>
+				<i className='flaticon-like flaticon-like_style'></i>
+				{likes}
+			</div> 
 		</div>
 	);
 }

@@ -1,6 +1,7 @@
 `use strict`;
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../styles/button.css';
 
 export default function PhotoPostAdd({addPostPhoto}){
@@ -13,4 +14,8 @@ export default function PhotoPostAdd({addPostPhoto}){
  			<button className='button' onClick={onButtonClick}>Загрузить еще</button>
 		</div>
 	);
+}
+
+PhotoPostAdd.propTypes = {
+	addPostPhoto: PropTypes.func.isRequired,
 }

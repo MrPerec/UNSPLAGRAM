@@ -1,6 +1,7 @@
 `use strict`;
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../styles/post.css';
 import '../styles/icofont-heart.min.css';
 
@@ -35,4 +36,8 @@ export default function PhotoPostDisplay({postOfPhoto}){
 			<div className='icofont-heart'> {likes}</div> 
 		</div>
 	);
+}
+
+PhotoPostDisplay.propTypes = {
+	postOfPhoto: PropTypes.object.isRequired
 }

@@ -1,11 +1,8 @@
 .post_container{
 	width: max-content;
-	margin: 30px 0;
+	margin: 30px auto;
 	border: 1px solid #dbdbdb;
 	padding: 16px;
-	/* margin-left: auto;
-    margin-right: auto; */
-	margin: 0 auto;
 }
 
 .flaticon-heart_style{
@@ -15,7 +12,7 @@
 
 
 .flaticon-like_style{
-	background: linear-gradient(0deg, #ff8f5a, #ff2f96);
+	background: linear-gradient(130deg, #ff000061, #ff0000);
 	-webkit-text-fill-color: transparent;
 	-webkit-background-clip: text; 
 	cursor: pointer;

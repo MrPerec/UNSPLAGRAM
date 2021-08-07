@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import '../styles/post.css';
 // import '../styles/icofont-heart.min.css';
 // import '../styles/icons.css';
-import '../styles/font/flaticon.css';
+import '../styles/fonts/iconfont/flaticon.css';
 
 export default function PhotoPostDisplay({postOfPhoto}){
 	// console.log(`It is the component PhotoPostDisplay`);

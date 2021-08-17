@@ -23,10 +23,11 @@
 		 url('./fonts/Raleway/raleway-v22-latin_cyrillic-600.woff') format('woff'), /* Modern Browsers */
 		 url('./fonts/Raleway/raleway-v22-latin_cyrillic-600.ttf') format('truetype'), /* Safari, Android, iOS */
 		 url('./fonts/Raleway/raleway-v22-latin_cyrillic-600.svg#Raleway') format('svg'); /* Legacy iOS */
-  }
-
+		}
+		
 .html, .body {
 	/* max-width: 1440px; */
+	min-width: 1000px;
 	margin: 0;
 	padding: 0;
 	font-family: Arial;
@@ -34,14 +35,19 @@
 }
 
 .fixed-container {
-    max-width: 1440px;
-    /* width: 100%; */
+	/* max-width: 1440px; */
+    width: 960px;
     margin: 0 auto;
     position: relative;
 }
 
-.header_h3__style{
+.text_center{
 	text-align: center;
+	margin: 10px 0;	
+}
+
+.header_h3__style{
+	/* text-align: center; */
 	margin: 30px auto;
 	width: 273px;
 	height: 56px;
@@ -76,15 +82,43 @@
 
 .main__image_style{
 	position: relative;
-	width: 1440px;
+	/* width: 1440px; */
 	height: 960px;
+	margin: 0 auto;
 
 	background: url(../img/nico-iseli-W7oHCrzoJjo-unsplash.png);
 }
 
-.text_center{
-	text-align: center;
-    margin: 10px 0;	
+.main__text_style{
+	/* height: 169px;
+	width: 838px;
+	left: 150px;
+	top: 300px; */
+	/* margin: 110px 150px 0; */
+	padding: 150px 0 0 0;
+	border-radius: nullpx;
+
+	font-family: Raleway;
+	font-size: 144px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 169px;
+	letter-spacing: 0em;
+	text-align: left;
+	color: white;
+}
+
+.main__input_style{
+	/* position: absolute; */
+	/* width: 1119px; */
+	Width: 838px;
+	height: 77px;
+	/* left: 160px;
+	top: 492px; */
+	margin: 25px 0 15px 0;
+
+	background: #FFFFFF;
+	border-radius: 5px;
 }
 
 .line{

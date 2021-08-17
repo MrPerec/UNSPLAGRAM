@@ -3,8 +3,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/post.css';
-// import '../styles/icofont-heart.min.css';
-// import '../styles/icons.css';
 import '../styles/fonts/iconfont/flaticon.css';
 
 export default function PhotoPostDisplay({postOfPhoto}){
@@ -37,13 +35,8 @@ export default function PhotoPostDisplay({postOfPhoto}){
 				alt={alt_description}
 				title={alt_description}
 			/>
-			{/*<div>{userName}</div>*/}
-			<div>
-				<a href={userLinksHtml} target='_blank'	rel='noopener noreferrer'>{userName}</a>
-			</div>
-			<div>
-				<time dateTime={created_at} className="font_style">Published on {created_at} </time>
-			</div>
+			<a href={userLinksHtml} target='_blank'	rel='noopener noreferrer' className="user_link">{userName}</a>
+			<time dateTime={created_at} className="publish_style">Published on {created_at} </time>
 			<div className='flex-container'>
 				<i className='flaticon-heart flaticon-heart_style'></i>
 				<i className='flaticon-like flaticon-like_style'></i>

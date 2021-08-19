@@ -19,7 +19,7 @@
 	margin-right: 5px;
 }
 
-.font_style{
+.publish_style{
 	font-size: 14px;
 }
 
@@ -27,4 +27,8 @@
 	display: flex;
 	/* width: 225px;
 	flex-wrap: wrap; */
+}
+
+.user_link{
+	display: block;
 }

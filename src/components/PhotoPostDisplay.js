@@ -19,17 +19,6 @@ export default function PhotoPostDisplay({postOfPhoto}){
 	
 	return (
 		<div className='post_container'>
-			{/*<a 
-				href={userLinksHtml} 
-				target='_blank' 
-				rel='noopener noreferrer'
-			>
-				<img 
-					src={urlsThumb}
-					alt={alt_description}
-					title={alt_description}
-				/>
-			</a>*/}
 			<img 
 				src={urlsThumb}
 				alt={alt_description}

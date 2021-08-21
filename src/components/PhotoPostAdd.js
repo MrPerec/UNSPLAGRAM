@@ -2,7 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styles/button.css';
+// import '../styles/button.css';
 
 export default function PhotoPostAdd({addPostPhoto}){
 	/*console.log(`It is the component PhotoPostDisplay`);
@@ -11,9 +11,10 @@ export default function PhotoPostAdd({addPostPhoto}){
 	const onButtonClick = () => addPostPhoto();
 	
 	return (
-		<div className='button_container'>
- 			<button className='button' onClick={onButtonClick}>Загрузить еще</button>
-		</div>
+		// <div className='button_container'>
+ 		// 	<button className='button' onClick={onButtonClick}>Загрузить еще</button>
+		// </div>
+		<button className='button' onClick={onButtonClick}>Загрузить еще</button>
 	);
 }
 

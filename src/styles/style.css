@@ -29,6 +29,7 @@ src: local(''),
 	padding: 0;
 	font-family: Arial;
 	height: 0;
+	min-width: 1440px;
 }
 
 .fixed-container {

@@ -17,7 +17,7 @@ export default function PhotosPostsList({photoPost, addPostPhoto}){
 		if (keysContents !== ``){
 			const {
 				id, 
-				urlsThumb, 
+				urlsSmall, 
 				alt_description, 
 				userName, 
 				userLinksHtml, 
@@ -25,7 +25,7 @@ export default function PhotosPostsList({photoPost, addPostPhoto}){
 				likes
 			} = obj;
 			const postOfPhoto = { 
-				urlsThumb,
+				urlsSmall,
 				alt_description,
 				userName,
 				userLinksHtml,

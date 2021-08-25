@@ -1,5 +1,6 @@
 .post_container{
 	width: max-content;
+	height: max-content;
 	margin: 30px auto;
 	border: 1px solid #dbdbdb;
 	padding: 16px;

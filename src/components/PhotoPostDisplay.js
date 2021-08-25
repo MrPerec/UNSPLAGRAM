@@ -9,7 +9,7 @@ export default function PhotoPostDisplay({postOfPhoto}){
 	// console.log(`It is the component PhotoPostDisplay`);
 	// console.log(postOfPhoto);
 	const {
-		urlsThumb, 
+		urlsSmall, 
 		alt_description, 
 		userName, 
 		userLinksHtml, 
@@ -20,7 +20,7 @@ export default function PhotoPostDisplay({postOfPhoto}){
 	return (
 		<div className='post_container'>
 			<img 
-				src={urlsThumb}
+				src={urlsSmall}
 				alt={alt_description}
 				title={alt_description}
 			/>

@@ -24,13 +24,14 @@ export function addPostPhoto(state) {
 
 	return function(dispatch){
 		requestToApi(unsplashApi).then(response => {
+			console.log(response);
 			response.forEach( (item) =>{
 				const uuid = getUuid();
 				item.created_at = item.created_at.substr(START_POSITION, LENGTH).replace(SYMBOL_T, SYMBOL_SPACE);
 				dispatch({ 
 					type: ADD_POST_PHOTO,
 					id: uuid,
-					urlsThumb: item.urls.thumb,
+					urlsSmall: item.urls.small,
 					alt_description: item.alt_description,
 					userName: item.user.name,
 					userLinksHtml: item.user.links.html,

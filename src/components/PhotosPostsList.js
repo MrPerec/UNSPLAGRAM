@@ -42,10 +42,10 @@ export default function PhotosPostsList({photoPost, addPostPhoto}){
 	})
 	return(
 		<div className='post_list_container'>
+			{listOfPhotosPosts}
 			<PhotoPostAdd
 				addPostPhoto={addPostPhoto}
 			/>
-			{listOfPhotosPosts}
 		</div>
 	)
 }

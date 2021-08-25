@@ -14,7 +14,8 @@
 .flaticon-like_style{
 	background: linear-gradient(130deg, #ff000061, #ff0000);
 	-webkit-text-fill-color: transparent;
-	-webkit-background-clip: text; 
+	-webkit-background-clip: text;
+	background-clip: text; 
 	cursor: pointer;
 	margin-right: 5px;
 }

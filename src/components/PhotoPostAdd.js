@@ -2,7 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-// import '../styles/button.css';
+import '../styles/button.css';
 
 export default function PhotoPostAdd({addPostPhoto}){
 	/*console.log(`It is the component PhotoPostDisplay`);

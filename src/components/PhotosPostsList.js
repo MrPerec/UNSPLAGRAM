@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PhotoPostDisplay from '../components/PhotoPostDisplay.js';
 import PhotoPostAdd from '../components/PhotoPostAdd.js';
-import '../styles/button.css';
+import '../styles/postList.css';
 
 export default function PhotosPostsList({photoPost, addPostPhoto}){
 	// console.log(`It is the component PhotosPostsList`);

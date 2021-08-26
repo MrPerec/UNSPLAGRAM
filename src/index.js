@@ -7,8 +7,8 @@ import thunk from 'redux-thunk';
 
 import './styles/style.css';
 import App from './containers/App.js';
-import rootReducer from './reducers';
-import {addPostPhoto} from './actions';
+import rootReducer from './reducers/reducer';
+import {addPostPhoto} from './actions/action';
 
 const $rootElem = document.querySelector(`.js-root`);
 

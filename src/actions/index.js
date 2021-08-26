@@ -24,7 +24,7 @@ export function addPostPhoto(state) {
 
 	return function(dispatch){
 		requestToApi(unsplashApi).then(response => {
-			console.log(response);
+			// console.log(response);
 			response.forEach( (item) =>{
 				const uuid = getUuid();
 				item.created_at = item.created_at.substr(START_POSITION, LENGTH).replace(SYMBOL_T, SYMBOL_SPACE);

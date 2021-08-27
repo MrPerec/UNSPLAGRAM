@@ -26,7 +26,7 @@ export default function PhotoPostDisplay({postOfPhoto}){
 			/>
 			<a href={userLinksHtml} target='_blank'	rel='noopener noreferrer' className="user_link">{userName}</a>
 			<time dateTime={created_at} className="publish_style">Published on {created_at} </time>
-			<div className='like-container'>
+			<div className='like_container'>
 				<i className='flaticon-heart flaticon_position flaticon-heart_style'></i>
 				{/* <i className='flaticon-like flaticon_position flaticon-like_style'></i> */}
 				{likes}

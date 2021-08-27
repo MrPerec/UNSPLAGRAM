@@ -22,7 +22,19 @@
 }
 
 .publish_style{
-	font-size: 14px;
+	display: block;
+	position: absolute;
+	margin: -20px 0 0 22px;
+
+	font-family: Raleway;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 14px;
+
+	text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000;
+	color: #FFFFFF!important;
+	text-decoration: none;
 }
 
 .flex-container{
@@ -31,4 +43,28 @@
 
 .user_link{
 	display: block;
+	position: absolute;
+	margin: -38px 0 0 22px;
+	
+	font-family: Raleway;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 21px;
+	
+	text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000;
+	color: #FFFFFF!important;
+	text-decoration: none;
+}
+
+.like_container{
+	position: absolute;
+	margin: -38px 0 0 318px;
+	font-family: Raleway;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 21px;
+	text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000;
+	color: #FFFFFF!important;
 }

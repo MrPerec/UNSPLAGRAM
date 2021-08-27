@@ -32,11 +32,6 @@ src: local(''),
 	min-width: 1440px;
 }
 
-/* .fixed-container {
-	max-width: 1440px;
-    margin: 0 auto;
-    position: relative;
-} */
 .flex_box{
   max-width: 1350px;
   margin: 0 auto;
@@ -62,8 +57,8 @@ src: local(''),
 
 .header-nav-bar__style{
 	display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .header-header-nav-bar__a{
@@ -76,27 +71,62 @@ src: local(''),
 	color: #3B3B3B;
 }
 
-.section__image_style{
-  max-width: 1440px;
-  margin: 0 auto;
-  position: relative;
+.section_search{
+	margin: 0 auto;
+	width: max-content;
 	height: 960px;
-	background: url(../img/nico-iseli-W7oHCrzoJjo-unsplash.png);
+}
+
+.search_box{
+	position: absolute;
+	margin: 108px 0 0 150px;
+}
+
+.image_style{
+	max-width: 1440px;
+	position: relative;
+	height: 960px;
+	z-index: -1;
 }
 
 .section__heading_style{
-	padding: 108px 0 0;
-    margin: 0 150px;
+	/* padding: 108px 0 0;
+	margin: 0 150px; */
+	margin: 0 0 0 -10px;
 	font-family: Raleway;
 	font-size: 144px;
 	font-weight: 600;
 	color: white;
 }
 
-.section__input_style{
+.form_style{
+	margin: 23px 0 11px 0;
+}
+
+.button_search{
+	position: absolute;
+	margin: 31px 0 0 24px;
+	/*height: 77px;
+	width: 55px;
+	left: 184px;
+	margin-top: 25px; */
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	outline: none;
+}
+
+.button_search:before{
+	content: "\f103";
+	font-family: flaticon;
+	font-size: 16px;
+	color: #484848;
+}
+
+.input_style{
 	width: 1119px;
 	height: 77px;
-	margin: 25px 160px 12px;
+	
 	background: #FFFFFF;
 	border-radius: 5px;
 	border: none;
@@ -134,27 +164,8 @@ src: local(''),
 {color: transparent;
 }
 
-.button_search{
-	position: absolute;
-    height: 77px;
-    width: 55px;
-	left: 184px;
-    margin-top: 25px;
-	border: none;
-	background: transparent;
-	cursor: pointer;
-	outline: none;
-}
-
-.button_search:before{
-	content: "\f103";
-	font-family: flaticon;
-	font-size: 16px;
-	color: #484848;
-}
-
-.section__nav_bar_style{
-	margin: 0 160px;
+.section__nav_bar_container{
+	/* margin: 0 160px; */
 }
 
 .section__nav_bar_a_text_style{
@@ -163,7 +174,7 @@ src: local(''),
 	background: rgba(255, 255, 255, 0.3);
 	backdrop-filter: blur(20px);
 	border-radius: 5px;
-  padding: 10px;
+	padding: 10px;
 
 	text-decoration: none;
 	font-family: Raleway;
@@ -175,12 +186,13 @@ src: local(''),
 }
 
 .user_name_style{
+	display: block;
 	position: absolute;
-	width: 154px;
+	/* width: 154px;
 	height: 21px;
 	left: 24px;
-	top: 919px;
-	
+	top: 919px; */
+	margin: 919px 0 0 24px;
 	font-family: Raleway;
 	font-style: normal;
 	font-weight: normal;

@@ -1,2 +1,3 @@
 node_modules
-src/index_old.js
+src/styles/fonts/iconfont/flaticon.html
+src/styles/fonts/iconfont/flaticon.scss

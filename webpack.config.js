@@ -34,14 +34,18 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({template: './index.html'}),
-    new MiniCssExtractPlugin({filename: 'main.css'}),
+    new HtmlWebpackPlugin({
+      template: './index.html'
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'main.css'
+    }),
   ],
   module: {
     rules: [
       {
         test: /\.html$/i,
-        loader: "html-loader",
+        loader: 'html-loader',
       },
       {
         test: /\.css$/i,
@@ -61,20 +65,8 @@ module.exports = {
         }
       },
       {
-        test: /\.(ttf|eot|svg|png|jpg|gif|ico)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        use: [
-          {
-            loader: 'file-loader'
-          }
-        ]
-      },
-      {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [
-          {
-            loader: 'file-loader'
-          }
-        ]
+        test: /\.(woff(2)?|ttf|eot|svg|png|jpg|gif|ico)(\?v=\d+\.\d+\.\d+\.[0-9]\.[0-9]\.[0-9].)?$/,
+        type: 'asset/resource'
       },
     ],
   },

@@ -164,9 +164,9 @@ src: local(''),
 {color: transparent;
 }
 
-.section__nav_bar_container{
-	/* margin: 0 160px; */
-}
+/* .section__nav_bar_container{
+	margin: 0 160px;
+} */
 
 .section__nav_bar_a_text_style{
 	display: inline-block;

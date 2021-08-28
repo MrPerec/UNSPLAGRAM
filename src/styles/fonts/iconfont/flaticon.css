@@ -1,10 +1,10 @@
 @font-face {
     font-family: "flaticon";
-    src: url("./flaticon.ttf?5ad0bdc5a5c63f3361fe4d7fdfd1f1b6") format("truetype"),
-url("./flaticon.woff?5ad0bdc5a5c63f3361fe4d7fdfd1f1b6") format("woff"),
-url("./flaticon.woff2?5ad0bdc5a5c63f3361fe4d7fdfd1f1b6") format("woff2"),
-url("./flaticon.eot?5ad0bdc5a5c63f3361fe4d7fdfd1f1b6#iefix") format("embedded-opentype"),
-url("./flaticon.svg?5ad0bdc5a5c63f3361fe4d7fdfd1f1b6#flaticon") format("svg");
+    src: url("./flaticon.ttf?5cdab620bf55e943422f21473e3828f7") format("truetype"),
+url("./flaticon.woff?5cdab620bf55e943422f21473e3828f7") format("woff"),
+url("./flaticon.woff2?5cdab620bf55e943422f21473e3828f7") format("woff2"),
+url("./flaticon.eot?5cdab620bf55e943422f21473e3828f7#iefix") format("embedded-opentype"),
+url("./flaticon.svg?5cdab620bf55e943422f21473e3828f7#flaticon") format("svg");
 }
 
 i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
@@ -18,15 +18,12 @@ i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.flaticon-like:before {
+.flaticon-heart:before {
     content: "\f101";
 }
-.flaticon-heart:before {
+.flaticon-like:before {
     content: "\f102";
 }
 .flaticon-loupe:before {
     content: "\f103";
-}
-.flaticon-download:before {
-    content: "\f104";
 }

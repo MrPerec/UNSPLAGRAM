@@ -3,9 +3,11 @@
 	width: max-content;
 	height: max-content;
 	margin: 30px 0 0;
-	/* border: 1px solid #dbdbdb;
-	padding: 16px; */
 	box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+}
+
+.image{
+	display: block;
 }
 
 .post_text_container{
@@ -13,73 +15,53 @@
 	display: flex;
 	justify-content: space-around;
 	width: 100%;
-	bottom: 4px;
+	bottom: 0;
 	padding: 10px 0;
-
 	color: #767676;
 	background-color: hsla(0,0%,100%,.9);
-	/* border: 1px solid transparent;
-	box-shadow: 0 1px 2px rgb(0 0 0 / 6%); */
-}
-
-.post_name_piblish_container{
-	
 }
 
 .user_link{
 	display: block;
-	/* position: absolute;
-	margin: -38px 0 0 22px; */
 	font-family: Raleway;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 18px;
 	line-height: 21px;
-	/* text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000; */
-	/* color: #FFFFFF!important; */
 	color: #3B3B3B;
 	text-decoration: none;
 }
 
 .publish_style{
 	display: block;
-	/* position: absolute;
-	margin: -20px 0 0 22px; */
 	font-family: Raleway;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 12px;
 	line-height: 14px;
-	/* text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000; */
-	/* color: #FFFFFF!important; */
 	color: #3B3B3B;
 	text-decoration: none;
 }
 
 .like_container{
-	/* position: absolute;
-	margin: -38px 0 0 318px; */
-	/* font-family: Raleway;
+	display: flex;
+	height: 16px;
+	margin: 9px 0;
+
+	font-family: monospace;
 	font-style: normal;
-	font-weight: normal;
-	font-size: 18px;
-	line-height: 21px; */
-	/* text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000; */
-	/* color: #FFFFFF!important; */
-	color: #3B3B3B;
+	font-weight: lighter;
+	font-size: 12px;
+	line-height: 21px;
 }
 
-.flaticon-heart_style{
+.flaticon_style{
+	display: inline;
 	cursor: pointer;
 	margin-right: 5px;
+	font-size: 18px;
 }
 
 .flaticon-like_style{
-	/* background: linear-gradient(130deg, #ff000061, #ff0000); */
 	color: red;
-	/* -webkit-text-fill-color: transparent; */
-	-webkit-background-clip: text;
-	background-clip: text; 
-	cursor: pointer;
-	margin-right: 5px;
 }

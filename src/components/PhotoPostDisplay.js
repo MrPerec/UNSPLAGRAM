@@ -24,13 +24,22 @@ export default function PhotoPostDisplay({postOfPhoto}){
 				alt={alt_description}
 				title={alt_description}
 			/>
-			<a href={userLinksHtml} target='_blank'	rel='noopener noreferrer' className="user_link">{userName}</a>
+			<div className='post_text_container'>
+				<a href={userLinksHtml} target='_blank'	rel='noopener noreferrer' className="user_link">{userName}</a>
+				<time dateTime={created_at} className="publish_style">Published on {created_at} </time>
+				<div className='like_container'>
+					<i className='flaticon-heart flaticon_position flaticon-heart_style'></i>
+					<i className='flaticon-like flaticon_position flaticon-like_style'></i>
+					{likes}
+				</div> 
+			</div>
+			{/* <a href={userLinksHtml} target='_blank'	rel='noopener noreferrer' className="user_link">{userName}</a>
 			<time dateTime={created_at} className="publish_style">Published on {created_at} </time>
 			<div className='like_container'>
 				<i className='flaticon-heart flaticon_position flaticon-heart_style'></i>
-				{/* <i className='flaticon-like flaticon_position flaticon-like_style'></i> */}
+				<i className='flaticon-like flaticon_position flaticon-like_style'></i>
 				{likes}
-			</div> 
+			</div>  */}
 		</div>
 	);
 }

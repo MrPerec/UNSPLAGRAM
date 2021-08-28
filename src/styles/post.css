@@ -6,19 +6,20 @@
 	padding: 16px; */
 }
 
-.flaticon-heart_style{
-	cursor: pointer;
-	margin-right: 5px;
-}
-
-
-.flaticon-like_style{
-	background: linear-gradient(130deg, #ff000061, #ff0000);
-	-webkit-text-fill-color: transparent;
-	-webkit-background-clip: text;
-	background-clip: text; 
-	cursor: pointer;
-	margin-right: 5px;
+.user_link{
+	display: block;
+	position: absolute;
+	margin: -38px 0 0 22px;
+	
+	font-family: Raleway;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 21px;
+	
+	text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000;
+	color: #FFFFFF!important;
+	text-decoration: none;
 }
 
 .publish_style{
@@ -37,34 +38,29 @@
 	text-decoration: none;
 }
 
-.flex-container{
-	display: flex;
-}
-
-.user_link{
-	display: block;
-	position: absolute;
-	margin: -38px 0 0 22px;
-	
-	font-family: Raleway;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 18px;
-	line-height: 21px;
-	
-	text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000;
-	color: #FFFFFF!important;
-	text-decoration: none;
-}
-
 .like_container{
 	position: absolute;
 	margin: -38px 0 0 318px;
-	font-family: Raleway;
+	/* font-family: Raleway;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 18px;
-	line-height: 21px;
+	line-height: 21px; */
 	text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000;
 	color: #FFFFFF!important;
+}
+
+.flaticon-heart_style{
+	cursor: pointer;
+	margin-right: 5px;
+}
+
+.flaticon-like_style{
+	/* background: linear-gradient(130deg, #ff000061, #ff0000); */
+	color: red;
+	/* -webkit-text-fill-color: transparent; */
+	-webkit-background-clip: text;
+	background-clip: text; 
+	cursor: pointer;
+	margin-right: 5px;
 }

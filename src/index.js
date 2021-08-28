@@ -9,6 +9,7 @@ import './styles/style.css';
 import App from './containers/App.js';
 import rootReducer from './reducers/reducer';
 import {addPostPhoto} from './actions/action';
+import {SCROLL_HEIGHT} from './constants/constants.js';
 
 const $rootElem = document.querySelector(`.js-root`);
 
@@ -21,7 +22,8 @@ const addPostPhotoEndOfScroll = () =>{
         document.body.offsetHeight,	document.documentElement.offsetHeight, 
         document.body.clientHeight, document.documentElement.clientHeight
     );
-    if (scrollHeight - innerHeight === pageYOffset) return store.dispatch( addPostPhoto() )
+    if (scrollHeight - innerHeight === pageYOffset || 
+        scrollHeight - innerHeight === pageYOffset - SCROLL_HEIGHT) return store.dispatch( addPostPhoto() )
 }
 
 window.addEventListener('scroll', addPostPhotoEndOfScroll)

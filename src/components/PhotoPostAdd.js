@@ -12,7 +12,7 @@ export default function PhotoPostAdd({addPostPhoto}){
 	
 	return (
 		<div className='button_container'>
- 			<button className='button' onClick={onButtonClick}>Загрузить еще</button>
+ 			<button className='button' onClick={onButtonClick}>Show more</button>
 		</div>
 	);
 }

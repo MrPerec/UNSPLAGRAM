@@ -3,7 +3,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import PhotosPostsList from '../components/PhotosPostsList.js';
-import {addPostPhoto} from '../actions/action';
+import {addPostPhoto} from '../actions/actions';
 
 export default function App({photoPost, addPostPhoto}){
 	// console.log(`It is App.js`);

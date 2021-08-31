@@ -8,7 +8,7 @@ import thunk from 'redux-thunk';
 import './styles/style.css';
 import App from './containers/App.js';
 import rootReducer from './reducers/reducer';
-import {addPostPhoto} from './actions/action';
+import {addPostPhoto} from './actions/actions';
 import {SCROLL_HEIGHT} from './constants/constants.js';
 
 const $rootElem = document.querySelector(`.js-root`);

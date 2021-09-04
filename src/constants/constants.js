@@ -10,3 +10,4 @@ export const SYMBOL_SPACE = ` `;
 export const ADD_COMMENT = `ADD_COMMENT`;
 export const DELETE_COMMENT = `DELETE_COMMENT`;
 export const SCROLL_HEIGHT = 15;
+export const FIRST_ITEM_OF_COLLECTION = 0;

@@ -11,21 +11,21 @@ import rootReducer from './reducers/reducer';
 import {addPostPhoto} from './actions/actions';
 import {SCROLL_HEIGHT} from './constants/constants.js';
 
+const $rootElem = document.querySelector(`.js-root`);
+
 const addPostPhotoEndOfScroll = () =>{
     let scrollHeight = Math.max(
         document.body.scrollHeight, document.documentElement.scrollHeight, 
         document.body.offsetHeight,	document.documentElement.offsetHeight, 
         document.body.clientHeight, document.documentElement.clientHeight
     );
-    if (scrollHeight - innerHeight === scrollY || scrollHeight - innerHeight === scrollY - SCROLL_HEIGHT) return store.dispatch( addPostPhoto() )
-}
-
-const $rootElem = document.querySelector(`.js-root`);
+    if (scrollHeight - innerHeight === scrollY || scrollHeight - innerHeight === scrollY - SCROLL_HEIGHT) return store.dispatch( addPostPhoto() );
+};
 
 const store = createStore( rootReducer, applyMiddleware(thunk) );
-store.dispatch( addPostPhoto() )
+store.dispatch( addPostPhoto() );
 
-window.addEventListener('scroll', addPostPhotoEndOfScroll)
+window.addEventListener('scroll', addPostPhotoEndOfScroll);
 
 render( 
     <App 

@@ -20,7 +20,7 @@ export function getPosts() {
 	} 
 };
 
-export function getTitlePhoto() {
+/* export function getTitlePhoto() {
 	try{
 		const stateTitlePhoto = [{}];
 		return stateTitlePhoto;
@@ -28,4 +28,4 @@ export function getTitlePhoto() {
 	catch (err){
 		return undefined
 	}
-}
+} */

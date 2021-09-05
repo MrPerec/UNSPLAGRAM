@@ -23,19 +23,21 @@ export default function rootReducer(state = [{}], action){
 					likes
 				}
 			];
-		// case LIKE_POST:
-		// 	return state.map(postsList => {
-		// 		if (postsList.id === action.id) {
-		// 			return {
-		// 				// id: todo.id, 
-		// 				// name: todo.name, 
-		// 				// checked: !todo.checked
-		// 			}
-		// 		}
-		// 		return postsList;
-		// 	})
-		case ADD_TITLE_PHOTO:
-			return titlePhoto;
+			
+		case LIKE_POST:
+			return state.map(postsList => {
+				if (postsList.id === action.id) {
+					return {
+						// id: todo.id, 
+						// name: todo.name, 
+						// checked: !todo.checked
+					}
+				}
+				return postsList;
+			})
+
+		/* case ADD_TITLE_PHOTO:
+			return titlePhoto; */
 
 		default: return state;
 	}

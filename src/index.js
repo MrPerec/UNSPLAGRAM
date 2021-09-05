@@ -13,7 +13,7 @@ import {SCROLL_HEIGHT} from './constants/constants.js';
 
 const $rootElem = document.querySelector(`.js-root`);
 
-const addPostPhotoEndOfScroll = () =>{
+/* const addPostPhotoEndOfScroll = () =>{
     let scrollHeight = Math.max(
         document.body.scrollHeight, document.documentElement.scrollHeight, 
         document.body.offsetHeight,	document.documentElement.offsetHeight, 
@@ -22,10 +22,10 @@ const addPostPhotoEndOfScroll = () =>{
     if (scrollHeight - innerHeight === scrollY || scrollHeight - innerHeight === scrollY - SCROLL_HEIGHT) return store.dispatch( addPostPhoto() );
 };
 
+window.addEventListener('scroll', addPostPhotoEndOfScroll); */
+
 const store = createStore( rootReducer, applyMiddleware(thunk) );
 store.dispatch( addPostPhoto() );
-
-window.addEventListener('scroll', addPostPhotoEndOfScroll);
 
 render( 
     <App 

@@ -21,19 +21,6 @@ const requestToPhotoList = api => {
 	});
 }
 
-const requestTheTittlePhoto = api => {
-	return api.collections.getPhotos({ 
-		collectionId: `827743`,
-		orientation: `landscape`
-	}).then(result => {
-		if (result.errors) return alert(`error occurred: ${result.errors[0]}`);
-		// console.log(result.response.results[FIRST_ITEM_OF_COLLECTION]);
-		return result.response.results[FIRST_ITEM_OF_COLLECTION];
-	});
-};
-
-requestTheTittlePhoto(unsplashApi);
-
 export function addPostPhoto(state) {
 
 	return function(dispatch){
@@ -57,6 +44,27 @@ export function addPostPhoto(state) {
 	}
 }
 
+export function likePost(id){
+	dispatch({
+		type: LIKE_POST,
+		id
+	})
+}
+
+
+/* const requestTheTittlePhoto = api => {
+	return api.collections.getPhotos({ 
+		collectionId: `827743`,
+		orientation: `landscape`
+	}).then(result => {
+		if (result.errors) return alert(`error occurred: ${result.errors[0]}`);
+		// console.log(result.response.results[FIRST_ITEM_OF_COLLECTION]);
+		return result.response.results[FIRST_ITEM_OF_COLLECTION];
+	});
+};
+
+requestTheTittlePhoto(unsplashApi);
+
 export function addTheTitlePhoto(state){
 	return function (dispatch){
 		requestTheTittlePhoto(unsplashApi).then(response => {
@@ -67,11 +75,4 @@ export function addTheTitlePhoto(state){
 			})
 		})
 	}
-}
-
-// export function likePost(id){
-// 	dispatch({
-// 		type: LIKE_POST,
-// 		id
-// 	})
-// }
+} */

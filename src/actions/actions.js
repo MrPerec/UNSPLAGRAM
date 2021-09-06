@@ -11,14 +11,14 @@ const unsplashApi = createApi({
 	secret: `3bb-ZjMm_DeThkQSR9975k1KQPg56J_xUk5SpU1X6Sk`,
 });
 
-let pageNumber = 1;
-
 const requestListPhoto = api => {
 	return api.photos.list({page: pageNumber++, perPage: 10}).then(result => {
 		if (result.errors) return alert(`error occurred: ${result.errors[0]}`);
 		return result.response.results;
 	});
 }
+
+let pageNumber = 1;
 
 export function addPostPhoto() {
 	return function(dispatch){

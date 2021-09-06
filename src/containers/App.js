@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import ListPostPhoto from '../components/ListPostPhoto.js';
 import {addPostPhoto} from '../actions/actions';
 
-export default function App({postPhoto, addPostPhoto}){
+export default function App( {postPhoto, addPostPhoto} ){
 	// console.log(`It is App.js`);
 	// console.log(postPhoto);
 	// console.log(addPostPhoto);
@@ -21,6 +21,7 @@ export default function App({postPhoto, addPostPhoto}){
 }
 
 const mapStateToProps = (state) => {
+	// console.log(state);
 	return {
 		postPhoto: state
 	}
@@ -28,7 +29,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return{
-		addPostPhoto: (props) => dispatch( addPostPhoto(props) )
+		addPostPhoto: (state) => dispatch( addPostPhoto(state) )
 	}
 }
 

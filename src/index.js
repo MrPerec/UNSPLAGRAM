@@ -28,5 +28,5 @@ const store = createStore( rootReducer, applyMiddleware(thunk) );
 store.dispatch( addPostPhoto() );
 
 render( 
-    <App store={store}/>, $rootElem, 
+    <App store={store}/>, $rootElem
 );

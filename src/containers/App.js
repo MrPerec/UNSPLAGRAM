@@ -2,18 +2,18 @@
 
 import React from 'react';
 import {connect} from 'react-redux';
-import PhotosPostsList from '../components/PhotosPostsList.js';
+import ListPostPhoto from '../components/ListPostPhoto.js';
 import {addPostPhoto} from '../actions/actions';
 
-export default function App({photoPost, addPostPhoto}){
+export default function App({postPhoto, addPostPhoto}){
 	// console.log(`It is App.js`);
-	// console.log(photoPost);
+	// console.log(postPhoto);
 	// console.log(addPostPhoto);
 
 	return(
 		<div>
-			<PhotosPostsList
-				photoPost={photoPost}
+			<ListPostPhoto
+				postPhoto={postPhoto}
 				addPostPhoto={addPostPhoto}
 			/>		
 		</div>
@@ -22,7 +22,7 @@ export default function App({photoPost, addPostPhoto}){
 
 const mapStateToProps = (state) => {
 	return {
-		photoPost: state
+		postPhoto: state
 	}
 }
 

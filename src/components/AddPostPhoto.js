@@ -4,8 +4,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/button.css';
 
-export default function PhotoPostAdd({addPostPhoto}){
-	/*console.log(`It is the component PhotoPostDisplay`);
+export default function AddPostPhoto({addPostPhoto}){
+	/*console.log(`It is the component DisplayPostPhoto`);
 	console.log(postOfPhoto);*/
 	
 	const onButtonClick = () => addPostPhoto();
@@ -17,6 +17,6 @@ export default function PhotoPostAdd({addPostPhoto}){
 	);
 }
 
-PhotoPostAdd.propTypes = {
+AddPostPhoto.propTypes = {
 	addPostPhoto: PropTypes.func.isRequired,
 }

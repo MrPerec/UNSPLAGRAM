@@ -1,6 +1,6 @@
 `use strict`;
 
-import {ADD_POST, LIKE_POST, ADD_TITLE_PHOTO} from '../types/types.js';
+import {ADD_POST_PHOTO, LIKE_POST, ADD_TITLE_PHOTO} from '../types/types.js';
 
 // export default function rootReducer(state = initialState, action){
 export default function rootReducer(state = [{}], action){
@@ -10,7 +10,7 @@ export default function rootReducer(state = [{}], action){
 	const {id, urlsSmall, alt_description, userName, userLinksHtml, created_at, likes} = action;
 
 	switch (action.type) {
-		case ADD_POST:
+		case ADD_POST_PHOTO:
 			return [
 				...state,
 				{
@@ -23,8 +23,11 @@ export default function rootReducer(state = [{}], action){
 					likes
 				}
 			];
-			
-		case LIKE_POST:
+
+		/* case ADD_TITLE_PHOTO:
+			return titlePhoto; */
+
+		/* case LIKE_POST:
 			return state.map(postsList => {
 				if (postsList.id === action.id) {
 					return {
@@ -33,11 +36,8 @@ export default function rootReducer(state = [{}], action){
 						// checked: !todo.checked
 					}
 				}
-				return postsList;
-			})
-
-		/* case ADD_TITLE_PHOTO:
-			return titlePhoto; */
+			return postsList;
+		}) */
 
 		default: return state;
 	}

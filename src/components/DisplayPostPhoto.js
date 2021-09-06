@@ -5,17 +5,10 @@ import PropTypes from 'prop-types';
 import '../styles/post.css';
 import '../styles/fonts/iconfont/flaticon.css';
 
-export default function PhotoPostDisplay({postOfPhoto}){
-	// console.log(`It is the component PhotoPostDisplay`);
+export default function DisplayPostPhoto({postOfPhoto}){
+	// console.log(`It is the component DisplayPostPhoto`);
 	// console.log(postOfPhoto);
-	const {
-		urlsSmall, 
-		alt_description, 
-		userName, 
-		userLinksHtml, 
-		created_at, 
-		likes
-	} = postOfPhoto;
+	const { urlsSmall, alt_description, userName, userLinksHtml, created_at, likes} = postOfPhoto;
 	
 	return (
 		<div className='post_container'>
@@ -40,6 +33,6 @@ export default function PhotoPostDisplay({postOfPhoto}){
 	);
 }
 
-PhotoPostDisplay.propTypes = {
+DisplayPostPhoto.propTypes = {
 	postOfPhoto: PropTypes.object.isRequired
 }

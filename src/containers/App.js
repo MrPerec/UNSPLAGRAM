@@ -28,6 +28,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
+	// console.log(dispatch);
 	return{
 		addPostPhoto: (state) => dispatch( addPostPhoto(state) )
 	}

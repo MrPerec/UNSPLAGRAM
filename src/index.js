@@ -11,7 +11,14 @@ import rootReducer from './reducers/reducer';
 import {addPostPhoto} from './actions/actions';
 // import {SCROLL_HEIGHT} from './constants/constants.js';
 
+// const $imageElem = document.querySelector(`.js_image`);
 const $rootElem = document.querySelector(`.js-root`);
+
+/* const image = <img 
+    className= 'image_style' 
+    src= './img/nico-iseli-W7oHCrzoJjo-unsplash.png' 
+    alt= 'beautiful picture'
+/> */
 
 /* const addPostPhotoEndOfScroll = () =>{
     let scrollHeight = Math.max(
@@ -30,3 +37,7 @@ store.dispatch( addPostPhoto() );
 render( 
     <App store={store}/>, $rootElem
 );
+
+/* render( 
+    image, $imageElem
+); */

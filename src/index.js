@@ -11,6 +11,7 @@ import rootReducer from './reducers/reducer';
 import {addPostPhoto, addTitlePhoto} from './actions/actions';
 // import {SCROLL_HEIGHT} from './constants/constants.js';
 
+// const $imageElem = document.querySelector(`.js_image`);
 const $rootElem = document.querySelector(`.js-root`);
 
 /* const addPostPhotoEndOfScroll = () =>{

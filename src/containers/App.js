@@ -2,18 +2,24 @@
 
 import React from 'react';
 import {connect} from 'react-redux';
-import PhotosPostsList from '../components/PhotosPostsList.js';
-import {addPostPhoto} from '../actions/action';
+import DisplayTitlePhoto from '../components/DisplayTitlePhoto.js';
+import DisplayListPostPhoto from '../components/DisplayListPostPhoto.js';
+import {addPostPhoto} from '../actions/actions';
 
-export default function App({photoPost, addPostPhoto}){
+/* export default function App(prop){
+	console.log(prop) */
+export default function App( {postPhoto, addPostPhoto} ){
 	// console.log(`It is App.js`);
-	// console.log(photoPost);
+	// console.log(postPhoto);
 	// console.log(addPostPhoto);
 
 	return(
 		<div>
-			<PhotosPostsList
-				photoPost={photoPost}
+			<DisplayTitlePhoto
+				// titlePhoto={titlePhoto}
+			/>
+			<DisplayListPostPhoto
+				postPhoto={postPhoto}
 				addPostPhoto={addPostPhoto}
 			/>		
 		</div>
@@ -21,14 +27,17 @@ export default function App({photoPost, addPostPhoto}){
 }
 
 const mapStateToProps = (state) => {
+	console.log(state);
 	return {
-		photoPost: state
+		postPhoto: state,
+		// titlePhoto: state
 	}
 }
 
 const mapDispatchToProps = (dispatch) => {
+	// console.log(dispatch);
 	return{
-		addPostPhoto: (props) => dispatch( addPostPhoto(props) )
+		addPostPhoto: (state) => dispatch( addPostPhoto(state) )
 	}
 }
 

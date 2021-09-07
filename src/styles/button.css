@@ -1,4 +1,8 @@
 .button_container{
     width: max-content;
-    margin: 30px auto;
+    margin: 30px auto; 
+}
+
+.button_height{
+    height: 200px;
 }

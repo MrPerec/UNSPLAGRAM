@@ -8,29 +8,27 @@ import thunk from 'redux-thunk';
 import './styles/style.css';
 import App from './containers/App.js';
 import rootReducer from './reducers/reducer';
-import {addPostPhoto} from './actions/action';
-import {SCROLL_HEIGHT} from './constants/constants.js';
+import {addPostPhoto, addTitlePhoto} from './actions/actions';
+// import {SCROLL_HEIGHT} from './constants/constants.js';
 
 const $rootElem = document.querySelector(`.js-root`);
 
-const store = createStore( rootReducer, applyMiddleware(thunk) );
-store.dispatch( addPostPhoto() )
-
-window.addEventListener('scroll', addPostPhotoEndOfScroll)
-
-render( 
-    <App 
-        store={store}
-    />, 
-    $rootElem 
-);
-
-const addPostPhotoEndOfScroll = () =>{
+/* const addPostPhotoEndOfScroll = () =>{
     let scrollHeight = Math.max(
         document.body.scrollHeight, document.documentElement.scrollHeight, 
         document.body.offsetHeight,	document.documentElement.offsetHeight, 
         document.body.clientHeight, document.documentElement.clientHeight
     );
-    if (scrollHeight - innerHeight === pageYOffset || 
-        scrollHeight - innerHeight === pageYOffset - SCROLL_HEIGHT) return store.dispatch( addPostPhoto() )
-}
+    if (scrollHeight - innerHeight === scrollY || scrollHeight - innerHeight === scrollY - SCROLL_HEIGHT) return store.dispatch( addPostPhoto() );
+};
+
+window.addEventListener('scroll', addPostPhotoEndOfScroll); */
+
+const store = createStore( rootReducer, applyMiddleware(thunk) );
+// store.dispatch( addTitlePhoto() );
+store.dispatch( addPostPhoto() );
+// console.log(store.getState())
+
+render( 
+    <App store={store}/>, $rootElem
+);

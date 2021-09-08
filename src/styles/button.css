@@ -3,6 +3,30 @@
     margin: 30px auto; 
 }
 
-.button_height{
-    height: 200px;
+.button {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #3B3B3B;
+    
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button__style {
+    background-color: #e7e7e7;
+    color: #3B3B3B;
+    border: 2px solid #e7e7e7;
+}
+
+.button__style:hover {
+    background-color: white;
 }

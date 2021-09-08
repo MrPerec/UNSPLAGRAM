@@ -1,15 +1,15 @@
 `use strict`;
 
 import {createApi} from 'unsplash-js';
-import {ADD_POST_PHOTO, LIKE_POST, ADD_TITLE_PHOTO} from '../types/types.js';
-import {START_POSITION, LENGTH, SYMBOL_T, SYMBOL_SPACE, FIRST_ITEM_OF_COLLECTION} from '../constants/constants.js';
-
-const getUuid = () => ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g,c=>(c^crypto.getRandomValues(new Uint8Array(1))[0]&15 >> c/4).toString(16));
+import {ADD_POST_PHOTO, LIKE_POST} from '../types/types.js';
+import {START_POSITION, LENGTH, SYMBOL_T, SYMBOL_SPACE} from '../constants/constants.js';
 
 const unsplashApi = createApi({
 	accessKey: '_JCTLXIriKQH3zfw4IPJa7c4uUf-KBTJbCqNHGAvXFc',
 	secret: `3bb-ZjMm_DeThkQSR9975k1KQPg56J_xUk5SpU1X6Sk`,
 });
+
+const getUuid = () => ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g,c=>(c^crypto.getRandomValues(new Uint8Array(1))[0]&15 >> c/4).toString(16));
 
 const requestListPhoto = api => {
 	return api.photos.list({
@@ -21,24 +21,10 @@ const requestListPhoto = api => {
 	});
 }
 
-const requestTitlePhoto = api => {
-	return api.collections.getPhotos({ 
-		collectionId: `827743`,
-		orientation: `landscape`
-	}).then(result => {
-		if (result.errors) return alert(`error occurred: ${result.errors[0]}`);
-		// console.log(result.response.results[FIRST_ITEM_OF_COLLECTION]);
-		return result.response.results[FIRST_ITEM_OF_COLLECTION];
-	});
-};
-
-// requestTitlePhoto(unsplashApi);
-
 let pageNumber = 1;
 
 export function addPostPhoto() {
 	return function(dispatch){
-	
 		requestListPhoto(unsplashApi).then(response => {
 			response.forEach( (item) =>{
 				const uuid = getUuid();
@@ -56,34 +42,5 @@ export function addPostPhoto() {
 				 })
 			})
 		})
-		
-		/* requestTitlePhoto(unsplashApi).then(response => {
-			
-			dispatch({
-				type: ADD_TITLE_PHOTO,
-				urlsFull: response.urls.full
-			})
-		}) */
-	
 	}
 }
-
-/* export function addTitlePhoto(){
-	return function (dispatch){
-		requestTitlePhoto(unsplashApi).then(response => {
-			// console.log(response);
-			
-			dispatch({
-				type: ADD_TITLE_PHOTO,
-				urlsFull: response.urls.full
-			})
-		})
-	}
-} */
-
-/* export function likePost(id){
-	dispatch({
-		type: LIKE_POST,
-		id
-	})
-} */

@@ -4,6 +4,7 @@
 	height: max-content;
 	margin: 30px 0 0;
 	box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+	cursor: zoom-in;
 }
 
 .image{
@@ -19,6 +20,7 @@
 	padding: 10px 0;
 	color: #767676;
 	background-color: hsla(0,0%,100%,.9);
+	cursor: default;
 }
 
 .user_link{
@@ -57,7 +59,6 @@
 
 .flaticon_style{
 	display: inline;
-	cursor: pointer;
 	margin-right: 5px;
 	font-size: 18px;
 }

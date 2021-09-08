@@ -6,8 +6,6 @@ import '../styles/post.css';
 import '../styles/fonts/iconfont/flaticon.css';
 
 export default function DisplayPostPhoto({postOfPhoto}){
-	// console.log(`It is the component DisplayPostPhoto`);
-	// console.log(postOfPhoto);
 	const { urlsSmall, altDescriptionPostPhoto, userNamePostPhoto, userLinksHtml, createdAt, likes} = postOfPhoto;
 	
 	return (

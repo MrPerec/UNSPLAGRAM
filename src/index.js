@@ -11,8 +11,6 @@ import rootReducer from './reducers/reducer';
 import {addPostPhoto, addTitlePhoto} from './actions/actions';
 // import {SCROLL_HEIGHT} from './constants/constants.js';
 
-const $rootElem = document.querySelector(`.js-root`);
-
 /* const addPostPhotoEndOfScroll = () =>{
     let scrollHeight = Math.max(
         document.body.scrollHeight, document.documentElement.scrollHeight, 
@@ -25,10 +23,9 @@ const $rootElem = document.querySelector(`.js-root`);
 window.addEventListener('scroll', addPostPhotoEndOfScroll); */
 
 const store = createStore( rootReducer, applyMiddleware(thunk) );
-// store.dispatch( addTitlePhoto() );
 store.dispatch( addPostPhoto() );
-// console.log(store.getState())
+// store.subscribe(() => console.log(store.getState()))
 
 render( 
-    <App store={store}/>, $rootElem
+    <App store={store}/>, document.querySelector(`.js-root`)
 );

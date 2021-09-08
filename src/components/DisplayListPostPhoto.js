@@ -7,9 +7,6 @@ import AddPostPhoto from './AddPostPhoto.js';
 import '../styles/postList.css';
 
 export default function DisplayListPostPhoto({postPhoto, addPostPhoto}){
-	// console.log(`It is the component DisplayListPostPhoto`);
-	// console.log(postPhoto);
-	// console.log(addPostPhoto);
 	
 	const listOfPhotosPosts = postPhoto.map( (obj) => {
 		let keysContents = ``;
@@ -24,6 +21,7 @@ export default function DisplayListPostPhoto({postPhoto, addPostPhoto}){
 				createdAt,
 				likes
 			};
+			
 			return(
 				<DisplayPostPhoto
 					key={id}
@@ -32,6 +30,7 @@ export default function DisplayListPostPhoto({postPhoto, addPostPhoto}){
 			)
 		}
 	})
+
 	return(
 		<main>
 			<div className='post_list_container'>

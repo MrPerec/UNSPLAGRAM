@@ -1,15 +1,14 @@
 `use strict`;
 
 import React from 'react';
-import {render}  from 'react-dom';
-import {createStore, applyMiddleware} from 'redux';
+import { render }  from 'react-dom';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import { composeWithDevTools } from 'redux-devtools-extension';
 
 import './styles/style.css';
 import App from './containers/App.js';
-import rootReducer from './reducers/reducer';
-import {addPostPhoto, addTitlePhoto} from './actions/actions';
+import reducers from './reducers/reducers';
+import { addPostPhoto } from './actions/actions';
 // import {SCROLL_HEIGHT} from './constants/constants.js';
 
 /* const addPostPhotoEndOfScroll = () =>{
@@ -23,7 +22,8 @@ import {addPostPhoto, addTitlePhoto} from './actions/actions';
 
 window.addEventListener('scroll', addPostPhotoEndOfScroll); */
 
-const store = createStore(rootReducer, composeWithDevTools(
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducers, composeEnhancers(
     applyMiddleware(thunk)
 ));
 

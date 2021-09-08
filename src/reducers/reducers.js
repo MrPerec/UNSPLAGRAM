@@ -2,7 +2,7 @@
 
 import {ADD_POST_PHOTO, LIKE_POST, ADD_TITLE_PHOTO} from '../types/types.js';
 
-export default function rootReducer(state = [{}], action){
+export default function reducers(state = [{}], action){
 	switch (action.type) {
 		
 		case ADD_POST_PHOTO:

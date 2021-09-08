@@ -28,24 +28,32 @@ src: local(''),
 	margin: 0;
 	padding: 0;
 	height: 0;
-	width: 100%;
+	min-width: 400px;
 
 	font-family: Raleway;
 	font-style: normal;
 	font-weight: normal;
 }
 
+.header__container{
+	height: max-content;
+}
+
 .gray__block{
 	background-color: #3B3B3B;
-	height: 200px;
 }
 
 .header_h3__text-style{
 	margin: 0 auto;
 	width: max-content;
+	padding: 25px 0;
 	font-family: Raleway;
 	font-style: normal;
 	font-weight: 600;
-	font-size: 144px;
+	font-size: calc(1rem + 10vw);
 	color: white;
+}
+
+.footer__container{
+	height: 200px;
 }

@@ -6,14 +6,14 @@ export default function rootReducer(state = [{}], action){
 	switch (action.type) {
 		
 		case ADD_POST_PHOTO:
-			const {id, urlsSmall, altDescriptionPostPhoto, userNamePostPhoto, userLinksHtml, createdAt, likes} = action;
+			const {id, urlsSmall, altDescription, userName, userLinksHtml, createdAt, likes} = action;
 			return [
 				...state,
 				{
 					id,
 					urlsSmall,
-					altDescriptionPostPhoto,
-					userNamePostPhoto,
+					altDescription,
+					userName,
 					userLinksHtml,
 					createdAt,
 					likes

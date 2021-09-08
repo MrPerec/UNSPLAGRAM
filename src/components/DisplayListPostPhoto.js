@@ -12,11 +12,11 @@ export default function DisplayListPostPhoto({postPhoto, addPostPhoto}){
 		let keysContents = ``;
 		for (const key in obj) keysContents += obj[key];
 		if (keysContents !== ``){
-			const {id, urlsSmall, altDescriptionPostPhoto, userNamePostPhoto, userLinksHtml, createdAt, likes} = obj;
+			const {id, urlsSmall, altDescription, userName, userLinksHtml, createdAt, likes} = obj;
 			const postOfPhoto = { 
 				urlsSmall,
-				altDescriptionPostPhoto,
-				userNamePostPhoto,
+				altDescription,
+				userName,
 				userLinksHtml,
 				createdAt,
 				likes

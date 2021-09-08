@@ -6,19 +6,19 @@ import '../styles/post.css';
 import '../styles/fonts/iconfont/flaticon.css';
 
 export default function DisplayPostPhoto({postOfPhoto}){
-	const { urlsSmall, altDescriptionPostPhoto, userNamePostPhoto, userLinksHtml, createdAt, likes} = postOfPhoto;
+	const { urlsSmall, altDescription, userName, userLinksHtml, createdAt, likes} = postOfPhoto;
 	
 	return (
 		<div className='post_container'>
 			<img 
 				className='image'
 				src={urlsSmall}
-				alt={altDescriptionPostPhoto}
-				title={altDescriptionPostPhoto}
+				alt={altDescription}
+				title={altDescription}
 			/>
 			<div className='post_text_container'>
 				<div className='post_name_piblish_container'>
-					<a href={userLinksHtml} target='_blank'	rel='noopener noreferrer' className="user_link">{userNamePostPhoto}</a>
+					<a href={userLinksHtml} target='_blank'	rel='noopener noreferrer' className="user_link">{userName}</a>
 					<time dateTime={createdAt} className="publish_style">Published on {createdAt} </time>
 				</div>
 				<div className='like_container'>

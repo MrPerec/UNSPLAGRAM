@@ -34,8 +34,8 @@ export function addPostPhoto() {
 					type: ADD_POST_PHOTO,
 					id: uuid,
 					urlsSmall: item.urls.small,
-					altDescriptionPostPhoto: item.alt_description,
-					userNamePostPhoto: item.user.name,
+					altDescription: item.alt_description,
+					userName: item.user.name,
 					userLinksHtml: item.user.links.html,
 					createdAt: item.createdAt,
 					likes: item.likes

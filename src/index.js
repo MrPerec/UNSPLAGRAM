@@ -4,6 +4,7 @@ import React from 'react';
 import {render}  from 'react-dom';
 import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 import './styles/style.css';
 import App from './containers/App.js';
@@ -22,7 +23,10 @@ import {addPostPhoto, addTitlePhoto} from './actions/actions';
 
 window.addEventListener('scroll', addPostPhotoEndOfScroll); */
 
-const store = createStore( rootReducer, applyMiddleware(thunk) );
+const store = createStore(rootReducer, composeWithDevTools(
+    applyMiddleware(thunk)
+));
+
 store.dispatch( addPostPhoto() );
 // store.subscribe(() => console.log(store.getState()))
 

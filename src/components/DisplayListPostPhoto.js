@@ -5,8 +5,14 @@ import PropTypes from 'prop-types';
 import DisplayPostPhoto from './DisplayPostPhoto.js';
 import AddPostPhoto from './AddPostPhoto.js';
 import '../styles/postList.css';
+import {INITIAL_STATE_LENGTH} from '../constants/constants.js'
 
 export default function DisplayListPostPhoto({postPhoto, addPostPhoto}){
+
+	const getFirstlistOfPhotosPosts = () => {
+		console.log(postPhoto.length);
+		if (postPhoto.length === INITIAL_STATE_LENGTH ) addPostPhoto();
+	};
 	
 	const listOfPhotosPosts = postPhoto.map( (obj) => {
 		let keysContents = ``;
@@ -29,7 +35,9 @@ export default function DisplayListPostPhoto({postPhoto, addPostPhoto}){
 				/>
 			)
 		}
-	})
+	});
+
+	getFirstlistOfPhotosPosts();
 
 	return(
 		<main>

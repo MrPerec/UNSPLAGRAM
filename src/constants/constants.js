@@ -9,4 +9,3 @@ export const SYMBOL_T = `T`;
 export const SYMBOL_SPACE = ` `;
 export const ADD_COMMENT = `ADD_COMMENT`;
 export const DELETE_COMMENT = `DELETE_COMMENT`;
-export const SCROLL_HEIGHT = 15;

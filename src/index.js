@@ -9,7 +9,6 @@ import './styles/style.css';
 import App from './containers/App.js';
 import reducers from './reducers/reducers';
 import { addPostPhoto } from './actions/actions';
-import {SCROLL_HEIGHT} from './constants/constants.js';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducers, composeEnhancers(
@@ -24,9 +23,7 @@ window.addEventListener('scroll', () =>{
         document.body.offsetHeight,	document.documentElement.offsetHeight, 
         document.body.clientHeight, document.documentElement.clientHeight
     );
-    if (scrollHeight - innerHeight === scrollY || scrollHeight - innerHeight === scrollY - SCROLL_HEIGHT){
-        return store.dispatch( addPostPhoto() );
-    } 
+    if (scrollHeight - innerHeight === scrollY) return store.dispatch( addPostPhoto() );
 });
 
 render( 

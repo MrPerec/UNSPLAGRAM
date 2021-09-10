@@ -2,7 +2,7 @@
 
 import {createApi} from 'unsplash-js';
 import {ADD_POST_PHOTO, LIKE_POST} from '../types/types.js';
-import {START_POSITION, LENGTH, SYMBOL_T, SYMBOL_SPACE} from '../constants/constants.js';
+import {START_POSITION, CHARACTERS_NUMBER, SYMBOL_T, SYMBOL_SPACE} from '../constants/constants.js';
 
 const unsplashApi = createApi({
 	accessKey: '_JCTLXIriKQH3zfw4IPJa7c4uUf-KBTJbCqNHGAvXFc',
@@ -28,7 +28,7 @@ export function addPostPhoto() {
 		requestListPhoto(unsplashApi).then(response => {
 			response.forEach( (item) =>{
 				const uuid = getUuid();
-				item.createdAt = item.created_at.substr(START_POSITION, LENGTH).replace(SYMBOL_T, SYMBOL_SPACE);
+				item.createdAt = item.created_at.substr(START_POSITION, CHARACTERS_NUMBER).replace(SYMBOL_T, SYMBOL_SPACE);
 				
 				dispatch({ 
 					type: ADD_POST_PHOTO,

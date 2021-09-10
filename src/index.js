@@ -15,8 +15,6 @@ const store = createStore(reducers, composeEnhancers(
     applyMiddleware(thunk)
 ));
 
-store.dispatch( addPostPhoto() );
-
 window.addEventListener('scroll', () =>{
     let scrollHeight = Math.max(
         document.body.scrollHeight, document.documentElement.scrollHeight, 

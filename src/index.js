@@ -7,7 +7,7 @@ import thunk from 'redux-thunk';
 
 import './styles/style.css';
 import App from './containers/App.js';
-import reducers from './reducers/reducers';
+import reducers from './reducers/rootReducer';
 import { addPostPhoto } from './actions/actions';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

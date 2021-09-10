@@ -1,10 +1,11 @@
 `use strict`;
 
-export function getStatePhoto() {
+export function getState() {
 	try{
-		const statePhoto = [{}]
-		return statePhoto;
-	} catch (err) {
+		const state = [{}]
+		return state;
+	} 
+	catch (err) {
 		return undefined;	
 	} 
 };

@@ -10,7 +10,6 @@ import {INITIAL_STATE_LENGTH} from '../constants/constants.js'
 export default function DisplayListPostPhoto({postPhoto, addPostPhoto}){
 
 	const getFirstlistOfPhotosPosts = () => {
-		console.log(postPhoto.length);
 		if (postPhoto.length === INITIAL_STATE_LENGTH ) addPostPhoto();
 	};
 	

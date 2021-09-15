@@ -6,16 +6,16 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import './styles/style.css';
+// import './styles/style.css';
 import App from './containers/App.js';
 import reducers from './reducers/rootReducer';
-import {addPostPhoto} from './actions/actions';
+// import {addPostPhoto} from './actions/actions';
 
 const store = createStore(reducers, composeWithDevTools(
     applyMiddleware(thunk),
 ));
 
-const onScroll = () =>{
+/* const onScroll = () =>{
     const height = Math.max(
         document.body.scrollHeight, document.documentElement.scrollHeight, 
         document.body.offsetHeight,	document.documentElement.offsetHeight, 
@@ -45,7 +45,7 @@ function throttle(callee, timeout) {
 }
   
 window.addEventListener( `scroll`, throttle(onScroll, 1000) )
-window.addEventListener( `resize`, throttle(onScroll, 1000) )
+window.addEventListener( `resize`, throttle(onScroll, 1000) ) */
 
 render( 
     <App store={store}/>, document.querySelector(`.js-root`)

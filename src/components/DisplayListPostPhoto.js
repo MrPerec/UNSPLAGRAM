@@ -3,7 +3,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DisplayPostPhoto from './DisplayPostPhoto.js';
-// import AddPostPhoto from './AddPostPhoto.js';
 import '../styles/postList.css';
 import {INITIAL_STATE_LENGTH} from '../constants/constants.js'
 
@@ -39,14 +38,9 @@ export default function DisplayListPostPhoto({postPhoto, addPostPhoto}){
 	getFirstlistOfPhotosPosts();
 
 	return(
-		<main>
-			<div className='post_list_container'>
-				{listOfPhotosPosts}
-			</div>
-			{/* <AddPostPhoto
-				addPostPhoto={addPostPhoto}
-			/> */}
-		</main>
+		<div className='post_list_container'>
+			{listOfPhotosPosts}
+		</div>
 	)
 }
 

@@ -1,7 +1,7 @@
 `use strict`;
 
 import { createApi } from 'unsplash-js';
-import { ADD_POST_PHOTO, CHOOSE_POST, LIKE_POST } from '../types/types.js';
+import { ADD_POST_PHOTO } from '../types/types.js';
 import {
   START_POSITION,
   CHARACTERS_NUMBER,
@@ -60,10 +60,3 @@ export function addPostPhoto() {
     });
   };
 }
-
-/* export function choosePost(id) {
-  return {
-    type: CHOOSE_POST,
-    id,
-  };
-} */

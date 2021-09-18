@@ -1,11 +1,6 @@
 `use strict`;
 
-import {
-  ADD_POST_PHOTO,
-  CHOOSE_POST,
-  LIKE_POST,
-  ADD_TITLE_PHOTO,
-} from '../types/types.js';
+import { ADD_POST_PHOTO } from '../types/types.js';
 
 export default function reducers(
   state = [{}],
@@ -36,9 +31,6 @@ export default function reducers(
           likes,
         },
       ];
-
-    /* case CHOOSE_POST:
-      return state.filter((post) => post.id === id); */
 
     default:
       return state;

@@ -10,14 +10,14 @@ import DisplayListPostPhoto from '../components/DisplayListPostPhoto.js';
 import PhotoFullSizePage from '../pages/PhotoFullSizePage';
 import { addPostPhoto } from '../actions/actions';
 
-export default function App({ postPhoto, addPostPhoto /* , choosePost */ }) {
+export default function App({ postPhoto, addPostPhoto }) {
   // document.addEventListener(`click`, () => console.log(`click!`))
   // const photoFullSize = postPhoto
 
-  const listOfPhotosPostsId = postPhoto.map((post) => {
+  /*   const listOfPhotosPostsId = postPhoto.map((post) => {
     // console.log(post.urlsFull);
     return post.urlsFull;
-  });
+  }); */
 
   return (
     <div>
@@ -29,8 +29,9 @@ export default function App({ postPhoto, addPostPhoto /* , choosePost */ }) {
             addPostPhoto={addPostPhoto}
           />
         </Route>
-        <Route path='/photoFullSize'>
-          <PhotoFullSizePage postPhoto={listOfPhotosPostsId} />
+        {/* <Route path='/photoFullSize/:id' component={PhotoFullSizePage} /> */}
+        <Route path='/photoFullSize/:id'>
+          <PhotoFullSizePage postPhoto={postPhoto} />
         </Route>
         <Redirect to='/' />
       </Switch>

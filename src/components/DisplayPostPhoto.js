@@ -25,13 +25,13 @@ export default function DisplayPostPhoto({postOfPhoto}){
 					<a href={userLinksHtml} target='_blank'	rel='noopener noreferrer' className="user_link">{userName}</a>
 					<time dateTime={createdAt} className="publish_style">Published on {createdAt} </time>
 				</div>
-				<div className='like_container'>
-					<i className='flaticon-heart flaticon_style flaticon-heart_style'></i>
-					{/* <i className='flaticon-like flaticon_style flaticon-like_style'></i> */}
-					{likes}
-				</div> 
 			</div>
-		</div>
+			{/* <Switch>
+				<Route path='/photoFullSize'>
+					<PhotoFullSizePage />
+				</Route>
+			</Switch> */}
+		</Router>
 	);
 }
 

@@ -17,6 +17,7 @@ export default function DisplayListPostPhoto({ postPhoto, addPostPhoto }) {
     if (keysContents !== ``) {
       const {
         id,
+        urlsFull,
         urlsSmall,
         altDescription,
         userName,
@@ -25,6 +26,8 @@ export default function DisplayListPostPhoto({ postPhoto, addPostPhoto }) {
         likes,
       } = post;
       const postOfPhoto = {
+        id,
+        urlsFull,
         urlsSmall,
         altDescription,
         userName,

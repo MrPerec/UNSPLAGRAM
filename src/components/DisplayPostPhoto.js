@@ -8,7 +8,10 @@ import '../styles/post.css';
 import '../styles/fonts/iconfont/flaticon.css';
 
 export default function DisplayPostPhoto({ postOfPhoto }) {
+  // console.log(postOfPhoto);
   const {
+    id,
+    urlsFull,
     urlsSmall,
     altDescription,
     userName,
@@ -19,7 +22,7 @@ export default function DisplayPostPhoto({ postOfPhoto }) {
 
   return (
     <div className='post_container'>
-      <Link to={'/photoFullSize'}>
+      <Link to={`/photoFullSize/${id}`}>
         <img
           className='image'
           src={urlsSmall}

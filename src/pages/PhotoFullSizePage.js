@@ -6,11 +6,22 @@ import { useHistory } from 'react-router-dom';
 import '../styles/button.css';
 
 export default function PhotoFullSizePage(props) {
-  console.log(props);
-  // const { urlsFull, altDescription, userName, userLinksHtml, createdAt, likes} = postPhoto;
+  console.log(props.match.params);
   const history = useHistory();
   const onButtonClick = () => history.goBack();
-  // const onButtonClick = () => history.push('/');
+
+  /* const photoPhullSize = (props) => {
+    const player = PlayerAPI.get(parseInt(props.match.params.number, 10));
+    return (
+      <div>
+        <h1>
+          {player.name} (#{player.number})
+        </h1>
+        <h2>Position: {player.position}</h2>
+        <Link to='/roster'>Back</Link>
+      </div>
+    );
+  }; */
 
   return (
     <div className='button_container'>

@@ -48,8 +48,8 @@ function throttle(callee, timeout) {
   };
 }
 
-window.addEventListener(`scroll`, throttle(onScroll, 1000));
-window.addEventListener(`resize`, throttle(onScroll, 1000));
+// window.addEventListener(`scroll`, throttle(onScroll, 1000));
+// window.addEventListener(`resize`, throttle(onScroll, 1000));
 
 render(
   <Router>

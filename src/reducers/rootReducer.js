@@ -1,25 +1,46 @@
 `use strict`;
 
-import {ADD_POST_PHOTO, LIKE_POST, ADD_TITLE_PHOTO} from '../types/types.js';
+import {
+  ADD_POST_PHOTO,
+  CHOOSE_POST,
+  LIKE_POST,
+  ADD_TITLE_PHOTO,
+} from '../types/types.js';
 
-export default function reducers(state = [{}], action){
-	switch (action.type) {
-		
-		case ADD_POST_PHOTO:
-			const {id, urlsSmall, altDescription, userName, userLinksHtml, createdAt, likes} = action;
-			return [
-				...state,
-				{
-					id,
-					urlsSmall,
-					altDescription,
-					userName,
-					userLinksHtml,
-					createdAt,
-					likes
-				}
-			];
+export default function reducers(
+  state = [{}],
+  {
+    type,
+    id,
+    urlsFull,
+    urlsSmall,
+    altDescription,
+    userName,
+    userLinksHtml,
+    createdAt,
+    likes,
+  }
+) {
+  switch (type) {
+    case ADD_POST_PHOTO:
+      return [
+        ...state,
+        {
+          id,
+          urlsFull,
+          urlsSmall,
+          altDescription,
+          userName,
+          userLinksHtml,
+          createdAt,
+          likes,
+        },
+      ];
 
-		default: return state;
-	}
+    /* case CHOOSE_POST:
+      return state.filter((post) => post.id === id); */
+
+    default:
+      return state;
+  }
 }

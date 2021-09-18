@@ -2,6 +2,8 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
+
 import '../styles/post.css';
 import '../styles/fonts/iconfont/flaticon.css';
 
@@ -10,12 +12,14 @@ export default function DisplayPostPhoto({postOfPhoto}){
 	
 	return (
 		<div className='post_container'>
-			<img 
-				className='image'
-				src={urlsSmall}
-				alt={altDescription}
-				title={altDescription}
-			/>
+			<NavLink to={'/photoFullSize'}>
+				<img 
+					className='image'
+					src={urlsSmall}
+					alt={altDescription}
+					title={altDescription}
+				/>
+			</NavLink>
 			<div className='post_text_container'>
 				<div className='post_name_piblish_container'>
 					<a href={userLinksHtml} target='_blank'	rel='noopener noreferrer' className="user_link">{userName}</a>

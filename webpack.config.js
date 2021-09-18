@@ -19,6 +19,7 @@ module.exports = {
     open: true,
     compress: true,
     port: 9000,
+    historyApiFallback: true
   },
   optimization: {
     minimizer: [

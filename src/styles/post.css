@@ -1,68 +1,67 @@
-.post_container{
-	position: relative;
-	width: max-content;
-	height: max-content;
-	margin: 30px 0 0;
-	box-shadow: 0 0 10px rgb(0 0 0 / 50%);
-	cursor: zoom-in;
+.post_container {
+  position: relative;
+  width: max-content;
+  height: max-content;
+  margin: 30px 0 0;
+  box-shadow: 0 0 10px rgb(0 0 0 / 50%);
 }
 
-.image{
-	display: block;
+.image {
+  display: block;
 }
 
-.post_text_container{
-	position: absolute;
-	display: flex;
-	justify-content: space-around;
-	width: 100%;
-	bottom: 0;
-	padding: 10px 0;
-	color: #767676;
-	background-color: hsla(0,0%,100%,.9);
-	cursor: default;
+.post_text_container {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  bottom: 0;
+  padding: 10px 0;
+  color: #767676;
+  background-color: hsla(0, 0%, 100%, 0.9);
+  cursor: default;
 }
 
-.user_link{
-	display: block;
-	font-family: Raleway;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 18px;
-	line-height: 21px;
-	color: #3B3B3B;
-	text-decoration: none;
+.user_link {
+  display: block;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #3b3b3b;
+  text-decoration: none;
 }
 
-.publish_style{
-	display: block;
-	font-family: Raleway;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 12px;
-	line-height: 14px;
-	color: #3B3B3B;
-	text-decoration: none;
+.publish_style {
+  display: block;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #3b3b3b;
+  text-decoration: none;
 }
 
-.like_container{
-	display: flex;
-	height: 16px;
-	margin: 9px 0;
+.like_container {
+  display: flex;
+  height: 16px;
+  margin: 9px 0;
 
-	font-family: Raleway;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 12px;
-	line-height: 21px;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 21px;
 }
 
-.flaticon_style{
-	display: inline;
-	margin-right: 5px;
-	font-size: 18px;
+.flaticon_style {
+  display: inline;
+  margin-right: 5px;
+  font-size: 18px;
 }
 
-.flaticon-like_style{
-	color: red;
+.flaticon-like_style {
+  color: red;
 }

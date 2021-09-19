@@ -11,7 +11,7 @@ export default function DisplayPostPhoto({ postOfPhoto }) {
   // console.log(postOfPhoto);
   const {
     id,
-    urlsFull,
+    urlsRegular,
     urlsSmall,
     altDescription,
     userName,
@@ -22,7 +22,17 @@ export default function DisplayPostPhoto({ postOfPhoto }) {
 
   return (
     <div className='post_container'>
-      <Link to={`/photoFullSize/${id}`}>
+      <Link
+        to={{
+          pathname: `/photoFullSize/${id}`,
+          urlsRegular: urlsRegular,
+          altDescription: altDescription,
+          userName: userName,
+          userLinksHtml: userLinksHtml,
+          createdAt: createdAt,
+          likes: likes,
+        }}
+      >
         <img
           className='image'
           src={urlsSmall}

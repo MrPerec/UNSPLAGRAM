@@ -48,7 +48,7 @@ export function addPostPhoto() {
         dispatch({
           type: ADD_POST_PHOTO,
           id: uuid,
-          urlsFull: item.urls.full,
+          urlsRegular: item.urls.regular,
           urlsSmall: item.urls.small,
           altDescription: item.alt_description,
           userName: item.user.name,

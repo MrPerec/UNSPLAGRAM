@@ -7,7 +7,7 @@ export default function reducers(
   {
     type,
     id,
-    urlsRegular,
+    urlsFull,
     urlsSmall,
     altDescription,
     userName,
@@ -22,7 +22,7 @@ export default function reducers(
         ...state,
         {
           id,
-          urlsRegular,
+          urlsFull,
           urlsSmall,
           altDescription,
           userName,

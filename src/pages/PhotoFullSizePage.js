@@ -12,7 +12,7 @@ export default function PhotoFullSizePage({ location }) {
   const onButtonClick = () => history.goBack();
 
   const {
-    urlsRegular,
+    urlsFull,
     altDescription,
     userName,
     userLinksHtml,
@@ -24,7 +24,7 @@ export default function PhotoFullSizePage({ location }) {
     <div className='post_container'>
       <img
         className='image'
-        src={urlsRegular}
+        src={urlsFull}
         alt={altDescription}
         title={altDescription}
       />

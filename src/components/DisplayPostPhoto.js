@@ -11,7 +11,7 @@ export default function DisplayPostPhoto({ postOfPhoto }) {
   // console.log(postOfPhoto);
   const {
     id,
-    urlsRegular,
+    urlsFull,
     urlsSmall,
     altDescription,
     userName,
@@ -25,7 +25,7 @@ export default function DisplayPostPhoto({ postOfPhoto }) {
       <Link
         to={{
           pathname: `/photoFullSize/${id}`,
-          urlsRegular: urlsRegular,
+          urlsFull: urlsFull,
           altDescription: altDescription,
           userName: userName,
           userLinksHtml: userLinksHtml,

@@ -17,7 +17,7 @@ export default function DisplayListPostPhoto({ postPhoto, addPostPhoto }) {
     if (keysContents !== ``) {
       const {
         id,
-        urlsRegular,
+        urlsFull,
         urlsSmall,
         altDescription,
         userName,
@@ -27,7 +27,7 @@ export default function DisplayListPostPhoto({ postPhoto, addPostPhoto }) {
       } = post;
       const postOfPhoto = {
         id,
-        urlsRegular,
+        urlsFull,
         urlsSmall,
         altDescription,
         userName,

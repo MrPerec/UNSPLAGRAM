@@ -11,7 +11,7 @@ export default function DisplayPostPhoto({ postOfPhoto }) {
   // console.log(postOfPhoto);
   const {
     id,
-    urlsFull,
+    urlsRegular,
     urlsSmall,
     altDescription,
     userName,
@@ -25,7 +25,7 @@ export default function DisplayPostPhoto({ postOfPhoto }) {
       <Link
         to={{
           pathname: `/photoFullSize/${id}`,
-          urlsFull: urlsFull,
+          urlsRegular: urlsRegular,
           altDescription: altDescription,
           userName: userName,
           userLinksHtml: userLinksHtml,
@@ -56,7 +56,6 @@ export default function DisplayPostPhoto({ postOfPhoto }) {
         </div>
         <div className='like_container'>
           <i className='flaticon-heart flaticon_style flaticon-heart_style'></i>
-          {/* <i className='flaticon-like flaticon_style flaticon-like_style'></i> */}
           {likes}
         </div>
       </div>

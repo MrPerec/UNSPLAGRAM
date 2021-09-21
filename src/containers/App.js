@@ -11,7 +11,7 @@ import PhotoFullSizePage from '../pages/PhotoFullSizePage';
 import { addPostPhoto } from '../actions/actions';
 
 export default function App({ postPhoto, addPostPhoto }) {
-  // document.addEventListener(`click`, () => console.log(`click!`))
+  document.addEventListener(`scroll`, () => console.log(`scroll!`));
 
   return (
     <div>

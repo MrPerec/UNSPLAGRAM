@@ -16,7 +16,7 @@ const store = createStore(
   composeWithDevTools(applyMiddleware(thunk))
 );
 
-const onScroll = () => {
+/* const onScroll = () => {
   const height = Math.max(
     document.body.scrollHeight,
     document.documentElement.scrollHeight,
@@ -31,6 +31,7 @@ const onScroll = () => {
   const position = scrolled + screenHeight;
 
   if (threshold <= position) return store.dispatch(addPostPhoto());
+  // if (threshold <= position) return console.log(`Scroll detected!`);
 };
 
 function throttle(callee, timeout) {
@@ -48,8 +49,8 @@ function throttle(callee, timeout) {
   };
 }
 
-// window.addEventListener(`scroll`, throttle(onScroll, 1000));
-// window.addEventListener(`resize`, throttle(onScroll, 1000));
+window.addEventListener(`scroll`, throttle(onScroll, 1000));
+window.addEventListener(`resize`, throttle(onScroll, 1000)); */
 
 render(
   <Router>

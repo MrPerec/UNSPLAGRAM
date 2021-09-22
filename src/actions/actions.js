@@ -7,12 +7,12 @@ import {
   CHARACTERS_NUMBER,
   SYMBOL_T,
   SYMBOL_SPACE,
-  ACCES_KEY,
+  ACCESS_KEY,
   SECRET_KEY,
 } from '../constants/constants.js';
 
 const unsplashApi = createApi({
-  accessKey: ACCES_KEY,
+  accessKey: ACCESS_KEY,
   secret: SECRET_KEY,
 });
 

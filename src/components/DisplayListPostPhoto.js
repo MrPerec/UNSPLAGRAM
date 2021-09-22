@@ -42,7 +42,13 @@ export default function DisplayListPostPhoto({ postPhoto, addPostPhoto }) {
 
   getFirstlistOfPhotosPosts();
 
-  return <div className='post_list_container'>{listOfPhotosPosts}</div>;
+  return (
+    <div className='post_list_container'>{listOfPhotosPosts}</div>
+    // <div>
+    //   <div className='post_list_container'>{listOfPhotosPosts}</div>
+    //   <h4 className='post_list_container'>Loading...</h4>
+    // </div>
+  );
 }
 
 DisplayListPostPhoto.propTypes = {

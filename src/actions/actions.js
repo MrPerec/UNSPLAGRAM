@@ -7,11 +7,13 @@ import {
   CHARACTERS_NUMBER,
   SYMBOL_T,
   SYMBOL_SPACE,
+  ACCES_KEY,
+  SECRET_KEY,
 } from '../constants/constants.js';
 
 const unsplashApi = createApi({
-  accessKey: '_JCTLXIriKQH3zfw4IPJa7c4uUf-KBTJbCqNHGAvXFc',
-  secret: `3bb-ZjMm_DeThkQSR9975k1KQPg56J_xUk5SpU1X6Sk`,
+  accessKey: ACCES_KEY,
+  secret: SECRET_KEY,
 });
 
 const getUuid = () =>

@@ -1,6 +1,6 @@
 `use strict`;
 
-import fetchtListPhotos from './api/fetchtListPhotos';
+import fetchtListPhotos from '../api/fetchtListPhotos';
 import { ADD_POST_PHOTO } from '../types/types.js';
 import {
   START_POSITION,

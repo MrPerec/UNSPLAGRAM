@@ -17,7 +17,7 @@ const getUuid = () =>
     ).toString(16)
   );
 
-export function addPostPhoto() {
+export default function addPostPhoto() {
   return function (dispatch) {
     fetchtListPhotos().then((response) => {
       response.forEach((item) => {

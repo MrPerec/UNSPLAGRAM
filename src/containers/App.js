@@ -8,7 +8,7 @@ import '../styles/app.css';
 import Header from '../components/layouts/Header';
 import DisplayListPostPhoto from '../components/DisplayListPostPhoto.js';
 import PhotoFullSizePage from '../components/pages/PhotoFullSizePage';
-import { addPostPhoto } from '../actions/addPostPhoto';
+import addPostPhoto from '../actions/addPostPhoto';
 
 export default function App({ postPhoto, addPostPhoto }) {
   return (

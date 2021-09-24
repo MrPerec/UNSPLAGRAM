@@ -8,7 +8,7 @@ import { INITIAL_STATE_LENGTH } from '../constants/constants.js';
 import '../styles/postList.css';
 
 export default function DisplayListPostPhoto({ postPhoto, addPostPhoto }) {
-  const getFirstlistOfPhotosPosts = () => {
+  const getFirstlistOfPostsPhotos = () => {
     if (postPhoto.length === INITIAL_STATE_LENGTH) addPostPhoto();
   };
 
@@ -21,7 +21,7 @@ export default function DisplayListPostPhoto({ postPhoto, addPostPhoto }) {
     }
   });
 
-  getFirstlistOfPhotosPosts();
+  getFirstlistOfPostsPhotos();
 
   return (
     <InfiniteScroll

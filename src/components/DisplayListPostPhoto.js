@@ -17,7 +17,6 @@ export default function DisplayListPostPhoto({ postPhoto, addPostPhoto }) {
     for (const key in postOfPhoto) keysContents += postOfPhoto[key];
     if (keysContents !== ``) {
       const { id } = postOfPhoto;
-
       return <DisplayPostPhoto key={id} postOfPhoto={postOfPhoto} />;
     }
   });

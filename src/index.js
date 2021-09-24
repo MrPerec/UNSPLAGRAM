@@ -9,7 +9,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import App from './containers/App.js';
 import reducers from './reducers/rootReducer';
-import { addPostPhoto } from './actions/actions';
+// import { addPostPhoto } from './actions/actions';
 
 const store = createStore(
   reducers,
@@ -31,7 +31,6 @@ const store = createStore(
   const position = scrolled + screenHeight;
 
   if (threshold <= position) return store.dispatch(addPostPhoto());
-  // if (threshold <= position) return console.log(`Scroll detected!`);
 };
 
 function throttle(callee, timeout) {

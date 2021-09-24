@@ -5,14 +5,12 @@ import { connect } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import '../styles/app.css';
-import Header from '../components/Header';
+import Header from '../components/layouts/Header';
 import DisplayListPostPhoto from '../components/DisplayListPostPhoto.js';
-import PhotoFullSizePage from '../pages/PhotoFullSizePage';
-import { addPostPhoto } from '../actions/actions';
+import PhotoFullSizePage from '../components/pages/PhotoFullSizePage';
+import { addPostPhoto } from '../actions/addPostPhoto';
 
 export default function App({ postPhoto, addPostPhoto }) {
-  // document.addEventListener(`scroll`, () => console.log(`scroll!`));
-
   return (
     <div>
       <Header />

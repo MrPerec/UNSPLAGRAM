@@ -1,6 +1,6 @@
 `use strict`;
 
-import { ADD_POST_PHOTO } from '../types/types.js';
+import { ADD_POST_PHOTO, LIKE_POST_PHOTO } from '../types/types.js';
 
 export default function reducers(
   state = [{}],
@@ -31,6 +31,18 @@ export default function reducers(
           likes,
         },
       ];
+
+    case LIKE_POST_PHOTO:
+      return state.map((postList) => {
+        if (postList.id === action.id) {
+          return {
+            id: todo.id,
+            name: todo.name,
+            checked: !todo.checked,
+          };
+        }
+        return todo;
+      });
 
     default:
       return state;

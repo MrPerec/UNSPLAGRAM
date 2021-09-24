@@ -3,9 +3,9 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import '../styles/post.css';
-import '../styles/button.css';
-import '../styles/fonts/iconfont/flaticon.css';
+import '../../styles/post.css';
+import '../../styles/button.css';
+import '../../styles/fonts/iconfont/flaticon.css';
 
 export default function PhotoFullSizePage({ location }) {
   const history = useHistory();

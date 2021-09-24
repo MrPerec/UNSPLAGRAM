@@ -7,12 +7,12 @@ import DisplayPostPhoto from './DisplayPostPhoto.js';
 import { INITIAL_STATE_LENGTH } from '../constants/constants.js';
 import '../styles/postList.css';
 
-export default function DisplayListPostPhoto({ postPhoto, addPostPhoto }) {
+export default function DisplayListPostPhoto({ listPostPhotos, addPostPhoto }) {
   const getFirstlistOfPostsPhotos = () => {
-    if (postPhoto.length === INITIAL_STATE_LENGTH) addPostPhoto();
+    if (listPostPhotos.length === INITIAL_STATE_LENGTH) addPostPhoto();
   };
 
-  const listOfPhotosPosts = postPhoto.map((postOfPhoto) => {
+  const listOfPhotosPosts = listPostPhotos.map((postOfPhoto) => {
     let keysContents = ``;
     for (const key in postOfPhoto) keysContents += postOfPhoto[key];
     if (keysContents !== ``) {
@@ -25,7 +25,7 @@ export default function DisplayListPostPhoto({ postPhoto, addPostPhoto }) {
 
   return (
     <InfiniteScroll
-      dataLength={postPhoto.length}
+      dataLength={listPostPhotos.length}
       next={addPostPhoto}
       hasMore={true}
       loader={<h4 className='post_list_container'>Loading...</h4>}
@@ -36,6 +36,6 @@ export default function DisplayListPostPhoto({ postPhoto, addPostPhoto }) {
 }
 
 DisplayListPostPhoto.propTypes = {
-  postPhoto: PropTypes.array.isRequired,
+  listPostPhotos: PropTypes.array.isRequired,
   addPostPhoto: PropTypes.func.isRequired,
 };

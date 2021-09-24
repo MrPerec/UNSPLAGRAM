@@ -12,30 +12,11 @@ export default function DisplayListPostPhoto({ postPhoto, addPostPhoto }) {
     if (postPhoto.length === INITIAL_STATE_LENGTH) addPostPhoto();
   };
 
-  const listOfPhotosPosts = postPhoto.map((post) => {
+  const listOfPhotosPosts = postPhoto.map((postOfPhoto) => {
     let keysContents = ``;
-    for (const key in post) keysContents += post[key];
+    for (const key in postOfPhoto) keysContents += postOfPhoto[key];
     if (keysContents !== ``) {
-      const {
-        id,
-        urlsRegular,
-        urlsSmall,
-        altDescription,
-        userName,
-        userLinksHtml,
-        createdAt,
-        likes,
-      } = post;
-      const postOfPhoto = {
-        id,
-        urlsRegular,
-        urlsSmall,
-        altDescription,
-        userName,
-        userLinksHtml,
-        createdAt,
-        likes,
-      };
+      const { id } = postOfPhoto;
 
       return <DisplayPostPhoto key={id} postOfPhoto={postOfPhoto} />;
     }

@@ -8,7 +8,6 @@ import '../styles/post.css';
 import '../styles/fonts/iconfont/flaticon.css';
 
 export default function DisplayPostPhoto({ postOfPhoto }) {
-  // console.log(postOfPhoto);
   const {
     id,
     urlsRegular,

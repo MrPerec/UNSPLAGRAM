@@ -3,9 +3,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import DisplayPostPhoto from './DisplayPostPhoto.js';
-import { INITIAL_STATE_LENGTH } from '../constants/constants.js';
+
 import '../styles/postList.css';
+import { INITIAL_STATE_LENGTH } from '../constants/constants.js';
+import DisplayPostPhoto from './DisplayPostPhoto.js';
+import ButtonBackTop from '../components/layouts/ButtonBackTop';
 
 export default function DisplayListPostPhoto({ listPostPhotos, addPostPhoto }) {
   const getFirstlistOfPostsPhotos = () => {
@@ -31,6 +33,7 @@ export default function DisplayListPostPhoto({ listPostPhotos, addPostPhoto }) {
       loader={<h4 className='post_list_container'>Loading...</h4>}
     >
       <div className='post_list_container'>{listOfPhotosPosts}</div>
+      <ButtonBackTop />
     </InfiniteScroll>
   );
 }

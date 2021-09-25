@@ -1,5 +1,7 @@
-.post_list_container{
-    justify-content: space-around;
-    display: flex;
-    flex-wrap: wrap;
+.post_list_container {
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1320px;
+  margin: 0 auto;
 }

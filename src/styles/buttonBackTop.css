@@ -1,0 +1,30 @@
+.button-back {
+  position: fixed;
+  right: 1%;
+  bottom: 1%;
+
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 21px;
+  color: #3b3b3b;
+
+  padding: 20px 10px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button-back__style {
+  background-color: hsla(0, 0%, 100%, 0.9);
+  color: #3b3b3b;
+  border: 2px solid #e7e7e7;
+}
+
+.button-back__style:hover {
+  border: 2px solid #e7e7e7;
+  background-color: #e7e7e7;
+}

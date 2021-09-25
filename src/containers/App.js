@@ -6,6 +6,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 import '../styles/app.css';
 import Header from '../components/layouts/Header';
+import ButtonBackTop from '../components/layouts/ButtonBackTop';
 import DisplayListPostPhoto from '../components/DisplayListPostPhoto.js';
 import PhotoFullSizePage from '../components/pages/PhotoFullSizePage';
 import addPostPhoto from '../actions/addPostPhoto';
@@ -24,6 +25,7 @@ export default function App({ listPostPhotos, addPostPhoto }) {
         <Route path='/photoFullSize/:id' component={PhotoFullSizePage} />
         <Redirect to='/' />
       </Switch>
+      <ButtonBackTop />
     </div>
   );
 }

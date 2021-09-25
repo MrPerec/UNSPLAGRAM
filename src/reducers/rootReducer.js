@@ -33,15 +33,22 @@ export default function reducers(
       ];
 
     case LIKE_POST_PHOTO:
-      return state.map((postList) => {
-        if (postList.id === action.id) {
-          return {
-            id: todo.id,
-            name: todo.name,
-            checked: !todo.checked,
-          };
-        }
-        return todo;
+      return state.map((listPhoto) => {
+        console.log(listPhoto);
+        // if (listPhoto.id === id) {
+        //   return
+        //   {
+        //     id: listPhoto.id,
+        //     urlsRegular,
+        //     urlsSmall,
+        //     altDescription,
+        //     userName,
+        //     userLinksHtml,
+        //     createdAt,
+        //     likes,
+        //     checked: !listPhoto.checked,
+        //   };
+        // }
       });
 
     default:

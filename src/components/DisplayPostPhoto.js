@@ -24,12 +24,13 @@ export default function DisplayPostPhoto({ postOfPhoto }) {
       <Link
         to={{
           pathname: `/photoFullSize/${id}`,
-          urlsRegular: urlsRegular,
-          altDescription: altDescription,
-          userName: userName,
-          userLinksHtml: userLinksHtml,
-          createdAt: createdAt,
-          likes: likes,
+          id,
+          urlsRegular,
+          altDescription,
+          userName,
+          userLinksHtml,
+          createdAt,
+          likes,
         }}
       >
         <img

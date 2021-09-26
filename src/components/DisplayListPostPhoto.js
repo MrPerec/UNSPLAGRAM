@@ -9,7 +9,11 @@ import { INITIAL_STATE_LENGTH } from '../constants/constants.js';
 import DisplayPostPhoto from './DisplayPostPhoto.js';
 import ButtonBackTop from '../components/layouts/ButtonBackTop';
 
-export default function DisplayListPostPhoto({ listPostPhotos, addPostPhoto }) {
+export default function DisplayListPostPhoto({
+  listPostPhotos,
+  addPostPhoto,
+  likePostPhoto,
+}) {
   const getFirstlistOfPostsPhotos = () => {
     if (listPostPhotos.length === INITIAL_STATE_LENGTH) addPostPhoto();
   };
@@ -19,7 +23,13 @@ export default function DisplayListPostPhoto({ listPostPhotos, addPostPhoto }) {
     for (const key in postOfPhoto) keysContents += postOfPhoto[key];
     if (keysContents !== ``) {
       const { id } = postOfPhoto;
-      return <DisplayPostPhoto key={id} postOfPhoto={postOfPhoto} />;
+      return (
+        <DisplayPostPhoto
+          key={id}
+          postOfPhoto={postOfPhoto}
+          likePostPhoto={likePostPhoto}
+        />
+      );
     }
   });
 

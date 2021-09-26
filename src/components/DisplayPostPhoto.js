@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import '../styles/post.css';
 import '../styles/fonts/iconfont/flaticon.css';
 
-export default function DisplayPostPhoto({ postOfPhoto }) {
+export default function DisplayPostPhoto({ postOfPhoto, likePostPhoto }) {
   const {
     id,
     urlsRegular,
@@ -31,6 +31,7 @@ export default function DisplayPostPhoto({ postOfPhoto }) {
           userLinksHtml,
           createdAt,
           likes,
+          likePostPhoto,
         }}
       >
         <img

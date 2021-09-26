@@ -3,11 +3,13 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
 import '../../styles/post.css';
 import '../../styles/button.css';
 import '../../styles/fonts/iconfont/flaticon.css';
 
-export default function PhotoFullSizePage({ location, likePostPhoto }) {
+export default function PhotoFullSizePage({ location }) {
+  console.log(location);
   const {
     id,
     urlsRegular,
@@ -16,6 +18,7 @@ export default function PhotoFullSizePage({ location, likePostPhoto }) {
     userLinksHtml,
     createdAt,
     likes,
+    likePostPhoto,
   } = location;
 
   const history = useHistory();

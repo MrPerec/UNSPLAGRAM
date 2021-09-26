@@ -11,6 +11,21 @@ import PhotoFullSizePage from '../components/pages/PhotoFullSizePage';
 import addPostPhoto from '../actions/addPostPhoto';
 import likePostPhoto from '../actions/likePostPhoto';
 
+const mapStateToProps = (state) => {
+  return {
+    listPostPhotos: state,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addPostPhoto: () => dispatch(addPostPhoto()),
+    likePostPhoto: (id) => dispatch(likePostPhoto(id)),
+  };
+};
+
+App = connect(mapStateToProps, mapDispatchToProps)(App);
+
 export default function App({ listPostPhotos, addPostPhoto, likePostPhoto }) {
   return (
     <div>
@@ -29,18 +44,3 @@ export default function App({ listPostPhotos, addPostPhoto, likePostPhoto }) {
     </div>
   );
 }
-
-const mapStateToProps = (state) => {
-  return {
-    listPostPhotos: state,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addPostPhoto: () => dispatch(addPostPhoto()),
-    likePostPhoto: (id) => dispatch(likePostPhoto(id)),
-  };
-};
-
-App = connect(mapStateToProps, mapDispatchToProps)(App);

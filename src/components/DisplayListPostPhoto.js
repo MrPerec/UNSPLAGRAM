@@ -14,11 +14,14 @@ export default function DisplayListPostPhoto({
   addPostPhoto,
   likePostPhoto,
 }) {
+  // console.log(`It's the DisplayListPostPhoto`);
+  // console.log(listPostPhotos);
+
   const getFirstlistOfPostsPhotos = () => {
     if (listPostPhotos.length === INITIAL_STATE_LENGTH) addPostPhoto();
   };
 
-  const listOfPhotosPosts = listPostPhotos.map((postOfPhoto) => {
+  const displayListPostPhoto = listPostPhotos.map((postOfPhoto) => {
     let keysContents = ``;
     for (const key in postOfPhoto) keysContents += postOfPhoto[key];
     if (keysContents !== ``) {
@@ -42,7 +45,7 @@ export default function DisplayListPostPhoto({
       hasMore={true}
       loader={<h4 className='post_list_container'>Loading...</h4>}
     >
-      <div className='post_list_container'>{listOfPhotosPosts}</div>
+      <div className='post_list_container'>{displayListPostPhoto}</div>
       <ButtonBackTop />
     </InfiniteScroll>
   );

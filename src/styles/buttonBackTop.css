@@ -18,14 +18,12 @@
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   cursor: pointer;
-
-  border-radius: 10px;
 }
 
 .button-back__style {
   background-color: hsla(0, 0%, 100%, 0.9);
   color: #3b3b3b;
-  border: 2px solid white;
+  border: 2px solid hsla(0, 0%, 100%, 0.9);
 }
 
 .button-back__style:hover {

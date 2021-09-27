@@ -1,10 +1,10 @@
 @font-face {
     font-family: "flaticon";
-    src: url("./flaticon.ttf?5cdab620bf55e943422f21473e3828f7") format("truetype"),
-url("./flaticon.woff?5cdab620bf55e943422f21473e3828f7") format("woff"),
-url("./flaticon.woff2?5cdab620bf55e943422f21473e3828f7") format("woff2"),
-url("./flaticon.eot?5cdab620bf55e943422f21473e3828f7#iefix") format("embedded-opentype"),
-url("./flaticon.svg?5cdab620bf55e943422f21473e3828f7#flaticon") format("svg");
+    src: url("./flaticon.ttf?04469ced138bf45659298d562066cdb1") format("truetype"),
+url("./flaticon.woff?04469ced138bf45659298d562066cdb1") format("woff"),
+url("./flaticon.woff2?04469ced138bf45659298d562066cdb1") format("woff2"),
+url("./flaticon.eot?04469ced138bf45659298d562066cdb1#iefix") format("embedded-opentype"),
+url("./flaticon.svg?04469ced138bf45659298d562066cdb1#flaticon") format("svg");
 }
 
 i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
@@ -26,4 +26,7 @@ i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
 }
 .flaticon-loupe:before {
     content: "\f103";
+}
+.flaticon-up-arrow:before {
+    content: "\f104";
 }

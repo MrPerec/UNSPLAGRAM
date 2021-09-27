@@ -7,7 +7,7 @@ import '../../styles/buttonBackTop.css';
 export default function ButtonBackTop() {
   return (
     <a className='button-back button-back__style' href='#'>
-      &#9650;
+      <i className='flaticon-up-arrow'></i>
     </a>
   );
 }

@@ -14,6 +14,7 @@ export default function reducers(
     userLinksHtml,
     createdAt,
     likes,
+    likedByUser,
   }
 ) {
   switch (type) {
@@ -29,26 +30,41 @@ export default function reducers(
           userLinksHtml,
           createdAt,
           likes,
+          likedByUser,
         },
       ];
 
     case LIKE_POST_PHOTO:
+      // console.log(`it's the LIKE_POST_PHOTO reducer`);
+      // console.log(id);
+
       return state.map((listPhoto) => {
-        console.log(listPhoto);
-        // if (listPhoto.id === id) {
-        //   return
-        //   {
-        //     id: listPhoto.id,
-        //     urlsRegular,
-        //     urlsSmall,
-        //     altDescription,
-        //     userName,
-        //     userLinksHtml,
-        //     createdAt,
-        //     likes,
-        //     checked: !listPhoto.checked,
-        //   };
-        // }
+        if (listPhoto.id === id) {
+          // console.log(`
+          // id "${listPhoto.id}",
+          // urlsRegular "${listPhoto.urlsRegular}",
+          // urlsSmall "${listPhoto.urlsSmall}",
+          // altDescription "${listPhoto.altDescription}",
+          // userName "${listPhoto.userName}",
+          // userLinksHtml "${listPhoto.userLinksHtml}",
+          // createdAt "${listPhoto.createdAt}",
+          // likes "${listPhoto.likes}",
+          // likedByUser "${!listPhoto.likedByUser}"
+          //           `);
+          return {
+            id: listPhoto.id,
+            urlsRegular: listPhoto.urlsRegular,
+            urlsSmall: listPhoto.urlsSmall,
+            altDescription: listPhoto.altDescription,
+            userName: listPhoto.userName,
+            userLinksHtml: listPhoto.userLinksHtml,
+            createdAt: listPhoto.createdAt,
+            likes: listPhoto.likes,
+            likedByUser: !listPhoto.likedByUser,
+            checked: true,
+          };
+        }
+        return listPhoto;
       });
 
     default:

@@ -36,6 +36,7 @@ export default function addPostPhoto() {
           userLinksHtml: item.user.links.html,
           createdAt: item.createdAt,
           likes: item.likes,
+          likedByUser: item.liked_by_user,
         });
       });
     });

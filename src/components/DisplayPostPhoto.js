@@ -17,6 +17,8 @@ export default function DisplayPostPhoto({ postOfPhoto, likePostPhoto }) {
     userLinksHtml,
     createdAt,
     likes,
+    likedByUser,
+    checked,
   } = postOfPhoto;
 
   return (
@@ -31,6 +33,8 @@ export default function DisplayPostPhoto({ postOfPhoto, likePostPhoto }) {
           userLinksHtml,
           createdAt,
           likes,
+          likedByUser,
+          checked,
           likePostPhoto,
         }}
       >
@@ -52,11 +56,11 @@ export default function DisplayPostPhoto({ postOfPhoto, likePostPhoto }) {
             {userName}
           </a>
           <time dateTime={createdAt} className='publish_style'>
-            Published on {createdAt}{' '}
+            Published on {createdAt}
           </time>
         </div>
         <div className='like_container'>
-          <i className='flaticon-heart flaticon_style flaticon-heart_style'></i>
+          <i className='flaticon-heart flaticon_style'></i>
           {likes}
         </div>
       </div>

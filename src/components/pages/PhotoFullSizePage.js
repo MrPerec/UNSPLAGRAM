@@ -9,6 +9,7 @@ import '../../styles/button.css';
 import '../../styles/fonts/iconfont/flaticon.css';
 
 export default function PhotoFullSizePage({ location }) {
+  console.log(location);
   const {
     id,
     urlsRegular,
@@ -17,13 +18,21 @@ export default function PhotoFullSizePage({ location }) {
     userLinksHtml,
     createdAt,
     likes,
+    likedByUser,
+    checked,
     likePostPhoto,
   } = location;
-  console.log(likePostPhoto);
 
   const history = useHistory();
   const onButtonBack = () => history.goBack();
   const onLike = () => likePostPhoto(id);
+
+  const like = likedByUser
+    ? 'flaticon-like flaticon_style flaticon-like_style'
+    : 'flaticon-heart flaticon_style';
+
+  console.log(checked);
+  console.log(like);
 
   return (
     <div className='post_full-size_container'>
@@ -49,10 +58,8 @@ export default function PhotoFullSizePage({ location }) {
             </time>
           </div>
           <div className='like_container'>
-            <i
-              className='flaticon-heart flaticon_style flaticon-heart_style'
-              onClick={onLike}
-            ></i>
+            <i className={like} onClick={onLike}></i>
+            {/* <i className='flaticon-heart flaticon_style' onClick={onLike}></i> */}
             {/* <i className='flaticon-like flaticon_style flaticon-like_style'></i> */}
             {likes}
           </div>

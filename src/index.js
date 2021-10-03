@@ -8,10 +8,10 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import App from './containers/App.js';
-import reducers from './reducers/rootReducer';
+import rootReducer from './reducers/rootReducer';
 
 const store = createStore(
-  reducers,
+  rootReducer,
   composeWithDevTools(applyMiddleware(thunk))
 );
 

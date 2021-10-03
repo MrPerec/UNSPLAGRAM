@@ -1,8 +1,25 @@
 `use strict`;
 
 import { ADD_POST_PHOTO, LIKE_POST_PHOTO } from '../types/types.js';
+import {
+  START_POSITION,
+  CHARACTERS_NUMBER,
+  SYMBOL_T,
+  SYMBOL_SPACE,
+  COMMERCIAL_USER_HILLSHIRE_FARM,
+  COMMERCIAL_USER_JIMMY_DEAN,
+  COMMERCIAL_USER_XPS,
+} from '../constants/constants.js';
 
-export default function reducers(
+const getUuid = () =>
+  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
+    (
+      c ^
+      (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
+    ).toString(16)
+  );
+
+export default function rootReducer(
   state = [{}],
   {
     type,
@@ -19,10 +36,23 @@ export default function reducers(
 ) {
   switch (type) {
     case ADD_POST_PHOTO:
+      const uuid = getUuid();
+      createdAt
+        .substr(START_POSITION, CHARACTERS_NUMBER)
+        .replace(SYMBOL_T, SYMBOL_SPACE);
+
+      if (
+        userName === COMMERCIAL_USER_HILLSHIRE_FARM ||
+        userName === COMMERCIAL_USER_JIMMY_DEAN ||
+        userName === COMMERCIAL_USER_XPS
+      ) {
+        return [...state];
+      }
+
       return [
         ...state,
         {
-          id,
+          id: uuid,
           urlsRegular,
           urlsSmall,
           altDescription,
@@ -35,36 +65,21 @@ export default function reducers(
       ];
 
     case LIKE_POST_PHOTO:
-      // console.log(`it's the LIKE_POST_PHOTO reducer`);
-      // console.log(id);
-
-      return state.map((listPhoto) => {
-        if (listPhoto.id === id) {
-          // console.log(`
-          // id "${listPhoto.id}",
-          // urlsRegular "${listPhoto.urlsRegular}",
-          // urlsSmall "${listPhoto.urlsSmall}",
-          // altDescription "${listPhoto.altDescription}",
-          // userName "${listPhoto.userName}",
-          // userLinksHtml "${listPhoto.userLinksHtml}",
-          // createdAt "${listPhoto.createdAt}",
-          // likes "${listPhoto.likes}",
-          // likedByUser "${!listPhoto.likedByUser}"
-          //           `);
+      return state.map((post) => {
+        if (post.id === id) {
           return {
-            id: listPhoto.id,
-            urlsRegular: listPhoto.urlsRegular,
-            urlsSmall: listPhoto.urlsSmall,
-            altDescription: listPhoto.altDescription,
-            userName: listPhoto.userName,
-            userLinksHtml: listPhoto.userLinksHtml,
-            createdAt: listPhoto.createdAt,
-            likes: listPhoto.likes,
-            likedByUser: !listPhoto.likedByUser,
-            checked: true,
+            id: post.id,
+            urlsRegular: post.urlsRegular,
+            urlsSmall: post.urlsSmall,
+            altDescription: post.altDescription,
+            userName: post.userName,
+            userLinksHtml: post.userLinksHtml,
+            createdAt: post.createdAt,
+            likes: post.likes,
+            likedByUser: !post.likedByUser,
           };
         }
-        return listPhoto;
+        return post;
       });
 
     default:

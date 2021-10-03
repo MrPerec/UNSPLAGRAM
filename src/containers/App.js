@@ -8,10 +8,11 @@ import '../styles/app.css';
 import Header from '../components/layouts/Header';
 import DisplayListPostPhoto from '../components/DisplayListPostPhoto.js';
 import PhotoFullSizePage from '../components/pages/PhotoFullSizePage';
-import addPostPhoto from '../actions/addPostPhoto';
-import likePostPhoto from '../actions/likePostPhoto';
+import addPostAction from '../actions/addPostAction';
+import likePostAction from '../actions/likePostAction';
 
-export default function App({ listPostPhotos, addPostPhoto, likePostPhoto }) {
+export default function App({ listPostPhotos, addPostAction, likePostAction }) {
+  // console.log(listPostPhotos);
   return (
     <div>
       <Header />
@@ -19,8 +20,8 @@ export default function App({ listPostPhotos, addPostPhoto, likePostPhoto }) {
         <Route exact path='/'>
           <DisplayListPostPhoto
             listPostPhotos={listPostPhotos}
-            addPostPhoto={addPostPhoto}
-            likePostPhoto={likePostPhoto}
+            addPostAction={addPostAction}
+            likePostAction={likePostAction}
           />
         </Route>
         <Route path='/photoFullSize/:id' component={PhotoFullSizePage} />
@@ -38,8 +39,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addPostPhoto: () => dispatch(addPostPhoto()),
-    likePostPhoto: (id) => dispatch(likePostPhoto(id)),
+    addPostAction: () => dispatch(addPostAction()),
+    likePostAction: (id) => dispatch(likePostAction(id)),
   };
 };
 

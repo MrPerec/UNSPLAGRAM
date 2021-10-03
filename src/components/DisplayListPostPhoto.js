@@ -11,14 +11,14 @@ import ButtonBackTop from '../components/layouts/ButtonBackTop';
 
 export default function DisplayListPostPhoto({
   listPostPhotos,
-  addPostPhoto,
-  likePostPhoto,
+  addPostAction,
+  likePostAction,
 }) {
   // console.log(`It's the DisplayListPostPhoto`);
   // console.log(listPostPhotos);
 
   const getFirstlistOfPostsPhotos = () => {
-    if (listPostPhotos.length === INITIAL_STATE_LENGTH) addPostPhoto();
+    if (listPostPhotos.length === INITIAL_STATE_LENGTH) addPostAction();
   };
 
   const displayListPostPhoto = listPostPhotos.map((postOfPhoto) => {
@@ -30,7 +30,7 @@ export default function DisplayListPostPhoto({
         <DisplayPostPhoto
           key={id}
           postOfPhoto={postOfPhoto}
-          likePostPhoto={likePostPhoto}
+          likePostAction={likePostAction}
         />
       );
     }
@@ -41,7 +41,7 @@ export default function DisplayListPostPhoto({
   return (
     <InfiniteScroll
       dataLength={listPostPhotos.length}
-      next={addPostPhoto}
+      next={addPostAction}
       hasMore={true}
       loader={<h4 className='post_list_container'>Loading...</h4>}
     >
@@ -53,5 +53,6 @@ export default function DisplayListPostPhoto({
 
 DisplayListPostPhoto.propTypes = {
   listPostPhotos: PropTypes.array.isRequired,
-  addPostPhoto: PropTypes.func.isRequired,
+  addPostAction: PropTypes.func.isRequired,
+  likePostAction: PropTypes.func.isRequired,
 };

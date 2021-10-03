@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import '../styles/post.css';
 import '../styles/fonts/iconfont/flaticon.css';
 
-export default function DisplayPostPhoto({ postOfPhoto, likePostPhoto }) {
+export default function DisplayPostPhoto({ postOfPhoto, likePostAction }) {
   const {
     id,
     urlsRegular,
@@ -18,8 +18,11 @@ export default function DisplayPostPhoto({ postOfPhoto, likePostPhoto }) {
     createdAt,
     likes,
     likedByUser,
-    checked,
   } = postOfPhoto;
+
+  const like = likedByUser
+    ? 'flaticon-like flaticon_style flaticon-like_style'
+    : 'flaticon-heart flaticon_style';
 
   return (
     <div className='post_container'>
@@ -34,8 +37,7 @@ export default function DisplayPostPhoto({ postOfPhoto, likePostPhoto }) {
           createdAt,
           likes,
           likedByUser,
-          checked,
-          likePostPhoto,
+          likePostAction,
         }}
       >
         <img
@@ -60,7 +62,7 @@ export default function DisplayPostPhoto({ postOfPhoto, likePostPhoto }) {
           </time>
         </div>
         <div className='like_container'>
-          <i className='flaticon-heart flaticon_style'></i>
+          <i className={like}></i>
           {likes}
         </div>
       </div>
@@ -70,4 +72,5 @@ export default function DisplayPostPhoto({ postOfPhoto, likePostPhoto }) {
 
 DisplayPostPhoto.propTypes = {
   postOfPhoto: PropTypes.object.isRequired,
+  likePostAction: PropTypes.func.isRequired,
 };

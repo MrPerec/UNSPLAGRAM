@@ -12,3 +12,6 @@ export const DELETE_COMMENT = `DELETE_COMMENT`;
 export const INITIAL_STATE_LENGTH = 1;
 export const ACCESS_KEY = `_JCTLXIriKQH3zfw4IPJa7c4uUf-KBTJbCqNHGAvXFc`;
 export const SECRET_KEY = `3bb-ZjMm_DeThkQSR9975k1KQPg56J_xUk5SpU1X6Sk`;
+export const COMMERCIAL_USER_HILLSHIRE_FARM = `Hillshire Farm`;
+export const COMMERCIAL_USER_JIMMY_DEAN = `Jimmy Dean`;
+export const COMMERCIAL_USER_XPS = `XPS`;

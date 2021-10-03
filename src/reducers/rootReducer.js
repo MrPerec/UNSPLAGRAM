@@ -6,9 +6,6 @@ import {
   CHARACTERS_NUMBER,
   SYMBOL_T,
   SYMBOL_SPACE,
-  COMMERCIAL_USER_HILLSHIRE_FARM,
-  COMMERCIAL_USER_JIMMY_DEAN,
-  COMMERCIAL_USER_XPS,
 } from '../constants/constants.js';
 
 const getUuid = () =>
@@ -40,14 +37,6 @@ export default function rootReducer(
       createdAt
         .substr(START_POSITION, CHARACTERS_NUMBER)
         .replace(SYMBOL_T, SYMBOL_SPACE);
-
-      if (
-        userName === COMMERCIAL_USER_HILLSHIRE_FARM ||
-        userName === COMMERCIAL_USER_JIMMY_DEAN ||
-        userName === COMMERCIAL_USER_XPS
-      ) {
-        return [...state];
-      }
 
       return [
         ...state,

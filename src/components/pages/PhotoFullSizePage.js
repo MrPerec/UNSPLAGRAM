@@ -69,14 +69,15 @@ import '../../styles/fonts/iconfont/flaticon.css';
 } */
 
 export default function PhotoFullSizePage(props) {
-  console.log(props);
+  const { listPostPhotos, likePostAction } = props;
   const currentPostId = props.match.params.id;
   const history = useHistory();
   const onButtonBack = () => history.goBack();
 
-  return props.listPostPhotos.forEach((post) => {
-    console.log(post.id === currentPostId);
-    if (post.id === currentPostId) {
+  const photoFullSize = listPostPhotos.map((postOfPhoto) => {
+    if (postOfPhoto.id === currentPostId) {
+      const onLike = () => likePostAction(id);
+
       const {
         id,
         urlsRegular,
@@ -86,16 +87,14 @@ export default function PhotoFullSizePage(props) {
         createdAt,
         likes,
         likedByUser,
-      } = post;
-
-      const onLike = () => likePostAction(id);
+      } = postOfPhoto;
 
       const like = likedByUser
         ? 'flaticon-like flaticon_style flaticon-like_style'
         : 'flaticon-heart flaticon_style';
 
       return (
-        <div className='post_full-size_container'>
+        <div className='post_full-size_container' key={currentPostId}>
           <div className='post_container'>
             <img
               className='image image-full-size'
@@ -132,6 +131,8 @@ export default function PhotoFullSizePage(props) {
       );
     }
   });
+
+  return <div>{photoFullSize};</div>;
 }
 
 // PhotoFullSizePage.propTypes = {

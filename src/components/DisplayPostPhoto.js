@@ -29,15 +29,15 @@ export default function DisplayPostPhoto({ postOfPhoto, likePostAction }) {
       <Link
         to={{
           pathname: `/photoFullSize/${id}`,
-          id,
-          urlsRegular,
-          altDescription,
-          userName,
-          userLinksHtml,
-          createdAt,
-          likes,
-          likedByUser,
-          likePostAction,
+          // id,
+          // urlsRegular,
+          // altDescription,
+          // userName,
+          // userLinksHtml,
+          // createdAt,
+          // likes,
+          // likedByUser,
+          // likePostAction,
         }}
       >
         <img

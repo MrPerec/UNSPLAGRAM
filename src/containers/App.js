@@ -24,7 +24,16 @@ export default function App({ listPostPhotos, addPostAction, likePostAction }) {
             likePostAction={likePostAction}
           />
         </Route>
-        <Route path='/photoFullSize/:id' component={PhotoFullSizePage} />
+        <Route
+          path='/photoFullSize/:id'
+          render={(props) => (
+            <PhotoFullSizePage
+              {...props}
+              listPostPhotos={listPostPhotos}
+              likePostAction={likePostAction}
+            />
+          )}
+        />
         <Redirect to='/' />
       </Switch>
     </div>

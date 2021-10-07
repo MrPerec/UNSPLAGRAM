@@ -7,10 +7,9 @@ import { Link } from 'react-router-dom';
 import '../styles/post.css';
 import '../styles/fonts/iconfont/flaticon.css';
 
-export default function DisplayPostPhoto({ postOfPhoto, likePostAction }) {
+export default function DisplayPostPhoto({ postOfPhoto }) {
   const {
     id,
-    urlsRegular,
     urlsSmall,
     altDescription,
     userName,
@@ -26,20 +25,7 @@ export default function DisplayPostPhoto({ postOfPhoto, likePostAction }) {
 
   return (
     <div className='post_container'>
-      <Link
-        to={{
-          pathname: `/photoFullSize/${id}`,
-          // id,
-          // urlsRegular,
-          // altDescription,
-          // userName,
-          // userLinksHtml,
-          // createdAt,
-          // likes,
-          // likedByUser,
-          // likePostAction,
-        }}
-      >
+      <Link to={{ pathname: `/photoFullSize/${id}` }}>
         <img
           className='image'
           src={urlsSmall}

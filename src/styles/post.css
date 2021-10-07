@@ -60,6 +60,9 @@
   display: inline;
   margin-right: 5px;
   font-size: 18px;
+}
+
+.flaticon_style_cursor {
   cursor: pointer;
 }
 

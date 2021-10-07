@@ -31,8 +31,8 @@ export default function PhotoFullSizePage({
       } = postOfPhoto;
 
       const like = likedByUser
-        ? 'flaticon-like flaticon_style flaticon-like_style'
-        : 'flaticon-heart flaticon_style';
+        ? 'flaticon-like flaticon_style flaticon_style_cursor flaticon-like_style'
+        : 'flaticon-heart flaticon_style flaticon_style_cursor';
 
       return (
         <div className='post_full-size_container' key={currentPostId}>

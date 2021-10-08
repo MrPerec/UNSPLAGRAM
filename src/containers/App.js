@@ -12,7 +12,6 @@ import addPostAction from '../actions/addPostAction';
 import likePostAction from '../actions/likePostAction';
 
 export default function App({ listPostPhotos, addPostAction, likePostAction }) {
-  // console.log(listPostPhotos);
   return (
     <div>
       <Header />

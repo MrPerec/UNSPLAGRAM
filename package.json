@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Diplom of JavaScript",
   "private": true,
+  "type": "module",
   "scripts": {
+    "nodemon": "nodemon app.js",
+    "serve": "node app.js",
     "start": "webpack serve --stats-children",
     "dev": "webpack --mode=development --config webpack.config.js",
     "build": "webpack --mode=production --config webpack.config.js"
@@ -20,6 +23,7 @@
     "@babel/core": "^7.14.0",
     "@babel/preset-env": "^7.14.1",
     "@babel/preset-react": "^7.13.13",
+    "@types/express": "^4.17.13",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.4",
     "css-minimizer-webpack-plugin": "^3.0.1",
@@ -28,12 +32,14 @@
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.6.0",
+    "nodemon": "^2.0.13",
     "webpack": "^5.36.2",
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.0.0"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.1",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",

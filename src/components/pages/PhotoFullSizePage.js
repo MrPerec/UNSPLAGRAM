@@ -3,6 +3,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import '../../styles/post.css';
 import '../../styles/button.css';
@@ -57,10 +58,12 @@ export default function PhotoFullSizePage({
                   Published on {createdAt}
                 </time>
               </div>
+              {/* <Link to={{ pathname: `https://unsplash.com/oauth/authorize` }}> */}
               <div className='like_container'>
                 <i className={like} onClick={onLike}></i>
                 {likes}
               </div>
+              {/* </Link> */}
             </div>
           </div>
           <div className='button_container'>

@@ -1,11 +1,11 @@
 `use strict`;
 
-import fetchtListPhotos from '../api/fetchtListPhotos';
+import requestListPhotos from '../api/requestListPhotos';
 import { ADD_POST_PHOTO } from '../types/types.js';
 
 export default function addPostAction() {
   return function (dispatch) {
-    fetchtListPhotos().then((response) => {
+    requestListPhotos().then((response) => {
       response.forEach((item) => {
         dispatch({
           type: ADD_POST_PHOTO,

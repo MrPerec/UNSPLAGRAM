@@ -4,7 +4,7 @@ import unsplash from './unsplash';
 
 let pageNumber = 1;
 
-export default function fetchtListPhotos() {
+export default function requestListPhotos() {
   return unsplash.photos
     .list({
       page: pageNumber++,

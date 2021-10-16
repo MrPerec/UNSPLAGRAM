@@ -1,11 +1,11 @@
 `use strict`;
 
-import unsplashApi from './unsplashApi';
+import unsplash from './unsplash';
 
 let pageNumber = 1;
 
 export default function fetchtListPhotos() {
-  return unsplashApi.photos
+  return unsplash.photos
     .list({
       page: pageNumber++,
       perPage: 10,

@@ -3,9 +3,9 @@
 import { createApi } from 'unsplash-js';
 import { ACCESS_KEY, SECRET_KEY } from '../constants/constants.js';
 
-const unsplashApi = createApi({
+const unsplash = createApi({
   accessKey: ACCESS_KEY,
   secret: SECRET_KEY,
 });
 
-export default unsplashApi;
+export default unsplash;

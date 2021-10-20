@@ -4,7 +4,7 @@ import requestListPhotos from '../api/requestListPhotos';
 import { ADD_POST_PHOTO } from '../types/types.js';
 
 export default function addPostAction() {
-  return function (dispatch) {
+  return (dispatch) => {
     requestListPhotos().then((response) => {
       response.forEach((item) => {
         dispatch({

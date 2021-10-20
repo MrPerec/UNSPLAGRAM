@@ -7,16 +7,13 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import '../styles/postList.css';
 import { INITIAL_STATE_LENGTH } from '../constants/constants.js';
 import DisplayPostPhoto from './DisplayPostPhoto.js';
-import ButtonBackTop from '../components/layouts/ButtonBackTop';
+import ButtonBackTop from './layouts/ButtonBackTop';
 
 export default function DisplayListPostPhoto({
   listPostPhotos,
   addPostAction,
   likePostAction,
 }) {
-  // console.log(`It's the DisplayListPostPhoto`);
-  // console.log(listPostPhotos);
-
   const getFirstlistOfPostsPhotos = () => {
     if (listPostPhotos.length === INITIAL_STATE_LENGTH) addPostAction();
   };

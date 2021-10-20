@@ -33,7 +33,6 @@ export default function App({ listPostPhotos, addPostAction, likePostAction }) {
             />
           )}
         />
-        <Redirect to='/' />
       </Switch>
     </div>
   );

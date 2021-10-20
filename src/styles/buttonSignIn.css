@@ -1,0 +1,28 @@
+.button-sign-in__style {
+  float: right;
+
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+
+  padding: 0.5%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 1%;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+  color: white;
+  border: 2px solid #e7e7e7;
+
+  background-color: transparent;
+}
+
+.button-sign-in__style:hover {
+  color: #3b3b3b;
+  background-color: white;
+}

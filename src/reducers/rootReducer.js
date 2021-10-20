@@ -1,6 +1,6 @@
 `use strict`;
 
-import { ADD_POST_PHOTO, LIKE_POST_PHOTO } from '../types/types.js';
+import { ADD_POST_PHOTO, LIKE_POST_PHOTO, SIGN_IN } from '../types/types.js';
 import {
   START_POSITION,
   CHARACTERS_NUMBER,

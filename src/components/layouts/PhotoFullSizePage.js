@@ -1,12 +1,9 @@
 `use strict`;
 
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-
+import ButtonGoBack from './ButtonGoBack';
 import '../../styles/post.css';
-import '../../styles/button.css';
 import '../../styles/fonts/iconfont/flaticon.css';
 
 export default function PhotoFullSizePage({
@@ -15,8 +12,6 @@ export default function PhotoFullSizePage({
   match,
 }) {
   const currentPostId = match.params.id;
-  const history = useHistory();
-  const onButtonBack = () => history.goBack();
   const onLike = () => likePostAction(currentPostId);
 
   const photoFullSize = listPostPhotos.map((postOfPhoto) => {
@@ -58,19 +53,13 @@ export default function PhotoFullSizePage({
                   Published on {createdAt}
                 </time>
               </div>
-              {/* <Link to={{ pathname: `https://unsplash.com/oauth/authorize` }}> */}
               <div className='like_container'>
                 <i className={like} onClick={onLike}></i>
                 {likes}
               </div>
-              {/* </Link> */}
             </div>
           </div>
-          <div className='button_container'>
-            <button className='button button__style' onClick={onButtonBack}>
-              Go Back
-            </button>
-          </div>
+          <ButtonGoBack />
         </div>
       );
     }

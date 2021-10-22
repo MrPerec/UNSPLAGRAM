@@ -4,10 +4,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
-import '../styles/postList.css';
 import { INITIAL_STATE_LENGTH } from '../constants/constants.js';
 import DisplayPostPhoto from './DisplayPostPhoto.js';
-import ButtonBackTop from './layouts/ButtonBackTop';
+import '../styles/postList.css';
+import '../styles/buttonBackTop.css';
 
 export default function DisplayListPostPhoto({
   listPostPhotos,
@@ -43,7 +43,9 @@ export default function DisplayListPostPhoto({
       loader={<h4 className='post_list_container'>Loading...</h4>}
     >
       <div className='post_list_container'>{displayListPostPhoto}</div>
-      <ButtonBackTop />
+      <a className='button-back button-back__style' href='#'>
+        <i className='flaticon-up-arrow'></i>
+      </a>
     </InfiniteScroll>
   );
 }

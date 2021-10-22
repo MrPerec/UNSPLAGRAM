@@ -4,7 +4,7 @@
   font-family: Raleway;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
+  font-size: calc(0.1rem + 1vw);
   line-height: 21px;
 
   padding: 0.5%;

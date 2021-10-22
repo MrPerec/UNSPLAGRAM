@@ -2,8 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const TerserPlugin = require("terser-webpack-plugin");
-
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -18,13 +17,13 @@ module.exports = {
     static: path.join(__dirname, 'build'),
     open: true,
     compress: true,
-    port: 9000,
-    historyApiFallback: true
+    port: 3000,
+    historyApiFallback: true,
   },
   optimization: {
     minimizer: [
       new TerserPlugin({
-         terserOptions: {
+        terserOptions: {
           format: {
             comments: false,
           },
@@ -36,10 +35,10 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html'
+      template: './index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: 'main.css'
+      filename: 'main.css',
     }),
   ],
   module: {
@@ -58,16 +57,13 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: [
-              '@babel/preset-env',
-              '@babel/preset-react'
-            ]
-          }
-        }
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
+        },
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg|png|jpg|gif|ico)(\?v=\d+\.\d+\.\d+\.[0-9]\.[0-9]\.[0-9].)?$/,
-        type: 'asset/resource'
+        type: 'asset/resource',
       },
     ],
   },

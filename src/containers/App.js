@@ -4,12 +4,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import '../styles/app.css';
 import Header from '../components/layouts/Header';
 import DisplayListPostPhoto from '../components/DisplayListPostPhoto.js';
-import PhotoFullSizePage from '../components/pages/PhotoFullSizePage';
+import LoginPage from '../components/layouts/LoginPage';
+import PhotoFullSizePage from '../components/layouts/PhotoFullSizePage';
+
 import addPostAction from '../actions/addPostAction';
 import likePostAction from '../actions/likePostAction';
+
+import '../styles/app.css';
 
 export default function App({ listPostPhotos, addPostAction, likePostAction }) {
   return (
@@ -33,6 +36,8 @@ export default function App({ listPostPhotos, addPostAction, likePostAction }) {
             />
           )}
         />
+        <Route path='/login' component={LoginPage} />
+        <Redirect to='/' />
       </Switch>
     </div>
   );

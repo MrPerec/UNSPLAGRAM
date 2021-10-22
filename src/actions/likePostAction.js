@@ -1,6 +1,6 @@
 `use strict`;
 
-import { LIKE_POST_PHOTO } from '../types/types.js';
+import { LIKE_POST_PHOTO } from '../constants/types.js';
 
 export default function likePostAction(id) {
   return {

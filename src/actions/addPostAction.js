@@ -1,7 +1,7 @@
 `use strict`;
 
 import requestListPhotos from '../api/requestListPhotos';
-import { ADD_POST_PHOTO } from '../types/types.js';
+import { ADD_POST_PHOTO } from '../constants/types.js';
 
 export default function addPostAction() {
   return (dispatch) => {

@@ -9,7 +9,7 @@ export default function LoginPage() {
 
   return (
     <div>
-      <h2 className='button_container'>You are not log in</h2>
+      <h2 className='button_container'>You are not authorized</h2>
       <div className='button_container'>
         <button className='button button__style' onClick={onLogin}>
           Log In

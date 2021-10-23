@@ -34,8 +34,8 @@ export default function rootReducer(
   switch (type) {
     case ADD_POST_PHOTO:
       const uuid = getUuid();
-      createdAt
-        .substr(START_POSITION, CHARACTERS_NUMBER)
+      createdAt = createdAt
+        .substring(START_POSITION, CHARACTERS_NUMBER)
         .replace(SYMBOL_T, SYMBOL_SPACE);
 
       return [

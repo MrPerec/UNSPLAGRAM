@@ -1,6 +1,13 @@
 `use strict`;
 
-import unsplash from './unsplash';
+// import unsplash from './unsplash';
+import { createApi } from 'unsplash-js';
+import { ACCESS_KEY, SECRET_KEY } from '../constants/constants.js';
+
+const unsplash = createApi({
+  accessKey: ACCESS_KEY,
+  secret: SECRET_KEY,
+});
 
 let pageNumber = 1;
 

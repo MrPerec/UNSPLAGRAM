@@ -11,7 +11,9 @@ export const INITIAL_STATE_LENGTH = 1;
 
 export const ACCESS_KEY = `_JCTLXIriKQH3zfw4IPJa7c4uUf-KBTJbCqNHGAvXFc`;
 export const SECRET_KEY = `3bb-ZjMm_DeThkQSR9975k1KQPg56J_xUk5SpU1X6Sk`;
-export const REDIRECT_URI = `http://localhost:3000`;
+export const REDIRECT_URI = `http://localhost:3000/login`;
 export const RESPONSE_TYPE = `code`;
 export const SCOPE = `public+write_likes`;
 export const AUTH_URL = `https://unsplash.com/oauth/authorize?client_id=${ACCESS_KEY}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`;
+export const AUTHORIZATION_CODE = `authorization_code`;
+export const TOKEN_URL = `https://unsplash.com/oauth/token`;

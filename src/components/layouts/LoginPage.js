@@ -24,37 +24,43 @@ export default function LoginPage() {
     code,
     grant_type: AUTHORIZATION_CODE,
   };
+
   console.log(configObj);
 
-  // console.log(code === undefined);
-  // console.log(code.length);
+  // if (code !== undefined) {
+  //   fetch(TOKEN_URL, {
+  //     method: `POST`,
+  //     headers: {
+  //       Accept: 'application/json',
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(configObj),
+  //   }).then((response) => {
+  //     console.log(response);
+  //     return;
+  //   });
+  // }
 
-  // if (code.length > 0) {
-  if (code !== undefined) {
-    // fetch(TOKEN_URL, {
-    fetch(`https://unsplash.com/oauth/token`, {
-      method: `POST`,
-      /* headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      }, */
-      /* headers: {
-        'Content-Type': `text/plain`,
-      }, */
-      // body: JSON.stringify(configObj),
-      /* body: {
-        client_id: ACCESS_KEY,
-        client_secret: SECRET_KEY,
-        redirect_uri: REDIRECT_URI,
-        code,
-        grant_type: AUTHORIZATION_CODE,
-      }, */
-      // body: { configObj },
-    }).then((response) => {
-      console.log(response);
-      return;
-    });
-  }
+  // AUTH_URL1 = `https://unsplash.com/oauth/authorize?client_id=${ACCESS_KEY}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`;
+  // TOKEN_URL1 = `https://unsplash.com/oauth/token?client_id=_JCTLXIriKQH3zfw4IPJa7c4uUf-KBTJbCqNHGAvXFc&client_secret=3bb-ZjMm_DeThkQSR9975k1KQPg56J_xUk5SpU1X6Sk&redirect_uri=http://localhost:3000/login&code=fmIrhF-hbpXMEAmuDjq0Eh4zzuTyvg0hIkkCTWWEFGE&grant_type=authorization_code`;
+
+  // if (code !== undefined) {
+  //   fetch('https://unsplash.com/oauth/token', {
+  //     method: `POST`,
+  //     body: {
+  //       client_id: '_JCTLXIriKQH3zfw4IPJa7c4uUf-KBTJbCqNHGAvXFc',
+  //       client_secret: '3bb-ZjMm_DeThkQSR9975k1KQPg56J_xUk5SpU1X6Sk',
+  //       redirect_uri: 'http://localhost:3000/login',
+  //       code: 'fmIrhF-hbpXMEAmuDjq0Eh4zzuTyvg0hIkkCTWWEFGE',
+  //       grant_type: 'AUTHORIZATION_CODE',
+  //     },
+  //   }).then((response) => {
+  //     console.log(response);
+  //     return;
+  //   });
+  // }
+
+  fetch('https://unsplash.com/oauth/token', { method: 'POST' });
 
   return (
     <div>

@@ -1,7 +1,7 @@
 `use strict`;
 
 import React from 'react';
-import ButtonGoBack from './ButtonGoBack';
+import ButtonGoHome from './ButtonGoHome';
 import '../../styles/button.css';
 import {
   AUTH_URL,
@@ -26,8 +26,13 @@ export default function LoginPage() {
   };
   console.log(configObj);
 
-  if (code.length > 0) {
-    fetch(TOKEN_URL, {
+  // console.log(code === undefined);
+  // console.log(code.length);
+
+  // if (code.length > 0) {
+  if (code !== undefined) {
+    // fetch(TOKEN_URL, {
+    fetch(`https://unsplash.com/oauth/token`, {
       method: `POST`,
       /* headers: {
         Accept: 'application/json',
@@ -37,13 +42,14 @@ export default function LoginPage() {
         'Content-Type': `text/plain`,
       }, */
       // body: JSON.stringify(configObj),
-      body: {
+      /* body: {
         client_id: ACCESS_KEY,
         client_secret: SECRET_KEY,
         redirect_uri: REDIRECT_URI,
         code,
         grant_type: AUTHORIZATION_CODE,
-      },
+      }, */
+      // body: { configObj },
     }).then((response) => {
       console.log(response);
       return;
@@ -61,7 +67,7 @@ export default function LoginPage() {
           Log In
         </a>
       </div>
-      <ButtonGoBack />
+      <ButtonGoHome />
     </div>
   );
 }

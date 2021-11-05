@@ -2,7 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import ButtonGoBack from './ButtonGoBack';
+import ButtonGoHome from './ButtonGoHome';
 import '../../styles/post.css';
 import '../../styles/fonts/iconfont/flaticon.css';
 
@@ -59,7 +59,7 @@ export default function PhotoFullSizePage({
               </div>
             </div>
           </div>
-          <ButtonGoBack />
+          <ButtonGoHome />
         </div>
       );
     }

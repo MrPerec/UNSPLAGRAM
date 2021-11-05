@@ -7,12 +7,12 @@ import '../../styles/button.css';
 
 export default function ButtonGoBack() {
   const history = useHistory();
-  const onButtonBack = () => history.goBack();
+  const onButtonBack = () => history.push(`/`);
 
   return (
     <div className='button_container'>
       <button className='button button__style' onClick={onButtonBack}>
-        Go Back
+        Go Home
       </button>
     </div>
   );

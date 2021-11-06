@@ -1,5 +1,6 @@
 `use strict`;
 
+import unsplash from '../../api/unsplash';
 import React from 'react';
 import ButtonGoHome from './ButtonGoHome';
 import '../../styles/button.css';
@@ -25,22 +26,44 @@ export default function LoginPage() {
     grant_type: AUTHORIZATION_CODE,
   };
 
-  console.log(configObj);
+  // console.log(configObj);
 
   if (code !== undefined) {
     fetch(TOKEN_URL, {
       method: `POST`,
-      headers: [
-        [`Content-Type`, `application/json`],
-        [`Content-Type`, `text/plain`],
-      ],
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify(configObj),
     })
       .then((response) => response.json())
       .then((data) => {
+        localStorage.setItem(`token`, data.access_token);
         console.log(data);
       });
   }
+  // console.log(localStorage);
+
+  if (localStorage.token !== undefined) {
+    const ACCESS_TOKEN = localStorage.getItem('token');
+    // https://unsplash.com/photos/:id/like
+    fetch(`https://unsplash.com/photos/zcbtpjgToUY/like`, {
+      method: `POST`,
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${ACCESS_TOKEN}`,
+      },
+    });
+    // .then((response) => response.json())
+    // .then((data) => {
+    //   localStorage.setItem(`token`, data.access_token);
+    //   console.log(data);
+    // });
+  }
+
+  // POST /photos/:id/like
 
   return (
     <div>

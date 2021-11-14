@@ -9,7 +9,6 @@ import '../styles/fonts/iconfont/flaticon.css';
 export default function DisplayPhoto({ photo }) {
   const {
     id,
-    // uuid,
     urlsSmall,
     altDescription,
     userName,
@@ -25,7 +24,6 @@ export default function DisplayPhoto({ photo }) {
 
   return (
     <div className='post_container'>
-      {/* <Link to={{ pathname: `/bigPhoto/${uuid}` }}> */}
       <Link to={{ pathname: `/bigPhoto/${id}` }}>
         <img
           className='image'

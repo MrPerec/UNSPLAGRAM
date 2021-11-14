@@ -19,14 +19,7 @@ export default function DisplayPhotoList({ photoList, addPhotoAction }) {
     for (const prop in photo) propContent += photo[prop];
     if (propContent !== ``) {
       const { uuid } = photo;
-      // const { id } = photo;
-      return (
-        <DisplayPhoto
-          key={uuid}
-          // key={id}
-          photo={photo}
-        />
-      );
+      return <DisplayPhoto key={uuid} photo={photo} />;
     }
   });
 

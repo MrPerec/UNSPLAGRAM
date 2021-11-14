@@ -37,7 +37,6 @@ export default function App({
           />
         </Route>
         <Route
-          // path='/bigPhoto/:uuid'
           path='/bigPhoto/:id'
           render={(props) => (
             <BigPhotoPage

@@ -14,7 +14,6 @@ export default function rootReducer(
   {
     type,
     id,
-    // uuid,
     urlsRegular,
     urlsSmall,
     altDescription,
@@ -35,7 +34,6 @@ export default function rootReducer(
       return [
         ...state,
         {
-          // id: uuid,
           id,
           uuid,
           urlsRegular,

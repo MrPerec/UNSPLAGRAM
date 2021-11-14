@@ -67,7 +67,7 @@ export default function rootReducer(
       });
 
     case LOGIN:
-      return;
+      return { auth };
 
     default:
       return state;

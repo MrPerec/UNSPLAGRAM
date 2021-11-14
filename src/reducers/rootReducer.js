@@ -1,6 +1,5 @@
 `use strict`;
 
-// import getUuid from '../getUuid';
 import { ADD_PHOTO, LIKE_PHOTO, LOGIN } from '../constants/types.js';
 import {
   START_POSITION,
@@ -15,7 +14,7 @@ export default function rootReducer(
   {
     type,
     id,
-    uuid,
+    // uuid,
     urlsRegular,
     urlsSmall,
     altDescription,
@@ -36,9 +35,9 @@ export default function rootReducer(
       return [
         ...state,
         {
-          id: uuid,
-          // id,
-          // uuid,
+          // id: uuid,
+          id,
+          uuid,
           urlsRegular,
           urlsSmall,
           altDescription,
@@ -55,6 +54,7 @@ export default function rootReducer(
         if (post.id === id) {
           return {
             id: post.id,
+            uuid: post.uuid,
             urlsRegular: post.urlsRegular,
             urlsSmall: post.urlsSmall,
             altDescription: post.altDescription,

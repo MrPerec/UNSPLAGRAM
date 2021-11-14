@@ -2,10 +2,10 @@
 
 import requestPhotoList from '../api/requestPhotoList';
 import { ADD_PHOTO } from '../constants/types.js';
-import getUuid from '../getUuid';
+// import getUuid from '../getUuid';
 
 export default function addPhotoAction() {
-  const uuid = getUuid();
+  // const uuid = getUuid();
 
   return (dispatch) => {
     requestPhotoList().then((response) => {

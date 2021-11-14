@@ -9,11 +9,7 @@ import DisplayPhoto from './DisplayPhoto';
 import ButtonUp from './layouts/ButtonUp';
 import '../styles/postList.css';
 
-export default function DisplayPhotoList({
-  photoList,
-  addPhotoAction,
-  likePhotoAction,
-}) {
+export default function DisplayPhotoList({ photoList, addPhotoAction }) {
   const DisplayFirstPhotoList = () => {
     if (photoList.length === INITIAL_STATE_LENGTH) addPhotoAction();
   };
@@ -22,14 +18,12 @@ export default function DisplayPhotoList({
     let propContent = ``;
     for (const prop in photo) propContent += photo[prop];
     if (propContent !== ``) {
-      // console.log(photo);
-
-      // const { uuid } = photo;
-      const { id } = photo;
+      const { uuid } = photo;
+      // const { id } = photo;
       return (
         <DisplayPhoto
-          // key={uuid}
-          key={id}
+          key={uuid}
+          // key={id}
           photo={photo}
         />
       );

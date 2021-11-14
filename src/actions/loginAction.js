@@ -9,33 +9,37 @@ import {
   TOKEN_URL,
 } from '../constants/constants.js';
 
-const code = window.location.search.split(`?code=`)[1];
-
-const configObj = {
-  client_id: ACCESS_KEY,
-  client_secret: SECRET_KEY,
-  redirect_uri: REDIRECT_URI,
-  code,
-  grant_type: AUTHORIZATION_CODE,
-};
-
-if (code !== undefined) {
-  fetch(TOKEN_URL, {
-    method: `POST`,
-    headers: {
-      Accept: `application/json`,
-      'Content-Type': `application/json`,
-    },
-    body: JSON.stringify(configObj),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      localStorage.setItem(`token`, data.access_token);
-    });
-}
-
 export default function loginAction() {
+  const code = window.location.search.split(`?code=`)[1];
+
+  const configObj = {
+    client_id: ACCESS_KEY,
+    client_secret: SECRET_KEY,
+    redirect_uri: REDIRECT_URI,
+    code,
+    grant_type: AUTHORIZATION_CODE,
+  };
+
+  let auth = false;
+
+  if (code !== undefined) {
+    fetch(TOKEN_URL, {
+      method: `POST`,
+      headers: {
+        Accept: `application/json`,
+        'Content-Type': `application/json`,
+      },
+      body: JSON.stringify(configObj),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        localStorage.setItem(`token`, data.access_token);
+        auth = true;
+      });
+  }
+
   return {
     type: LOGIN,
+    auth,
   };
 }

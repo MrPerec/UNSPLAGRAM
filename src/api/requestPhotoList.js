@@ -1,6 +1,5 @@
 `use strict`;
 
-// import unsplash from './unsplash';
 import { createApi } from 'unsplash-js';
 import { ACCESS_KEY, SECRET_KEY } from '../constants/constants.js';
 
@@ -11,7 +10,7 @@ const unsplash = createApi({
 
 let pageNumber = 1;
 
-export default function requestListPhotos() {
+export default function requestPhotoList() {
   return unsplash.photos
     .list({
       page: pageNumber++,

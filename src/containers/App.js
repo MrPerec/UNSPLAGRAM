@@ -5,38 +5,48 @@ import { connect } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Header from '../components/layouts/Header';
-import DisplayListPostPhoto from '../components/DisplayListPostPhoto.js';
 import LoginPage from '../components/layouts/LoginPage';
-import PhotoFullSizePage from '../components/layouts/PhotoFullSizePage';
+import BigPhotoPage from '../components/layouts/BigPhotoPage';
+import DisplayPhotoList from '../components/DisplayPhotoList';
 
-import addPostAction from '../actions/addPostAction';
-import likePostAction from '../actions/likePostAction';
+import addPhotoAction from '../actions/addPhotoAction';
+import likePhotoAction from '../actions/likePhotoAction';
+import loginAction from '../actions/loginAction';
 
 import '../styles/app.css';
 
-export default function App({ listPostPhotos, addPostAction, likePostAction }) {
+export default function App({
+  photoList,
+  addPhotoAction,
+  likePhotoAction,
+  loginAction,
+}) {
   return (
     <div>
       <Header />
       <Switch>
+        <Route
+          path='/login'
+          render={(props) => <LoginPage {...props} loginAction={loginAction} />}
+        />
         <Route exact path='/'>
-          <DisplayListPostPhoto
-            listPostPhotos={listPostPhotos}
-            addPostAction={addPostAction}
-            likePostAction={likePostAction}
+          <DisplayPhotoList
+            photoList={photoList}
+            addPhotoAction={addPhotoAction}
+            likePhotoAction={likePhotoAction}
           />
         </Route>
         <Route
-          path='/photoFullSize/:id'
+          // path='/bigPhoto/:uuid'
+          path='/bigPhoto/:id'
           render={(props) => (
-            <PhotoFullSizePage
+            <BigPhotoPage
               {...props}
-              listPostPhotos={listPostPhotos}
-              likePostAction={likePostAction}
+              photoList={photoList}
+              likePhotoAction={likePhotoAction}
             />
           )}
         />
-        <Route path='/login' component={LoginPage} />
         <Redirect to='/' />
       </Switch>
     </div>
@@ -45,14 +55,15 @@ export default function App({ listPostPhotos, addPostAction, likePostAction }) {
 
 const mapStateToProps = (state) => {
   return {
-    listPostPhotos: state,
+    photoList: state,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addPostAction: () => dispatch(addPostAction()),
-    likePostAction: (id) => dispatch(likePostAction(id)),
+    addPhotoAction: () => dispatch(addPhotoAction()),
+    likePhotoAction: (id) => dispatch(likePhotoAction(id)),
+    loginAction: () => dispatch(loginAction()),
   };
 };
 

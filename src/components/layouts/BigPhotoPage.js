@@ -2,20 +2,16 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import ButtonGoHome from './ButtonGoHome';
+import ButtonGoBack from './ButtonGoBack';
 import '../../styles/post.css';
 import '../../styles/fonts/iconfont/flaticon.css';
 
-export default function PhotoFullSizePage({
-  listPostPhotos,
-  likePostAction,
-  match,
-}) {
+export default function BigPhotoPage({ photoList, likePhotoAction, match }) {
   const currentPostId = match.params.id;
-  const onLike = () => likePostAction(currentPostId);
+  const onLike = () => likePhotoAction(currentPostId);
 
-  const photoFullSize = listPostPhotos.map((postOfPhoto) => {
-    if (postOfPhoto.id === currentPostId) {
+  const bigPhoto = photoList.map((photo) => {
+    if (photo.id === currentPostId) {
       const {
         urlsRegular,
         altDescription,
@@ -24,7 +20,7 @@ export default function PhotoFullSizePage({
         createdAt,
         likes,
         likedByUser,
-      } = postOfPhoto;
+      } = photo;
 
       const like = likedByUser
         ? 'flaticon-like flaticon_style flaticon_style_cursor flaticon-like_style'
@@ -59,17 +55,17 @@ export default function PhotoFullSizePage({
               </div>
             </div>
           </div>
-          <ButtonGoHome />
+          <ButtonGoBack />
         </div>
       );
     }
   });
 
-  return <div>{photoFullSize};</div>;
+  return <div>{bigPhoto};</div>;
 }
 
-PhotoFullSizePage.propTypes = {
-  listPostPhotos: PropTypes.array.isRequired,
-  likePostAction: PropTypes.func.isRequired,
+BigPhotoPage.propTypes = {
+  photoList: PropTypes.array.isRequired,
+  likePhotoAction: PropTypes.func.isRequired,
   match: PropTypes.object.isRequired,
 };

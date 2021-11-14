@@ -1,26 +1,21 @@
 `use strict`;
 
-import { ADD_POST_PHOTO, LIKE_POST_PHOTO, LOGIN } from '../constants/types.js';
+// import getUuid from '../getUuid';
+import { ADD_PHOTO, LIKE_PHOTO, LOGIN } from '../constants/types.js';
 import {
   START_POSITION,
   CHARACTERS_NUMBER,
   SYMBOL_T,
   SYMBOL_SPACE,
 } from '../constants/constants.js';
-
-const getUuid = () =>
-  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
-    (
-      c ^
-      (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
-    ).toString(16)
-  );
+import getUuid from '../getUuid';
 
 export default function rootReducer(
   state = [{}],
   {
     type,
     id,
+    uuid,
     urlsRegular,
     urlsSmall,
     altDescription,
@@ -32,7 +27,7 @@ export default function rootReducer(
   }
 ) {
   switch (type) {
-    case ADD_POST_PHOTO:
+    case ADD_PHOTO:
       const uuid = getUuid();
       createdAt = createdAt
         .substring(START_POSITION, CHARACTERS_NUMBER)
@@ -42,6 +37,8 @@ export default function rootReducer(
         ...state,
         {
           id: uuid,
+          // id,
+          // uuid,
           urlsRegular,
           urlsSmall,
           altDescription,
@@ -53,7 +50,7 @@ export default function rootReducer(
         },
       ];
 
-    case LIKE_POST_PHOTO:
+    case LIKE_PHOTO:
       return state.map((post) => {
         if (post.id === id) {
           return {

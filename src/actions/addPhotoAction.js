@@ -1,14 +1,19 @@
 `use strict`;
 
-import requestListPhotos from '../api/requestListPhotos';
-import { ADD_POST_PHOTO } from '../constants/types.js';
+import requestPhotoList from '../api/requestPhotoList';
+import { ADD_PHOTO } from '../constants/types.js';
+import getUuid from '../getUuid';
 
-export default function addPostAction() {
+export default function addPhotoAction() {
+  const uuid = getUuid();
+
   return (dispatch) => {
-    requestListPhotos().then((response) => {
+    requestPhotoList().then((response) => {
       response.forEach((item) => {
         dispatch({
-          type: ADD_POST_PHOTO,
+          type: ADD_PHOTO,
+          id: item.id,
+          // uuid,
           urlsRegular: item.urls.regular,
           urlsSmall: item.urls.small,
           altDescription: item.alt_description,

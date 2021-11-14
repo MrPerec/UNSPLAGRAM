@@ -1,5 +1,6 @@
 `use strict`;
 
+import unsplash from '../../api/unsplash';
 import React from 'react';
 import ButtonGoHome from './ButtonGoHome';
 import { AUTH_URL } from '../../constants/constants.js';

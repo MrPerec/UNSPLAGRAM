@@ -18,6 +18,7 @@ export default function requestPhotoList() {
     })
     .then((result) => {
       if (result.errors) return alert(`error occurred: ${result.errors[0]}`);
+      console.log(result.response.results);
       return result.response.results;
     });
 }

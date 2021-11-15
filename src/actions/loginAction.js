@@ -7,10 +7,14 @@ import {
   REDIRECT_URI,
   AUTHORIZATION_CODE,
   TOKEN_URL,
+  POST,
+  APPLICATION_JSON,
+  TOKEN,
+  SEPARATOR_CODE,
 } from '../constants/constants.js';
 
 export default function loginAction() {
-  const code = window.location.search.split(`?code=`)[1];
+  const code = window.location.search.split(SEPARATOR_CODE)[1];
 
   const configObj = {
     client_id: ACCESS_KEY,
@@ -20,26 +24,23 @@ export default function loginAction() {
     grant_type: AUTHORIZATION_CODE,
   };
 
-  // let auth = false;
-
+  //засунуть в ассинхронную логику???
   if (code !== undefined) {
     fetch(TOKEN_URL, {
-      method: `POST`,
+      method: POST,
       headers: {
-        Accept: `application/json`,
-        'Content-Type': `application/json`,
+        Accept: APPLICATION_JSON,
+        'Content-Type': APPLICATION_JSON,
       },
       body: JSON.stringify(configObj),
     })
       .then((response) => response.json())
       .then((data) => {
-        localStorage.setItem(`token`, data.access_token);
-        // auth = true;
+        localStorage.setItem(TOKEN, data.access_token);
       });
   }
-  // console.log(auth);
+
   return {
     type: LOGIN,
-    // auth,
   };
 }

@@ -25,22 +25,42 @@ export default function loginAction() {
   };
 
   //засунуть в ассинхронную логику???
-  if (code !== undefined) {
-    fetch(TOKEN_URL, {
-      method: POST,
-      headers: {
-        Accept: APPLICATION_JSON,
-        'Content-Type': APPLICATION_JSON,
-      },
-      body: JSON.stringify(configObj),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        localStorage.setItem(TOKEN, data.access_token);
-      });
-  }
+  // if (code !== undefined) {
+  //   fetch(TOKEN_URL, {
+  //     method: POST,
+  //     headers: {
+  //       Accept: APPLICATION_JSON,
+  //       'Content-Type': APPLICATION_JSON,
+  //     },
+  //     body: JSON.stringify(configObj),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       localStorage.setItem(TOKEN, data.access_token);
+  //     });
+  // }
 
-  return {
-    type: LOGIN,
+  // return {
+  //   type: LOGIN,
+  // };
+
+  return (dispatch) => {
+    if (code !== undefined) {
+      fetch(TOKEN_URL, {
+        method: POST,
+        headers: {
+          Accept: APPLICATION_JSON,
+          'Content-Type': APPLICATION_JSON,
+        },
+        body: JSON.stringify(configObj),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          localStorage.setItem(TOKEN, data.access_token);
+          dispatch({
+            type: LOGIN,
+          });
+        });
+    }
   };
 }

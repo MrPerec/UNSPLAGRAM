@@ -20,7 +20,7 @@ export default function loginAction() {
     grant_type: AUTHORIZATION_CODE,
   };
 
-  let auth = false;
+  // let auth = false;
 
   if (code !== undefined) {
     fetch(TOKEN_URL, {
@@ -34,12 +34,12 @@ export default function loginAction() {
       .then((response) => response.json())
       .then((data) => {
         localStorage.setItem(`token`, data.access_token);
-        auth = true;
+        // auth = true;
       });
   }
-
+  // console.log(auth);
   return {
     type: LOGIN,
-    auth,
+    // auth,
   };
 }

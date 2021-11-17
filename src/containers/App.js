@@ -21,6 +21,8 @@ export default function App({
   likePhotoAction,
   loginAction,
 }) {
+  // export default function App(props) {
+  // console.log(props);
   return (
     <div>
       <Header />
@@ -52,9 +54,17 @@ export default function App({
   );
 }
 
-const mapStateToProps = (state) => {
+/* const mapStateToProps = (state) => {
   return {
     photoList: state,
+  };
+}; */
+
+const mapStateToProps = ({ addPhotoReducer /* likePhotoReducer */ }) => {
+  // console.log(state);
+  return {
+    photoList: addPhotoReducer,
+    // likeList: likePhotoReducer,
   };
 };
 

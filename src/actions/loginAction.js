@@ -14,6 +14,8 @@ import {
 } from '../constants/constants.js';
 
 export default function loginAction() {
+  console.log(location);
+
   const code = window.location.search.split(SEPARATOR_CODE)[1];
 
   const configObj = {
@@ -25,26 +27,28 @@ export default function loginAction() {
   };
 
   //засунуть в ассинхронную логику???
-  // if (code !== undefined) {
-  //   fetch(TOKEN_URL, {
-  //     method: POST,
-  //     headers: {
-  //       Accept: APPLICATION_JSON,
-  //       'Content-Type': APPLICATION_JSON,
-  //     },
-  //     body: JSON.stringify(configObj),
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       localStorage.setItem(TOKEN, data.access_token);
-  //     });
-  // }
 
-  // return {
-  //   type: LOGIN,
-  // };
+  if (code !== undefined) {
+    fetch(TOKEN_URL, {
+      method: POST,
+      headers: {
+        Accept: APPLICATION_JSON,
+        'Content-Type': APPLICATION_JSON,
+      },
+      body: JSON.stringify(configObj),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        localStorage.setItem(TOKEN, data.access_token);
+      });
+  }
 
-  return (dispatch) => {
+  return {
+    type: LOGIN,
+  };
+
+  /* return (dispatch) => {
+    console.log(code);
     if (code !== undefined) {
       fetch(TOKEN_URL, {
         method: POST,
@@ -62,5 +66,5 @@ export default function loginAction() {
           });
         });
     }
-  };
+  };*/
 }

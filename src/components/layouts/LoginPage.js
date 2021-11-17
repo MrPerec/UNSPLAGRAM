@@ -8,8 +8,6 @@ import '../../styles/button.css';
 export default function LoginPage({ loginAction }) {
   const onLogin = () => loginAction();
 
-  console.log(localStorage.token);
-
   const authStatus =
     localStorage.token === undefined
       ? 'You are not authorized'

@@ -21,4 +21,5 @@ export const SEPARATOR_CODE = `?code=`;
 
 export const REDIRECT_URI = `http://localhost:3000/login`;
 export const AUTH_URL = `https://unsplash.com/oauth/authorize?client_id=${ACCESS_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code&scope=public+write_likes`;
+// export const AUTH_URL = `https://unsplash.com/oauth/authorize?client_id=_JCTLXIriKQH3zfw4IPJa7c4uUf-KBTJbCqNHGAvXFc&redirect_uri=http://localhost:3000/login&response_type=code&scope=public+write_likes`;
 export const TOKEN_URL = `https://unsplash.com/oauth/token`;

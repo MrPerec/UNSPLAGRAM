@@ -7,11 +7,11 @@ import '../../styles/post.css';
 import '../../styles/fonts/iconfont/flaticon.css';
 
 export default function BigPhotoPage({ photoList, likePhotoAction, match }) {
-  const currentPostId = match.params.id;
-  const onLike = () => likePhotoAction(currentPostId);
+  const currentPhotoId = match.params.id;
+  const onLike = () => likePhotoAction(currentPhotoId);
 
   const bigPhoto = photoList.map((photo) => {
-    if (photo.id === currentPostId) {
+    if (photo.id === currentPhotoId) {
       const {
         urlsRegular,
         altDescription,
@@ -27,7 +27,7 @@ export default function BigPhotoPage({ photoList, likePhotoAction, match }) {
         : 'flaticon-heart flaticon_style flaticon_style_cursor';
 
       return (
-        <div className='post_full-size_container' key={currentPostId}>
+        <div className='post_full-size_container' key={currentPhotoId}>
           <div className='post_container'>
             <img
               className='image image-full-size'

@@ -9,8 +9,10 @@ import LoginPage from '../components/layouts/LoginPage';
 import BigPhotoPage from '../components/layouts/BigPhotoPage';
 import DisplayPhotoList from '../components/DisplayPhotoList';
 
-import addPhotoAction from '../actions/addPhotoAction';
-import likePhotoAction from '../actions/likePhotoAction';
+// import addPhotoAction from '../actions/addPhotoAction.test';
+// import likePhotoAction from '../actions/likePhotoAction.test';
+import { addPhotoAction, likePhotoAction } from '../actions/photoActions';
+
 import loginAction from '../actions/loginAction';
 
 import '../styles/app.css';
@@ -52,9 +54,15 @@ export default function App({
   );
 }
 
-const mapStateToProps = (state) => {
+/* const mapStateToProps = (state) => {
   return {
     photoList: state,
+  };
+}; */
+
+const mapStateToProps = ({ photoReducers }) => {
+  return {
+    photoList: photoReducers,
   };
 };
 

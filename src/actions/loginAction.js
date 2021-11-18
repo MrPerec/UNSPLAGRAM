@@ -15,8 +15,6 @@ import {
 } from '../constants/constants.js';
 
 export default function loginAction() {
-  console.log(location);
-  // window.location.href = AUTH_URL;
   const code = window.location.search.split(SEPARATOR_CODE)[1];
 
   const configObj = {
@@ -26,43 +24,24 @@ export default function loginAction() {
     code,
     grant_type: AUTHORIZATION_CODE,
   };
-  console.log(code);
-  //засунуть в ассинхронную логику???
-  // if (code !== undefined) {
-  //   fetch(TOKEN_URL, {
-  //     method: POST,
-  //     headers: {
-  //       Accept: APPLICATION_JSON,
-  //       'Content-Type': APPLICATION_JSON,
-  //     },
-  //     body: JSON.stringify(configObj),
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       localStorage.setItem(TOKEN, data.access_token);
-  //     });
-  // }
+
+  if (!code) window.location.href = AUTH_URL;
+  if (code) {
+    fetch(TOKEN_URL, {
+      method: POST,
+      headers: {
+        Accept: APPLICATION_JSON,
+        'Content-Type': APPLICATION_JSON,
+      },
+      body: JSON.stringify(configObj),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        localStorage.setItem(TOKEN, data.access_token);
+      });
+  }
+
   return {
     type: LOGIN,
   };
-
-  /* return (dispatch) => {
-    if (code !== undefined) {
-      fetch(TOKEN_URL, {
-        method: POST,
-        headers: {
-          Accept: APPLICATION_JSON,
-          'Content-Type': APPLICATION_JSON,
-        },
-        body: JSON.stringify(configObj),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          localStorage.setItem(TOKEN, data.access_token);
-          dispatch({
-            type: LOGIN,
-          });
-        });
-    }
-  }; */
 }

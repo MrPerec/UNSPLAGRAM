@@ -6,8 +6,6 @@ import ButtonGoHome from './ButtonGoHome';
 import '../../styles/button.css';
 
 export default function LoginPage({ loginAction }) {
-  // export default function LoginPage(props) {
-  // console.log(props);
   const onLogin = () => loginAction();
 
   const authStatus =

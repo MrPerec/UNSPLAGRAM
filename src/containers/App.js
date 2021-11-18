@@ -23,6 +23,8 @@ export default function App({
   likePhotoAction,
   loginAction,
 }) {
+  // export default function App(props) {
+  // console.log(props);
   return (
     <div>
       <Header />

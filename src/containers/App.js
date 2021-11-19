@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Header from '../components/layouts/Header';
-import LoginPage from '../components/layouts/LoginPage';
+// import LoginPage from '../components/layouts/LoginPage.test';
 import BigPhotoPage from '../components/layouts/BigPhotoPage';
 import DisplayPhotoList from '../components/DisplayPhotoList';
 
@@ -25,12 +25,12 @@ export default function App({
 }) {
   return (
     <div>
-      <Header />
+      <Header loginAction={loginAction} />
       <Switch>
-        <Route
+        {/* <Route
           path='/login'
           render={(props) => <LoginPage {...props} loginAction={loginAction} />}
-        />
+        /> */}
         <Route exact path='/'>
           <DisplayPhotoList
             photoList={photoList}

@@ -26,7 +26,7 @@ export default function loginAction() {
     grant_type: AUTHORIZATION_CODE,
   };
 
-  // if (!code) window.location.href = AUTH_URL;
+  if (!code) window.location.href = AUTH_URL;
   if (code) {
     fetch(TOKEN_URL, {
       method: POST,

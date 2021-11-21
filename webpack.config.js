@@ -62,6 +62,11 @@ module.exports = {
         },
       },
       {
+        test: /\.js$/,
+        enforce: 'pre',
+        use: ['source-map-loader'],
+      },
+      {
         test: /\.(woff(2)?|ttf|eot|svg|png|jpg|gif|ico)(\?v=\d+\.\d+\.\d+\.[0-9]\.[0-9]\.[0-9].)?$/,
         type: 'asset/resource',
       },

@@ -5,33 +5,27 @@ import { connect } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Header from '../components/layouts/Header';
-// import LoginPage from '../components/layouts/LoginPage.test';
 import CallBackPage from '../components/layouts/CallBackPage';
 import BigPhotoPage from '../components/layouts/BigPhotoPage';
 import DisplayPhotoList from '../components/DisplayPhotoList';
 
-// import addPhotoAction from '../actions/addPhotoAction.test';
-// import likePhotoAction from '../actions/likePhotoAction.test';
 import { addPhotoAction, likePhotoAction } from '../actions/photoActions';
-
 import loginAction from '../actions/loginAction';
 
 import '../styles/app.css';
 
 export default function App({
   photoList,
+  loginState,
   addPhotoAction,
   likePhotoAction,
   loginAction,
 }) {
+  console.log(loginState);
   return (
     <div>
-      <Header loginAction={loginAction} />
+      <Header />
       <Switch>
-        {/* <Route
-          path='/login'
-          render={(props) => <LoginPage {...props} loginAction={loginAction} />}
-        /> */}
         <Route exact path='/'>
           <DisplayPhotoList
             photoList={photoList}
@@ -52,7 +46,11 @@ export default function App({
         <Route
           path='/callBack'
           render={(props) => (
-            <CallBackPage {...props} loginAction={loginAction} />
+            <CallBackPage
+              {...props}
+              // loginState={loginState}
+              loginAction={loginAction}
+            />
           )}
         />
         <Redirect to='/' />
@@ -61,15 +59,10 @@ export default function App({
   );
 }
 
-/* const mapStateToProps = (state) => {
+const mapStateToProps = ({ photoReducer, loginReducer }) => {
   return {
-    photoList: state,
-  };
-}; */
-
-const mapStateToProps = ({ photoReducers }) => {
-  return {
-    photoList: photoReducers,
+    photoList: photoReducer,
+    loginState: loginReducer,
   };
 };
 

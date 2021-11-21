@@ -9,7 +9,7 @@ import {
 } from '../constants/constants.js';
 import getUuid from '../getUuid';
 
-export default function addPhotoReducer(
+export default function photoReducer(
   state = [{}],
   {
     type,

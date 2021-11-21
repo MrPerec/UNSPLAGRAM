@@ -5,11 +5,12 @@ import ButtonGoHome from './ButtonGoHome';
 // import { AUTH_URL } from '../../constants/constants.js';
 import '../../styles/button.css';
 
-export default function LoginPage({ loginAction }) {
+export default function LoginPage({ /* loginState, */ loginAction }) {
   // const onLogin = () => loginAction();
   console.log(window.location.search);
   loginAction();
-  console.log(localStorage.token);
+  console.log(`Token - ${localStorage.token}`);
+  // console.log(loginState);
 
   const authStatus =
     !localStorage.token || localStorage.token === `undefined`

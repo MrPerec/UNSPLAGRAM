@@ -26,8 +26,8 @@ export default function loginAction() {
     grant_type: AUTHORIZATION_CODE,
   };
 
-  if (!code) window.location.href = AUTH_URL;
-  if (code) {
+  // if (!code) window.location.href = AUTH_URL;
+  /* if (code) {
     fetch(TOKEN_URL, {
       method: POST,
       headers: {
@@ -41,8 +41,28 @@ export default function loginAction() {
         localStorage.setItem(TOKEN, data.access_token);
       });
   }
-
+  console.log(localStorage.token);
   return {
     type: LOGIN,
+  }; */
+
+  return (dispatch) => {
+    fetch(TOKEN_URL, {
+      method: POST,
+      headers: {
+        Accept: APPLICATION_JSON,
+        'Content-Type': APPLICATION_JSON,
+      },
+      body: JSON.stringify(configObj),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        localStorage.setItem(TOKEN, data.access_token);
+        console.log(localStorage.token);
+
+        dispatch({
+          type: LOGIN,
+        });
+      });
   };
 }

@@ -3,28 +3,31 @@
 import React from 'react';
 import '../../styles/header.css';
 import '../../styles/buttonLogin.css';
-// import { AUTH_URL } from '../../constants/constants.js';
+import { AUTH_URL } from '../../constants/constants.js';
 
 export default function Header({ loginAction }) {
-  const onLogin = () => loginAction();
+  // const onLogin = () => loginAction();
 
-  const authStatus = localStorage.token === undefined ? 'LogIn' : 'LogOut';
+  const authStatus =
+    !localStorage.token || localStorage.token === `undefined`
+      ? 'Log In'
+      : 'Log Out';
 
   return (
     <header className='header header__container gray__block'>
-      {/* <a
+      <a
         href={AUTH_URL}
         className='button-sign-in button-sign-in__style'
-        onClick={onLogin}
+        // onClick={onLogin}
       >
         {authStatus}
-      </a> */}
-      <button
+      </a>
+      {/* <button
         className='button-sign-in button-sign-in__style'
         onClick={onLogin}
       >
         {authStatus}
-      </button>
+      </button> */}
       <h3 className='h3 header_h3__text-style'>UNSPLAGRAM</h3>
     </header>
   );

@@ -6,6 +6,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Header from '../components/layouts/Header';
 // import LoginPage from '../components/layouts/LoginPage.test';
+import CallBackPage from '../components/layouts/CallBackPage';
 import BigPhotoPage from '../components/layouts/BigPhotoPage';
 import DisplayPhotoList from '../components/DisplayPhotoList';
 
@@ -46,6 +47,12 @@ export default function App({
               photoList={photoList}
               likePhotoAction={likePhotoAction}
             />
+          )}
+        />
+        <Route
+          path='/callBack'
+          render={(props) => (
+            <CallBackPage {...props} loginAction={loginAction} />
           )}
         />
         <Redirect to='/' />

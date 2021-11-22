@@ -2,10 +2,10 @@
 
 import { LOGIN } from '../constants/types.js';
 
-export default function loginReducer(state = { login: null }, { type }) {
+export default function loginReducer(state = {}, { type }) {
   switch (type) {
     case LOGIN:
-      return [...state, { login: true }];
+      return { ...state, login: true };
 
     default:
       return state;

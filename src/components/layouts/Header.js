@@ -16,7 +16,6 @@ export default function Header() {
       <a href={AUTH_URL} className='button-sign-in button-sign-in__style'>
         {authStatus}
       </a>
-
       <h3 className='h3 header_h3__text-style'>UNSPLAGRAM</h3>
     </header>
   );

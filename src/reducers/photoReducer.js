@@ -1,19 +1,13 @@
 `use strict`;
 
 import { ADD_PHOTO, LIKE_PHOTO } from '../constants/types.js';
-import {
-  START_POSITION,
-  CHARACTERS_NUMBER,
-  SYMBOL_T,
-  SYMBOL_SPACE,
-} from '../constants/constants.js';
-import getUuid from '../getUuid';
 
 export default function photoReducer(
   state = [{}],
   {
     type,
     id,
+    uuid,
     urlsRegular,
     urlsSmall,
     altDescription,
@@ -26,11 +20,6 @@ export default function photoReducer(
 ) {
   switch (type) {
     case ADD_PHOTO:
-      const uuid = getUuid();
-      createdAt = createdAt
-        .substring(START_POSITION, CHARACTERS_NUMBER)
-        .replace(SYMBOL_T, SYMBOL_SPACE);
-
       return [
         ...state,
         {

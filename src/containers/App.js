@@ -10,18 +10,18 @@ import BigPhotoPage from '../components/layouts/BigPhotoPage';
 import DisplayPhotoList from '../components/DisplayPhotoList';
 
 import { addPhotoAction, likePhotoAction } from '../actions/photoActions';
-import loginAction from '../actions/loginAction';
+import { loginAction } from '../actions/loginAction';
 
 import '../styles/app.css';
 
 export default function App({
   photoList,
-  loginState,
+  // loginState,
   addPhotoAction,
   likePhotoAction,
   loginAction,
 }) {
-  console.log(loginState);
+  // loginAction();
   return (
     <div>
       <Header />
@@ -60,9 +60,10 @@ export default function App({
 }
 
 const mapStateToProps = ({ photoReducer, loginReducer }) => {
+  // console.log(loginReducer);
   return {
     photoList: photoReducer,
-    loginState: loginReducer,
+    // loginState: loginReducer,
   };
 };
 

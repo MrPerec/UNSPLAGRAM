@@ -16,15 +16,14 @@ import '../styles/app.css';
 
 export default function App({
   photoList,
-  // loginState,
+  auth,
   addPhotoAction,
   likePhotoAction,
   loginAction,
 }) {
-  // loginAction();
   return (
     <div>
-      <Header />
+      <Header auth={auth} />
       <Switch>
         <Route exact path='/'>
           <DisplayPhotoList
@@ -46,11 +45,7 @@ export default function App({
         <Route
           path='/callBack'
           render={(props) => (
-            <CallBackPage
-              {...props}
-              // loginState={loginState}
-              loginAction={loginAction}
-            />
+            <CallBackPage {...props} auth={auth} loginAction={loginAction} />
           )}
         />
         <Redirect to='/' />
@@ -59,11 +54,10 @@ export default function App({
   );
 }
 
-const mapStateToProps = ({ photoReducer, loginReducer }) => {
-  // console.log(loginReducer);
+const mapStateToProps = ({ photoState, loginState }) => {
   return {
-    photoList: photoReducer,
-    // loginState: loginReducer,
+    photoList: photoState,
+    auth: loginState,
   };
 };
 

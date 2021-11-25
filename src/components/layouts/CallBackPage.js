@@ -4,15 +4,12 @@ import React from 'react';
 import ButtonGoHome from './ButtonGoHome';
 import '../../styles/button.css';
 
-export default function CallBackPage({ /* loginState, */ loginAction }) {
-  // loginAction();
-  // console.log(`Token - ${localStorage.token}`);
-  // console.log(loginState);
+export default function CallBackPage({ auth, loginAction }) {
+  const { login } = auth;
 
-  const authStatus =
-    !localStorage.token || localStorage.token === `undefined`
-      ? 'You are not authorized'
-      : 'You are authorized';
+  if (!login) loginAction();
+
+  const authStatus = !login ? 'You are not authorized' : 'You are authorized';
 
   return (
     <div>

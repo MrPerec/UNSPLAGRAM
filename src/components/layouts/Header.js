@@ -5,11 +5,10 @@ import '../../styles/header.css';
 import '../../styles/buttonLogin.css';
 import { AUTH_URL } from '../../constants/constants.js';
 
-export default function Header() {
-  const authStatus =
-    !localStorage.token || localStorage.token === `undefined`
-      ? 'Log In'
-      : 'Log Out';
+export default function Header({ auth }) {
+  const { login } = auth;
+
+  const authStatus = !login ? 'Log In' : 'Log Out';
 
   return (
     <header className='header header__container gray__block'>

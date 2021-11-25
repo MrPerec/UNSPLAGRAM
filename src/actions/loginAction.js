@@ -20,7 +20,7 @@ const login = () => {
 };
 
 export function loginAction() {
-  /* const code = window.location.search.split(SEPARATOR_CODE)[1];
+  const code = window.location.search.split(SEPARATOR_CODE)[1];
 
   const configObj = {
     client_id: ACCESS_KEY,
@@ -30,7 +30,7 @@ export function loginAction() {
     grant_type: AUTHORIZATION_CODE,
   };
 
-  return (dispatch) => {
+  /* return (dispatch) => {
     fetch(TOKEN_URL, {
       method: POST,
       headers: {
@@ -44,11 +44,29 @@ export function loginAction() {
         return data.access_token;
       })
       .then((response) => {
-        // localStorage.setItem(TOKEN, data.access_token);
+        localStorage.setItem(TOKEN, data.access_token);
         dispatch(login());
       });
   }; */
-  return {
-    type: LOGIN,
+  return (dispatch) => {
+    fetch(TOKEN_URL, {
+      method: POST,
+      headers: {
+        Accept: APPLICATION_JSON,
+        'Content-Type': APPLICATION_JSON,
+      },
+      body: JSON.stringify(configObj),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        localStorage.setItem(TOKEN, data.access_token);
+        console.log(localStorage.token);
+        // if (!localStorage.token || localStorage.token === `undefined`)
+        dispatch(login());
+        // return;
+      });
   };
+  /* return {
+    type: LOGIN,
+  }; */
 }

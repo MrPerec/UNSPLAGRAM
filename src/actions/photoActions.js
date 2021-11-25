@@ -57,10 +57,7 @@ export function addPhotoAction() {
       })
       .then((result) => {
         if (result.errors) return alert(`error occurred: ${result.errors[0]}`);
-        return result.response.results;
-      })
-      .then((response) => {
-        response.forEach((item) => {
+        return result.response.results.forEach((item) => {
           dispatch(addPhoto(item));
         });
       });

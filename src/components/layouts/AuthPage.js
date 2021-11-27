@@ -4,7 +4,7 @@ import React from 'react';
 import ButtonGoHome from './ButtonGoHome';
 import '../../styles/button.css';
 
-export default function CallBackPage({ auth, loginAction }) {
+export default function AuthPage({ auth, loginAction }) {
   const { login } = auth;
 
   if (!login) loginAction();

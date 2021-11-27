@@ -1,6 +1,6 @@
 `use strict`;
 
-import { LOGIN } from '../constants/types.js';
+import { LOGIN, IS_AUTH } from '../constants/types.js';
 import {
   ACCESS_KEY,
   SECRET_KEY,
@@ -19,6 +19,13 @@ const login = () => {
   };
 };
 
+const isAuthorized = () => {
+  return {
+    // type: IS_AUTH,
+    type: LOGIN,
+  };
+};
+
 export function loginAction() {
   const code = window.location.search.split(SEPARATOR_CODE)[1];
 
@@ -30,24 +37,6 @@ export function loginAction() {
     grant_type: AUTHORIZATION_CODE,
   };
 
-  /* return (dispatch) => {
-    fetch(TOKEN_URL, {
-      method: POST,
-      headers: {
-        Accept: APPLICATION_JSON,
-        'Content-Type': APPLICATION_JSON,
-      },
-      body: JSON.stringify(configObj),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        return data.access_token;
-      })
-      .then((response) => {
-        localStorage.setItem(TOKEN, data.access_token);
-        dispatch(login());
-      });
-  }; */
   return (dispatch) => {
     fetch(TOKEN_URL, {
       method: POST,
@@ -59,14 +48,16 @@ export function loginAction() {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data.access_token);
         localStorage.setItem(TOKEN, data.access_token);
-        console.log(localStorage.token);
-        // if (!localStorage.token || localStorage.token === `undefined`)
         dispatch(login());
-        // return;
       });
   };
-  /* return {
-    type: LOGIN,
-  }; */
+}
+
+export function isAuthorizedAction() {
+  const accessToken = localStorage.getItem('token');
+  console.log(accessToken);
+  // if (accessToken) return isAuthorized();
+  // if (!accessToken) login()
 }

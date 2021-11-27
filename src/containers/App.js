@@ -5,12 +5,12 @@ import { connect } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Header from '../components/layouts/Header';
-import CallBackPage from '../components/layouts/CallBackPage';
+import AuthPage from '../components/layouts/AuthPage';
 import BigPhotoPage from '../components/layouts/BigPhotoPage';
 import DisplayPhotoList from '../components/DisplayPhotoList';
 
 import { addPhotoAction, likePhotoAction } from '../actions/photoActions';
-import { loginAction } from '../actions/loginAction';
+import { loginAction, isAuthorizedAction } from '../actions/authAction';
 
 import '../styles/app.css';
 
@@ -20,10 +20,13 @@ export default function App({
   addPhotoAction,
   likePhotoAction,
   loginAction,
+  isAuthorizedAction,
 }) {
+  // isAuthorizedAction();
   return (
     <div>
       <Header auth={auth} />
+      {/* <Header auth={auth} loginAction={loginAction} /> */}
       <Switch>
         <Route exact path='/'>
           <DisplayPhotoList
@@ -42,10 +45,13 @@ export default function App({
             />
           )}
         />
+        {/* <Route path='/authPage'>
+          <AuthPage auth={auth} />
+        </Route> */}
         <Route
-          path='/callBack'
+          path='/authPage'
           render={(props) => (
-            <CallBackPage {...props} auth={auth} loginAction={loginAction} />
+            <AuthPage {...props} auth={auth} loginAction={loginAction} />
           )}
         />
         <Redirect to='/' />
@@ -66,6 +72,7 @@ const mapDispatchToProps = (dispatch) => {
     addPhotoAction: () => dispatch(addPhotoAction()),
     likePhotoAction: (id) => dispatch(likePhotoAction(id)),
     loginAction: () => dispatch(loginAction()),
+    isAuthorizedAction: () => dispatch(isAuthorizedAction()),
   };
 };
 

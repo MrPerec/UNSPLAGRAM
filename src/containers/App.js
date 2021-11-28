@@ -20,13 +20,11 @@ export default function App({
   addPhotoAction,
   likePhotoAction,
   loginAction,
-  isAuthorizedAction,
+  // isAuthorizedAction,
 }) {
-  // isAuthorizedAction();
   return (
     <div>
       <Header auth={auth} />
-      {/* <Header auth={auth} loginAction={loginAction} /> */}
       <Switch>
         <Route exact path='/'>
           <DisplayPhotoList
@@ -45,9 +43,6 @@ export default function App({
             />
           )}
         />
-        {/* <Route path='/authPage'>
-          <AuthPage auth={auth} />
-        </Route> */}
         <Route
           path='/authPage'
           render={(props) => (
@@ -60,10 +55,10 @@ export default function App({
   );
 }
 
-const mapStateToProps = ({ photoState, loginState }) => {
+const mapStateToProps = ({ photoState, authState }) => {
   return {
     photoList: photoState,
-    auth: loginState,
+    auth: authState,
   };
 };
 
@@ -72,7 +67,7 @@ const mapDispatchToProps = (dispatch) => {
     addPhotoAction: () => dispatch(addPhotoAction()),
     likePhotoAction: (id) => dispatch(likePhotoAction(id)),
     loginAction: () => dispatch(loginAction()),
-    isAuthorizedAction: () => dispatch(isAuthorizedAction()),
+    // isAuthorizedAction: () => dispatch(isAuthorizedAction()),
   };
 };
 

@@ -48,7 +48,7 @@ export function loginAction() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.access_token);
+        if (data.error) return alert(`error: ${data.error_description}`);
         localStorage.setItem(TOKEN, data.access_token);
         dispatch(login());
       });

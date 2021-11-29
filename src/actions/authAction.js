@@ -1,6 +1,6 @@
 `use strict`;
 
-import { LOGIN, IS_AUTH } from '../constants/types.js';
+import { LOGIN, LOGOUT } from '../constants/types.js';
 import {
   ACCESS_KEY,
   SECRET_KEY,
@@ -19,12 +19,18 @@ const login = () => {
   };
 };
 
-const isAuthorized = () => {
+/* const logout = () => {
+  return {
+    type: LOGOUT,
+  };
+}; */
+
+/* const isAuthorized = () => {
   return {
     // type: IS_AUTH,
     type: LOGIN,
   };
-};
+}; */
 
 export function loginAction() {
   const code = window.location.search.split(SEPARATOR_CODE)[1];
@@ -55,9 +61,16 @@ export function loginAction() {
   };
 }
 
-export function isAuthorizedAction() {
+export function logoutAction() {
+  localStorage.clear();
+  return {
+    type: LOGOUT,
+  };
+}
+
+/* export function isAuthorizedAction() {
   const accessToken = localStorage.getItem('token');
   console.log(accessToken);
   // if (accessToken) return isAuthorized();
   // if (!accessToken) login()
-}
+} */

@@ -6,12 +6,13 @@ import '../../styles/buttonLogin.css';
 import { AUTH_URL } from '../../constants/constants.js';
 import { Link } from 'react-router-dom';
 
-export default function Header({ auth }) {
+export default function Header({ auth, logoutAction }) {
   const { login } = auth;
+  const onLogout = () => logoutAction();
 
   // const authStatus = !login ? 'Log In' : 'Log Out';
 
-  const isAuth = !login ? (
+  /* const authState = !login ? (
     <a href={AUTH_URL} className='button-sign-in button-sign-in__style'>
       Log In
     </a>
@@ -23,6 +24,16 @@ export default function Header({ auth }) {
         </button>
       </Link>
     </div>
+  ); */
+
+  const authState = !login ? (
+    <a href={AUTH_URL} className='button-sign-in button-sign-in__style'>
+      Log In
+    </a>
+  ) : (
+    <button className='button-sign-in button-sign-in__style' onClick={onLogout}>
+      Log Out
+    </button>
   );
 
   return (
@@ -30,7 +41,7 @@ export default function Header({ auth }) {
       {/* <a href={AUTH_URL} className='button-sign-in button-sign-in__style'>
         {authStatus}
       </a> */}
-      {isAuth}
+      {authState}
       <h3 className='h3 header_h3__text-style'>UNSPLAGRAM</h3>
     </header>
   );

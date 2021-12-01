@@ -1,6 +1,6 @@
 `use strict`;
 
-import { LOGIN, LOGOUT } from '../constants/types.js';
+import { LOGIN, LOGOUT, GET_USER } from '../constants/types.js';
 import {
   ACCESS_KEY,
   SECRET_KEY,
@@ -11,26 +11,37 @@ import {
   POST,
   APPLICATION_JSON,
   SEPARATOR_CODE,
+  USER_URL,
+  GET,
+  USER_NAME,
+  PROFILE_IMAGE,
 } from '../constants/constants.js';
 
-const login = () => {
+const login = (token) => {
+  localStorage.setItem(TOKEN, token);
+
   return {
     type: LOGIN,
   };
 };
 
-/* const logout = () => {
+const getAuthUser = (userData) => {
+  localStorage.setItem(USER_NAME, userData.username);
+  localStorage.setItem(PROFILE_IMAGE, userData.profile_image.small);
+
+  return {
+    type: GET_USER,
+    userName: userData.username,
+    profileImage: userData.profile_image.small,
+  };
+};
+
+export function logoutAction() {
+  localStorage.clear();
   return {
     type: LOGOUT,
   };
-}; */
-
-/* const isAuthorized = () => {
-  return {
-    // type: IS_AUTH,
-    type: LOGIN,
-  };
-}; */
+}
 
 export function loginAction() {
   const code = window.location.search.split(SEPARATOR_CODE)[1];
@@ -55,22 +66,26 @@ export function loginAction() {
       .then((response) => response.json())
       .then((data) => {
         if (data.error) return alert(`error: ${data.error_description}`);
-        localStorage.setItem(TOKEN, data.access_token);
-        dispatch(login());
+        dispatch(login(data.access_token));
       });
   };
 }
 
-export function logoutAction() {
-  localStorage.clear();
-  return {
-    type: LOGOUT,
+export function getAuthUserAction() {
+  const token = localStorage.getItem('token');
+
+  return (dispatch) => {
+    fetch(USER_URL, {
+      method: GET,
+      headers: {
+        Accept: APPLICATION_JSON,
+        'Content-Type': APPLICATION_JSON,
+        Authorization: `Bearer ` + token,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        dispatch(getAuthUser(data));
+      });
   };
 }
-
-/* export function isAuthorizedAction() {
-  const accessToken = localStorage.getItem('token');
-  console.log(accessToken);
-  // if (accessToken) return isAuthorized();
-  // if (!accessToken) login()
-} */

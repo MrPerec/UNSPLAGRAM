@@ -10,7 +10,11 @@ import BigPhotoPage from '../components/layouts/BigPhotoPage';
 import DisplayPhotoList from '../components/DisplayPhotoList';
 
 import { addPhotoAction, likePhotoAction } from '../actions/photoActions';
-import { loginAction, logoutAction } from '../actions/authAction';
+import {
+  loginAction,
+  logoutAction,
+  getAuthUserAction,
+} from '../actions/authAction';
 
 import '../styles/app.css';
 
@@ -20,6 +24,8 @@ export default function App({
   addPhotoAction,
   likePhotoAction,
   loginAction,
+  logoutAction,
+  getAuthUserAction,
 }) {
   return (
     <div>
@@ -45,7 +51,12 @@ export default function App({
         <Route
           path='/authPage'
           render={(props) => (
-            <AuthPage {...props} auth={auth} loginAction={loginAction} />
+            <AuthPage
+              {...props}
+              auth={auth}
+              loginAction={loginAction}
+              getAuthUserAction={getAuthUserAction}
+            />
           )}
         />
         <Redirect to='/' />
@@ -67,6 +78,7 @@ const mapDispatchToProps = (dispatch) => {
     likePhotoAction: (id) => dispatch(likePhotoAction(id)),
     loginAction: () => dispatch(loginAction()),
     logoutAction: () => dispatch(logoutAction()),
+    getAuthUserAction: () => dispatch(getAuthUserAction()),
   };
 };
 

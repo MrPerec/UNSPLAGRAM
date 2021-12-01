@@ -4,30 +4,13 @@ import React from 'react';
 import '../../styles/header.css';
 import '../../styles/buttonLogin.css';
 import { AUTH_URL } from '../../constants/constants.js';
-// import { Link } from 'react-router-dom';
 
 export default function Header({ auth, logoutAction }) {
-  const { login } = auth;
-  console.log(login);
+  const { login, userName, profileImage } = auth;
+  console.log(userName, profileImage);
   const onLogout = () => logoutAction();
 
-  // const authStatus = !login ? 'Log In' : 'Log Out';
-
-  /* const authState = !login ? (
-    <a href={AUTH_URL} className='button-sign-in button-sign-in__style'>
-      Log In
-    </a>
-  ) : (
-    <div>
-      <Link to={{ pathname: `/authPage` }}>
-        <button className='button-sign-in button-sign-in__style'>
-          Log Out
-        </button>
-      </Link>
-    </div>
-  ); */
-
-  const authState = !login ? (
+  const buttonAuthState = !login ? (
     <a href={AUTH_URL} className='button-sign-in button-sign-in__style'>
       Log In
     </a>
@@ -37,9 +20,13 @@ export default function Header({ auth, logoutAction }) {
     </button>
   );
 
+  // const avatarAuthState = userName ?
+
+  // if (!login) getAuthUserAction();
+
   return (
     <header className='header header__container gray__block'>
-      {authState}
+      {buttonAuthState}
       <h3 className='h3 header_h3__text-style'>UNSPLAGRAM</h3>
     </header>
   );

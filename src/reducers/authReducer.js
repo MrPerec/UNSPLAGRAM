@@ -1,21 +1,29 @@
 `use strict`;
 
-import { LOGIN, LOGOUT } from '../constants/types.js';
+import { LOGIN, LOGOUT, GET_USER } from '../constants/types.js';
+import { TOKEN, USER_NAME, PROFILE_IMAGE } from '../constants/constants.js';
 
-const accessToken = localStorage.getItem('token');
-const initAuthState = accessToken ? { login: true } : { login: null };
+const accessToken = localStorage.getItem(TOKEN);
+const savedUserName = localStorage.getItem(USER_NAME);
+const savedProfileImage = localStorage.getItem(PROFILE_IMAGE);
 
-export default function loginReducer(state = initAuthState, { type }) {
-  console.log(state);
+const initAuthState = accessToken
+  ? { login: true, userName: savedUserName, profileImage: savedProfileImage }
+  : { login: null, userName: null, profileImage: null };
+
+export default function loginReducer(
+  state = initAuthState,
+  { type, userName, profileImage }
+) {
   switch (type) {
     case LOGIN:
       return { ...state, login: true };
 
     case LOGOUT:
-      return { ...state, login: false };
+      return { ...state, login: false, userName: null, profileImage: null };
 
-    // case IS_AUTH:
-    //   return { ...state, login: true };
+    case GET_USER:
+      return { ...state, userName, profileImage };
 
     default:
       return state;

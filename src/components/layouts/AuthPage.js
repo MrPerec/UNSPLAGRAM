@@ -4,12 +4,15 @@ import React from 'react';
 import ButtonGoHome from './ButtonGoHome';
 import '../../styles/button.css';
 
-export default function AuthPage({ auth, loginAction }) {
-  const { login } = auth;
+export default function AuthPage({ auth, loginAction, getAuthUserAction }) {
+  const { login, userName } = auth;
+
+  const authStatus = !login
+    ? `You are not authorized`
+    : `Greating you ${userName}!`;
 
   if (!login) loginAction();
-
-  const authStatus = !login ? 'You are not authorized' : 'You are authorized';
+  if (!userName) getAuthUserAction();
 
   return (
     <div>

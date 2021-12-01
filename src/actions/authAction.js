@@ -26,6 +26,7 @@ const login = (token) => {
 };
 
 const getAuthUser = (userData) => {
+  console.log(userData);
   localStorage.setItem(USER_NAME, userData.username);
   localStorage.setItem(PROFILE_IMAGE, userData.profile_image.small);
 

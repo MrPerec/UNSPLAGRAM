@@ -7,7 +7,6 @@ import { AUTH_URL } from '../../constants/constants.js';
 
 export default function Header({ auth, logoutAction }) {
   const { login, userName, profileImage } = auth;
-  console.log(userName, profileImage);
   const onLogout = () => logoutAction();
 
   const buttonAuthState = !login ? (
@@ -20,12 +19,18 @@ export default function Header({ auth, logoutAction }) {
     </button>
   );
 
-  // const avatarAuthState = userName ?
+  const avatarAuthState = userName ? (
+    <div>
+      <img src={profileImage} alt={userName} />
+      <div>{userName}</div>
+    </div>
+  ) : null;
 
   // if (!login) getAuthUserAction();
 
   return (
     <header className='header header__container gray__block'>
+      {avatarAuthState}
       {buttonAuthState}
       <h3 className='h3 header_h3__text-style'>UNSPLAGRAM</h3>
     </header>

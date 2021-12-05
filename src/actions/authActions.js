@@ -88,3 +88,20 @@ export function getAuthUserAction() {
       .then((data) => dispatch(getAuthUser(data)));
   };
 }
+
+export function getUsersLikedAction() {
+  const token = localStorage.getItem(TOKEN);
+
+  return (dispatch) => {
+    fetch(`https://api.unsplash.com/users/MrPerec/likes`, {
+      method: GET,
+      headers: {
+        Accept: APPLICATION_JSON,
+        'Content-Type': APPLICATION_JSON,
+        Authorization: BEARER + token,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => dispatch(getAuthUser(data)));
+  };
+}

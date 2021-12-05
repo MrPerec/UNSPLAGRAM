@@ -14,7 +14,7 @@ import {
   loginAction,
   logoutAction,
   getAuthUserAction,
-} from '../actions/authAction';
+} from '../actions/authActions';
 
 import '../styles/app.css';
 

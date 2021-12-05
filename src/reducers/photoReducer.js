@@ -39,6 +39,8 @@ export default function photoReducer(
     case LIKE_PHOTO:
       return state.map((photo) => {
         if (photo.id === id) {
+          console.log(photo.id);
+          console.log(photo.likedByUser);
           return {
             id: photo.id,
             uuid: photo.uuid,
@@ -49,7 +51,8 @@ export default function photoReducer(
             userLinksHtml: photo.userLinksHtml,
             createdAt: photo.createdAt,
             likes: photo.likes,
-            likedByUser: !photo.likedByUser,
+            likedByUser: photo.likedByUser,
+            // likedByUser: !photo.likedByUser,
           };
         }
         return photo;

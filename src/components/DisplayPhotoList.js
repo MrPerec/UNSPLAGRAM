@@ -41,5 +41,4 @@ export default function DisplayPhotoList({ photoList, addPhotoAction }) {
 DisplayPhotoList.propTypes = {
   photoList: PropTypes.array.isRequired,
   addPhotoAction: PropTypes.func.isRequired,
-  likePhotoAction: PropTypes.func.isRequired,
 };

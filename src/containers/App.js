@@ -9,7 +9,11 @@ import AuthPage from '../components/layouts/AuthPage';
 import BigPhotoPage from '../components/layouts/BigPhotoPage';
 import DisplayPhotoList from '../components/DisplayPhotoList';
 
-import { addPhotoAction, likePhotoAction } from '../actions/photoActions';
+import {
+  addPhotoAction,
+  likePhotoAction,
+  unLikePhotoAction,
+} from '../actions/photoActions';
 import {
   loginAction,
   logoutAction,
@@ -35,7 +39,6 @@ export default function App({
           <DisplayPhotoList
             photoList={photoList}
             addPhotoAction={addPhotoAction}
-            likePhotoAction={likePhotoAction}
           />
         </Route>
         <Route
@@ -45,6 +48,7 @@ export default function App({
               {...props}
               photoList={photoList}
               likePhotoAction={likePhotoAction}
+              unLikePhotoAction={unLikePhotoAction}
             />
           )}
         />
@@ -76,6 +80,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     addPhotoAction: () => dispatch(addPhotoAction()),
     likePhotoAction: (id) => dispatch(likePhotoAction(id)),
+    unLikePhotoAction: (id) => dispatch(unLikePhotoAction(id)),
     loginAction: () => dispatch(loginAction()),
     logoutAction: () => dispatch(logoutAction()),
     getAuthUserAction: () => dispatch(getAuthUserAction()),

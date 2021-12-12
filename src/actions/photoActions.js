@@ -11,7 +11,10 @@ import {
   SYMBOL_T,
   SYMBOL_SPACE,
   POST,
+<<<<<<< HEAD
   DELETE,
+=======
+>>>>>>> 400eba0017d2b619746772869b2740818d6d1746
   APPLICATION_JSON,
   BEARER,
   TOKEN,
@@ -107,6 +110,10 @@ export function unLikePhotoAction(photoId) {
       },
     })
       .then((response) => response.json())
+<<<<<<< HEAD
       .then((data) => dispatch(unLikePhoto(data)));
+=======
+      .then((data) => dispatch(likePhoto(data)));
+>>>>>>> 400eba0017d2b619746772869b2740818d6d1746
   };
 }

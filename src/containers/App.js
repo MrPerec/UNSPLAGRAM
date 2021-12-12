@@ -14,12 +14,18 @@ import {
   likePhotoAction,
   unLikePhotoAction,
 } from '../actions/photoActions';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 400eba0017d2b619746772869b2740818d6d1746
 import {
   loginAction,
   logoutAction,
   getAuthUserAction,
+<<<<<<< HEAD
   getLikesUserdAction,
+=======
+>>>>>>> 400eba0017d2b619746772869b2740818d6d1746
 } from '../actions/authActions';
 
 import '../styles/app.css';

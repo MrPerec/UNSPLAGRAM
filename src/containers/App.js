@@ -9,12 +9,18 @@ import AuthPage from '../components/layouts/AuthPage';
 import BigPhotoPage from '../components/layouts/BigPhotoPage';
 import DisplayPhotoList from '../components/DisplayPhotoList';
 
-import { addPhotoAction, likePhotoAction } from '../actions/photoActions';
+import {
+  addPhotoAction,
+  likePhotoAction,
+  unLikePhotoAction,
+} from '../actions/photoActions';
+
 import {
   loginAction,
   logoutAction,
   getAuthUserAction,
-} from '../actions/authAction';
+  getLikesUserdAction,
+} from '../actions/authActions';
 
 import '../styles/app.css';
 
@@ -23,9 +29,11 @@ export default function App({
   auth,
   addPhotoAction,
   likePhotoAction,
+  unLikePhotoAction,
   loginAction,
   logoutAction,
   getAuthUserAction,
+  getLikesUserdAction,
 }) {
   return (
     <div>
@@ -35,7 +43,6 @@ export default function App({
           <DisplayPhotoList
             photoList={photoList}
             addPhotoAction={addPhotoAction}
-            likePhotoAction={likePhotoAction}
           />
         </Route>
         <Route
@@ -45,6 +52,7 @@ export default function App({
               {...props}
               photoList={photoList}
               likePhotoAction={likePhotoAction}
+              unLikePhotoAction={unLikePhotoAction}
             />
           )}
         />
@@ -56,6 +64,7 @@ export default function App({
               auth={auth}
               loginAction={loginAction}
               getAuthUserAction={getAuthUserAction}
+              getLikesUserdAction={getLikesUserdAction}
             />
           )}
         />
@@ -76,9 +85,11 @@ const mapDispatchToProps = (dispatch) => {
   return {
     addPhotoAction: () => dispatch(addPhotoAction()),
     likePhotoAction: (id) => dispatch(likePhotoAction(id)),
+    unLikePhotoAction: (id) => dispatch(unLikePhotoAction(id)),
     loginAction: () => dispatch(loginAction()),
     logoutAction: () => dispatch(logoutAction()),
     getAuthUserAction: () => dispatch(getAuthUserAction()),
+    getLikesUserdAction: () => dispatch(getLikesUserdAction()),
   };
 };
 

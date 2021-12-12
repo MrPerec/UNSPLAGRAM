@@ -6,9 +6,13 @@ import ButtonGoBack from './ButtonGoBack';
 import '../../styles/post.css';
 import '../../styles/fonts/iconfont/flaticon.css';
 
-export default function BigPhotoPage({ photoList, likePhotoAction, match }) {
+export default function BigPhotoPage({
+  photoList,
+  likePhotoAction,
+  unLikePhotoAction,
+  match,
+}) {
   const currentPhotoId = match.params.id;
-  const onLike = () => likePhotoAction(currentPhotoId);
 
   const bigPhoto = photoList.map((photo) => {
     if (photo.id === currentPhotoId) {
@@ -21,6 +25,10 @@ export default function BigPhotoPage({ photoList, likePhotoAction, match }) {
         likes,
         likedByUser,
       } = photo;
+
+      const onLike = likedByUser
+        ? () => unLikePhotoAction(currentPhotoId)
+        : () => likePhotoAction(currentPhotoId);
 
       const like = likedByUser
         ? 'flaticon-like flaticon_style flaticon_style_cursor flaticon-like_style'

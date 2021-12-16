@@ -13,12 +13,13 @@ import {
   addPhotoAction,
   likePhotoAction,
   unLikePhotoAction,
+  getLikesUserdAction,
 } from '../actions/photoActions';
 import {
   loginAction,
   logoutAction,
   getAuthUserAction,
-  getLikesUserdAction,
+  // getLikesUserdAction,
 } from '../actions/authActions';
 
 import '../styles/app.css';

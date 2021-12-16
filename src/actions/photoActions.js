@@ -2,7 +2,12 @@
 
 import { createApi } from 'unsplash-js';
 import getUuid from '../utils/getUuid';
-import { ADD_PHOTO, LIKE_PHOTO, UNLIKE_PHOTO } from '../constants/types.js';
+import {
+  ADD_PHOTO,
+  LIKE_PHOTO,
+  UNLIKE_PHOTO,
+  GET_LIKES,
+} from '../constants/types.js';
 import {
   ACCESS_KEY,
   SECRET_KEY,
@@ -15,6 +20,8 @@ import {
   APPLICATION_JSON,
   BEARER,
   TOKEN,
+  USER_NAME,
+  GET,
 } from '../constants/constants.js';
 
 const unsplash = createApi({
@@ -59,6 +66,30 @@ const unLikePhoto = ({ photo }) => {
   };
 };
 
+/* const getLikesUser = (likesUser) => {
+  // console.log(likes);
+  const likes = likesUser.map(({ id, liked_by_user }) => {
+    return { id, liked_by_user };
+  });
+  console.log(likes);
+  // likesUser.map(({ id, liked_by_user }) => console.log(id, liked_by_user));
+  // localStorage.setItem(STORAGE_COMMENTS, JSON.stringify(commentsCopy));
+  // const savedComments = JSON.parse( localStorage.getItem(STORAGE_COMMENTS) );
+
+  return {
+    type: GET_LIKES,
+  };
+}; */
+const getLikesUser = ({ id, liked_by_user }) => {
+  console.log(id, liked_by_user);
+
+  return {
+    type: GET_LIKES,
+    id,
+    likedByUser: liked_by_user,
+  };
+};
+
 let pageNumber = 1;
 
 export function addPhotoAction() {
@@ -79,15 +110,16 @@ export function addPhotoAction() {
 
 export function likePhotoAction(photoId) {
   const token = localStorage.getItem(TOKEN);
+  const headersList = {
+    Accept: APPLICATION_JSON,
+    CONTENT_TYPE: APPLICATION_JSON,
+    Authorization: BEARER + token,
+  };
 
   return (dispatch) => {
     fetch(`https://api.unsplash.com/photos/${photoId}/like`, {
       method: POST,
-      headers: {
-        Accept: APPLICATION_JSON,
-        'Content-Type': APPLICATION_JSON,
-        Authorization: BEARER + token,
-      },
+      headers: headersList,
     })
       .then((response) => response.json())
       .then((data) => dispatch(likePhoto(data)));
@@ -96,17 +128,40 @@ export function likePhotoAction(photoId) {
 
 export function unLikePhotoAction(photoId) {
   const token = localStorage.getItem(TOKEN);
+  const headersList = {
+    Accept: APPLICATION_JSON,
+    CONTENT_TYPE: APPLICATION_JSON,
+    Authorization: BEARER + token,
+  };
 
   return (dispatch) => {
     fetch(`https://api.unsplash.com/photos/${photoId}/like`, {
       method: DELETE,
-      headers: {
-        Accept: APPLICATION_JSON,
-        'Content-Type': APPLICATION_JSON,
-        Authorization: BEARER + token,
-      },
+      headers: headersList,
     })
       .then((response) => response.json())
       .then((data) => dispatch(unLikePhoto(data)));
+  };
+}
+
+export function getLikesUserdAction() {
+  const token = localStorage.getItem(TOKEN);
+  const userName = localStorage.getItem(USER_NAME);
+  const headersList = {
+    Accept: APPLICATION_JSON,
+    CONTENT_TYPE: APPLICATION_JSON,
+    Authorization: BEARER + token,
+  };
+
+  return (dispatch) => {
+    fetch(`https://api.unsplash.com/users/${userName}/likes`, {
+      method: GET,
+      headers: headersList,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        return data.forEach((item) => dispatch(getLikesUser(item)));
+      });
+    // .then((data) => dispatch(getLikesUser(data)));
   };
 }

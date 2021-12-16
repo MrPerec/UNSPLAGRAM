@@ -1,6 +1,11 @@
 `use strict`;
 
-import { ADD_PHOTO, LIKE_PHOTO, UNLIKE_PHOTO } from '../constants/types.js';
+import {
+  ADD_PHOTO,
+  LIKE_PHOTO,
+  UNLIKE_PHOTO,
+  GET_LIKES,
+} from '../constants/types.js';
 
 export default function photoReducer(
   state = [{}],
@@ -73,6 +78,9 @@ export default function photoReducer(
         }
         return photo;
       });
+
+    case GET_LIKES:
+      return [...state];
 
     default:
       return state;

@@ -37,7 +37,7 @@ const getAuthUser = (userData) => {
   };
 };
 
-const getLikesUser = (likesUser) => {
+/* const getLikesUser = (likesUser) => {
   // console.log(likes);
   const likes = likesUser.map(({ id, liked_by_user }) => {
     return { id, liked_by_user };
@@ -50,7 +50,7 @@ const getLikesUser = (likesUser) => {
   return {
     type: GET_LIKES,
   };
-};
+}; */
 
 export function logoutAction() {
   localStorage.clear();
@@ -104,7 +104,7 @@ export function getAuthUserAction() {
       .then((data) => dispatch(getAuthUser(data)));
   };
 }
-
+/* 
 export function getLikesUserdAction() {
   const token = localStorage.getItem(TOKEN);
   const userName = localStorage.getItem(USER_NAME);
@@ -122,4 +122,4 @@ export function getLikesUserdAction() {
       .then((response) => response.json())
       .then((data) => dispatch(getLikesUser(data)));
   };
-}
+} */

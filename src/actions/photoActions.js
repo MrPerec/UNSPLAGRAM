@@ -161,9 +161,7 @@ export function getLikesUserAction() {
       }
     )
       .then((response) => response.json())
-      .then((data) => dispatch(getLikesUser(data)));
-    /* .then((data) => {
-        return data.forEach((item) => dispatch(getLikesUser(item)));
-      }); */
+      // .then((data) => dispatch(getLikesUser(data)));
+      .then((data) => data.forEach((item) => dispatch(getLikesUser(item))));
   };
 }

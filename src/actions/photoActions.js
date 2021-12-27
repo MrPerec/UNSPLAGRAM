@@ -66,16 +66,17 @@ const unLikePhoto = ({ photo }) => {
   };
 };
 
-const getLikesUser = (likesUser) => {
+const getLikesUser = (likesData) => {
   // localStorage.setItem(STORAGE_COMMENTS, JSON.stringify(commentsCopy));
   // const savedComments = JSON.parse( localStorage.getItem(STORAGE_COMMENTS) );
 
-  const likes = likesUser.map(({ id, liked_by_user }) => {
+  const likes = likesData.map(({ id, liked_by_user }) => {
     return { id, liked_by_user };
   });
-  console.log(likes);
+  // console.log(likes);
   return {
     type: GET_LIKES,
+    likes,
   };
 };
 
@@ -161,7 +162,7 @@ export function getLikesUserAction() {
       }
     )
       .then((response) => response.json())
-      // .then((data) => dispatch(getLikesUser(data)));
-      .then((data) => data.forEach((item) => dispatch(getLikesUser(item))));
+      .then((data) => dispatch(getLikesUser(data)));
+    // .then((data) => data.forEach((item) => dispatch(getLikesUser(item))));
   };
 }

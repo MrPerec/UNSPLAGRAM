@@ -8,16 +8,16 @@ export default function AuthPage({
   auth,
   loginAction,
   getAuthUserAction,
-  getLikesUserdAction,
+  getLikesUserAction,
 }) {
   const { login, userName } = auth;
-  const ButtonGetLikesUser = () => getLikesUserdAction();
+  const ButtonGetLikesUser = () => getLikesUserAction();
 
   const logIn = (loginAuth, userNameAuth) => {
     if (!loginAuth) loginAction();
     if (!userNameAuth) getAuthUserAction();
 
-    // getLikesUserdAction();
+    // getLikesUserAction();
   };
 
   const authStatus = !login

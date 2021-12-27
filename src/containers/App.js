@@ -13,13 +13,13 @@ import {
   addPhotoAction,
   likePhotoAction,
   unLikePhotoAction,
-  getLikesUserdAction,
+  getLikesUserAction,
 } from '../actions/photoActions';
 import {
   loginAction,
   logoutAction,
   getAuthUserAction,
-  // getLikesUserdAction,
+  // getLikesUserAction,
 } from '../actions/authActions';
 
 import '../styles/app.css';
@@ -33,7 +33,7 @@ export default function App({
   loginAction,
   logoutAction,
   getAuthUserAction,
-  getLikesUserdAction,
+  getLikesUserAction,
 }) {
   return (
     <div>
@@ -64,7 +64,7 @@ export default function App({
               auth={auth}
               loginAction={loginAction}
               getAuthUserAction={getAuthUserAction}
-              getLikesUserdAction={getLikesUserdAction}
+              getLikesUserAction={getLikesUserAction}
             />
           )}
         />
@@ -89,7 +89,7 @@ const mapDispatchToProps = (dispatch) => {
     loginAction: () => dispatch(loginAction()),
     logoutAction: () => dispatch(logoutAction()),
     getAuthUserAction: () => dispatch(getAuthUserAction()),
-    getLikesUserdAction: () => dispatch(getLikesUserdAction()),
+    getLikesUserAction: () => dispatch(getLikesUserAction()),
   };
 };
 

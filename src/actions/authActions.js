@@ -105,7 +105,7 @@ export function getAuthUserAction() {
   };
 }
 /* 
-export function getLikesUserdAction() {
+export function getLikesUserAction() {
   const token = localStorage.getItem(TOKEN);
   const userName = localStorage.getItem(USER_NAME);
   const headersList = {

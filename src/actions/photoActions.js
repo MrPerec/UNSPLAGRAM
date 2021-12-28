@@ -70,13 +70,13 @@ const getLikesUser = (likesData) => {
   // localStorage.setItem(STORAGE_COMMENTS, JSON.stringify(commentsCopy));
   // const savedComments = JSON.parse( localStorage.getItem(STORAGE_COMMENTS) );
 
-  const likes = likesData.map(({ id, liked_by_user }) => {
+  const likesUser = likesData.map(({ id, liked_by_user }) => {
     return { id, liked_by_user };
   });
-  // console.log(likes);
+  // console.log(likesUser);
   return {
     type: GET_LIKES,
-    likes,
+    likesUser,
   };
 };
 

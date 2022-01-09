@@ -179,7 +179,8 @@ export function getLikesUserAction() {
     // let length = 1;
     // while (length !== 0) {
     fetch(
-      `https://api.unsplash.com/users/${userName}/likes?page=${pageNumber++}`,
+      `https://api.unsplash.com/users/${userName}/likes?per_page=30&page=${pageNumber++}`,
+      // `https://api.unsplash.com/users/${userName}/likes?page=${pageNumber++}`,
       {
         method: GET,
         headers: headersList,
@@ -192,8 +193,8 @@ export function getLikesUserAction() {
             return { id, liked_by_user };
           });
           length = likes.length;
-          console.log(length);
           console.log(likes);
+          return length;
           /*return {
               type: GET_LIKES,
               likes,

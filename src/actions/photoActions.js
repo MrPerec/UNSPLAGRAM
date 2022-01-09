@@ -73,7 +73,6 @@ const getLikesUser = (likesData) => {
   const likes = likesData.map(({ id, liked_by_user }) => {
     return { id, liked_by_user };
   });
-  // console.log(likes);
   return {
     type: GET_LIKES,
     likes,
@@ -144,6 +143,29 @@ export function unLikePhotoAction(photoId) {
   };
 }
 
+// export function getLikesUserAction() {
+//   const token = localStorage.getItem(TOKEN);
+//   const userName = localStorage.getItem(USER_NAME);
+//   const headersList = {
+//     Accept: APPLICATION_JSON,
+//     CONTENT_TYPE: APPLICATION_JSON,
+//     Authorization: BEARER + token,
+//   };
+
+//   return (dispatch) => {
+//     fetch(
+//       `https://api.unsplash.com/users/${userName}/likes?page=${pageNumber++}`,
+//       {
+//         method: GET,
+//         headers: headersList,
+//       }
+//     )
+//       .then((response) => response.json())
+//       .then((data) => dispatch(getLikesUser(data)));
+//     // .then((data) => data.forEach((item) => dispatch(getLikesUser(item))));
+//   };
+// }
+
 export function getLikesUserAction() {
   const token = localStorage.getItem(TOKEN);
   const userName = localStorage.getItem(USER_NAME);
@@ -154,6 +176,8 @@ export function getLikesUserAction() {
   };
 
   return (dispatch) => {
+    // let length = 1;
+    // while (length !== 0) {
     fetch(
       `https://api.unsplash.com/users/${userName}/likes?page=${pageNumber++}`,
       {
@@ -162,7 +186,20 @@ export function getLikesUserAction() {
       }
     )
       .then((response) => response.json())
-      .then((data) => dispatch(getLikesUser(data)));
-    // .then((data) => data.forEach((item) => dispatch(getLikesUser(item))));
+      .then((data) =>
+        dispatch(() => {
+          const likes = data.map(({ id, liked_by_user }) => {
+            return { id, liked_by_user };
+          });
+          length = likes.length;
+          console.log(length);
+          console.log(likes);
+          /*return {
+              type: GET_LIKES,
+              likes,
+            }; */
+        })
+      );
+    // }
   };
 }

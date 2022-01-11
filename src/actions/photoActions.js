@@ -66,7 +66,7 @@ const unLikePhoto = ({ photo }) => {
   };
 };
 
-const getLikesUser = (likesData) => {
+/* const getLikesUser = (likesData) => {
   // localStorage.setItem(STORAGE_COMMENTS, JSON.stringify(commentsCopy));
   // const savedComments = JSON.parse( localStorage.getItem(STORAGE_COMMENTS) );
 
@@ -77,7 +77,7 @@ const getLikesUser = (likesData) => {
     type: GET_LIKES,
     likesUser,
   };
-};
+}; */
 
 /* const getLikesUser = ({ id, liked_by_user }) => {
   console.log(id, liked_by_user);
@@ -91,7 +91,7 @@ const getLikesUser = (likesData) => {
 
 let pageNumber = 1;
 
-export function addPhotoAction() {
+export function addNoAuthPhotoAction() {
   return (dispatch) => {
     unsplash.photos
       .list({
@@ -104,6 +104,25 @@ export function addPhotoAction() {
           dispatch(addPhoto(item));
         });
       });
+  };
+}
+
+export function addAuthPhotoAction() {
+  const token = localStorage.getItem(TOKEN);
+  const headersList = {
+    Accept: APPLICATION_JSON,
+    CONTENT_TYPE: APPLICATION_JSON,
+    Authorization: BEARER + token,
+  };
+
+  return (dispatch) => {
+    fetch(`https://api.unsplash.com/photos?page=${pageNumber}`, {
+      method: GET,
+      headers: headersList,
+    })
+      .then((response) => response.json())
+      // .then((data) => dispatch(getLikesUser(data)));
+      .then((data) => data.forEach((item) => dispatch(getLikesUser(item))));
   };
 }
 
@@ -143,30 +162,7 @@ export function unLikePhotoAction(photoId) {
   };
 }
 
-// export function getLikesUserAction() {
-//   const token = localStorage.getItem(TOKEN);
-//   const userName = localStorage.getItem(USER_NAME);
-//   const headersList = {
-//     Accept: APPLICATION_JSON,
-//     CONTENT_TYPE: APPLICATION_JSON,
-//     Authorization: BEARER + token,
-//   };
-
-//   return (dispatch) => {
-//     fetch(
-//       `https://api.unsplash.com/users/${userName}/likes?page=${pageNumber++}`,
-//       {
-//         method: GET,
-//         headers: headersList,
-//       }
-//     )
-//       .then((response) => response.json())
-//       .then((data) => dispatch(getLikesUser(data)));
-//     // .then((data) => data.forEach((item) => dispatch(getLikesUser(item))));
-//   };
-// }
-
-export function getLikesUserAction() {
+/* export function getLikesUserAction() {
   const token = localStorage.getItem(TOKEN);
   const userName = localStorage.getItem(USER_NAME);
   const headersList = {
@@ -176,31 +172,15 @@ export function getLikesUserAction() {
   };
 
   return (dispatch) => {
-    // let length = 1;
-    // while (length !== 0) {
     fetch(
-      `https://api.unsplash.com/users/${userName}/likes?per_page=30&page=${pageNumber++}`,
-      // `https://api.unsplash.com/users/${userName}/likes?page=${pageNumber++}`,
+      `https://api.unsplash.com/users/${userName}/likes?page=${pageNumber++}`,
       {
         method: GET,
         headers: headersList,
       }
     )
       .then((response) => response.json())
-      .then((data) =>
-        dispatch(() => {
-          const likes = data.map(({ id, liked_by_user }) => {
-            return { id, liked_by_user };
-          });
-          length = likes.length;
-          console.log(likes);
-          return length;
-          /*return {
-              type: GET_LIKES,
-              likes,
-            }; */
-        })
-      );
-    // }
+      .then((data) => dispatch(getLikesUser(data)));
+    // .then((data) => data.forEach((item) => dispatch(getLikesUser(item))));
   };
-}
+} */

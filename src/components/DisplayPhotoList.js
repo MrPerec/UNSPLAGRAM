@@ -9,9 +9,9 @@ import DisplayPhoto from './DisplayPhoto';
 import ButtonUp from './layouts/ButtonUp';
 import '../styles/postList.css';
 
-export default function DisplayPhotoList({ photoList, addPhotoAction }) {
+export default function DisplayPhotoList({ photoList, addNoAuthPhotoAction }) {
   const DisplayFirstPhotoList = () => {
-    if (photoList.length === INITIAL_STATE_LENGTH) addPhotoAction();
+    if (photoList.length === INITIAL_STATE_LENGTH) addNoAuthPhotoAction();
   };
 
   const displayPhotoList = photoList.map((photo) => {
@@ -28,7 +28,7 @@ export default function DisplayPhotoList({ photoList, addPhotoAction }) {
   return (
     <InfiniteScroll
       dataLength={photoList.length}
-      next={addPhotoAction}
+      next={addNoAuthPhotoAction}
       hasMore={true}
       loader={<h4 className='post_list_container'>Loading...</h4>}
     >
@@ -40,5 +40,5 @@ export default function DisplayPhotoList({ photoList, addPhotoAction }) {
 
 DisplayPhotoList.propTypes = {
   photoList: PropTypes.array.isRequired,
-  addPhotoAction: PropTypes.func.isRequired,
+  addNoAuthPhotoAction: PropTypes.func.isRequired,
 };

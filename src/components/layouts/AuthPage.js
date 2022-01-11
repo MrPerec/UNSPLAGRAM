@@ -8,10 +8,10 @@ export default function AuthPage({
   auth,
   loginAction,
   getAuthUserAction,
-  getLikesUserAction,
+  // getLikesUserAction,
 }) {
   const { login, userName } = auth;
-  const ButtonGetLikesUser = () => getLikesUserAction();
+  // const ButtonGetLikesUser = () => getLikesUserAction();
 
   const logIn = (loginAuth, userNameAuth) => {
     if (!loginAuth) loginAction();
@@ -32,11 +32,11 @@ export default function AuthPage({
     <div>
       <h2 className='button_container'>{authStatus}</h2>
       <ButtonGoHome />
-      <div className='button_container'>
+      {/* <div className='button_container'>
         <button className='button button__style' onClick={ButtonGetLikesUser}>
           Get Likes User
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

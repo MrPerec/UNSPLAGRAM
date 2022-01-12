@@ -25,10 +25,6 @@ export default function loginReducer(
     case GET_USER:
       return { ...state, userName, profileImage };
 
-    /* case GET_LIKES:
-      return { ...state };
-    // return { ...state, userName, profileImage }; */
-
     default:
       return state;
   }

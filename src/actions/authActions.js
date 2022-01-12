@@ -37,21 +37,6 @@ const getAuthUser = (userData) => {
   };
 };
 
-/* const getLikesUser = (likesUser) => {
-  // console.log(likes);
-  const likes = likesUser.map(({ id, liked_by_user }) => {
-    return { id, liked_by_user };
-  });
-  console.log(likes);
-  // likesUser.map(({ id, liked_by_user }) => console.log(id, liked_by_user));
-  // localStorage.setItem(STORAGE_COMMENTS, JSON.stringify(commentsCopy));
-  // const savedComments = JSON.parse( localStorage.getItem(STORAGE_COMMENTS) );
-
-  return {
-    type: GET_LIKES,
-  };
-}; */
-
 export function logoutAction() {
   localStorage.clear();
   return {
@@ -104,22 +89,3 @@ export function getAuthUserAction() {
       .then((data) => dispatch(getAuthUser(data)));
   };
 }
-/* 
-export function getLikesUserAction() {
-  const token = localStorage.getItem(TOKEN);
-  const userName = localStorage.getItem(USER_NAME);
-  const headersList = {
-    Accept: APPLICATION_JSON,
-    CONTENT_TYPE: APPLICATION_JSON,
-    Authorization: BEARER + token,
-  };
-
-  return (dispatch) => {
-    fetch(`https://api.unsplash.com/users/${userName}/likes`, {
-      method: GET,
-      headers: headersList,
-    })
-      .then((response) => response.json())
-      .then((data) => dispatch(getLikesUser(data)));
-  };
-} */

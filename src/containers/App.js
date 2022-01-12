@@ -11,15 +11,14 @@ import DisplayPhotoList from '../components/DisplayPhotoList';
 
 import {
   addNoAuthPhotoAction,
+  addAuthPhotoAction,
   likePhotoAction,
   unLikePhotoAction,
-  // getLikesUserAction,
 } from '../actions/photoActions';
 import {
   loginAction,
   logoutAction,
   getAuthUserAction,
-  // getLikesUserAction,
 } from '../actions/authActions';
 
 import '../styles/app.css';
@@ -28,12 +27,12 @@ export default function App({
   photoList,
   auth,
   addNoAuthPhotoAction,
+  addAuthPhotoAction,
   likePhotoAction,
   unLikePhotoAction,
   loginAction,
   logoutAction,
   getAuthUserAction,
-  // getLikesUserAction,
 }) {
   return (
     <div>
@@ -41,8 +40,10 @@ export default function App({
       <Switch>
         <Route exact path='/'>
           <DisplayPhotoList
+            auth={auth}
             photoList={photoList}
             addNoAuthPhotoAction={addNoAuthPhotoAction}
+            addAuthPhotoAction={addAuthPhotoAction}
           />
         </Route>
         <Route
@@ -64,7 +65,6 @@ export default function App({
               auth={auth}
               loginAction={loginAction}
               getAuthUserAction={getAuthUserAction}
-              // getLikesUserAction={getLikesUserAction}
             />
           )}
         />
@@ -84,12 +84,12 @@ const mapStateToProps = ({ photoState, authState }) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     addNoAuthPhotoAction: () => dispatch(addNoAuthPhotoAction()),
+    addAuthPhotoAction: () => dispatch(addAuthPhotoAction()),
     likePhotoAction: (id) => dispatch(likePhotoAction(id)),
     unLikePhotoAction: (id) => dispatch(unLikePhotoAction(id)),
     loginAction: () => dispatch(loginAction()),
     logoutAction: () => dispatch(logoutAction()),
     getAuthUserAction: () => dispatch(getAuthUserAction()),
-    // getLikesUserAction: () => dispatch(getLikesUserAction()),
   };
 };
 

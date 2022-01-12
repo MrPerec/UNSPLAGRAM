@@ -2,7 +2,6 @@
 
 import React from 'react';
 import '../../styles/header.css';
-// import '../../styles/buttonLogin.css';
 import '../../styles/auth.css';
 import { AUTH_URL } from '../../constants/constants.js';
 

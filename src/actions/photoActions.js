@@ -2,12 +2,7 @@
 
 import { createApi } from 'unsplash-js';
 import getUuid from '../utils/getUuid';
-import {
-  ADD_PHOTO,
-  LIKE_PHOTO,
-  UNLIKE_PHOTO,
-  GET_LIKES,
-} from '../constants/types.js';
+import { ADD_PHOTO, LIKE_PHOTO, UNLIKE_PHOTO } from '../constants/types.js';
 import {
   ACCESS_KEY,
   SECRET_KEY,
@@ -20,7 +15,6 @@ import {
   APPLICATION_JSON,
   BEARER,
   TOKEN,
-  USER_NAME,
   GET,
 } from '../constants/constants.js';
 
@@ -66,29 +60,6 @@ const unLikePhoto = ({ photo }) => {
   };
 };
 
-/* const getLikesUser = (likesData) => {
-  // localStorage.setItem(STORAGE_COMMENTS, JSON.stringify(commentsCopy));
-  // const savedComments = JSON.parse( localStorage.getItem(STORAGE_COMMENTS) );
-
-  const likesUser = likesData.map(({ id, liked_by_user }) => {
-    return { id, liked_by_user };
-  });
-  return {
-    type: GET_LIKES,
-    likesUser,
-  };
-}; */
-
-/* const getLikesUser = ({ id, liked_by_user }) => {
-  console.log(id, liked_by_user);
-
-  return {
-    type: GET_LIKES,
-    id,
-    likedByUser: liked_by_user,
-  };
-}; */
-
 let pageNumber = 1;
 
 export function addNoAuthPhotoAction() {
@@ -121,8 +92,7 @@ export function addAuthPhotoAction() {
       headers: headersList,
     })
       .then((response) => response.json())
-      // .then((data) => dispatch(getLikesUser(data)));
-      .then((data) => data.forEach((item) => dispatch(getLikesUser(item))));
+      .then((data) => data.forEach((item) => dispatch(addPhoto(item))));
   };
 }
 
@@ -161,26 +131,3 @@ export function unLikePhotoAction(photoId) {
       .then((data) => dispatch(unLikePhoto(data)));
   };
 }
-
-/* export function getLikesUserAction() {
-  const token = localStorage.getItem(TOKEN);
-  const userName = localStorage.getItem(USER_NAME);
-  const headersList = {
-    Accept: APPLICATION_JSON,
-    CONTENT_TYPE: APPLICATION_JSON,
-    Authorization: BEARER + token,
-  };
-
-  return (dispatch) => {
-    fetch(
-      `https://api.unsplash.com/users/${userName}/likes?page=${pageNumber++}`,
-      {
-        method: GET,
-        headers: headersList,
-      }
-    )
-      .then((response) => response.json())
-      .then((data) => dispatch(getLikesUser(data)));
-    // .then((data) => data.forEach((item) => dispatch(getLikesUser(item))));
-  };
-} */

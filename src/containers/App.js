@@ -51,6 +51,7 @@ export default function App({
           render={(props) => (
             <BigPhotoPage
               {...props}
+              auth={auth}
               photoList={photoList}
               likePhotoAction={likePhotoAction}
               unLikePhotoAction={unLikePhotoAction}

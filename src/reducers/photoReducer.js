@@ -1,11 +1,6 @@
 `use strict`;
 
-import {
-  ADD_PHOTO,
-  LIKE_PHOTO,
-  UNLIKE_PHOTO,
-  GET_LIKES,
-} from '../constants/types.js';
+import { ADD_PHOTO, LIKE_PHOTO, UNLIKE_PHOTO } from '../constants/types.js';
 
 export default function photoReducer(
   state = [{}],
@@ -53,7 +48,7 @@ export default function photoReducer(
             userName: photo.userName,
             userLinksHtml: photo.userLinksHtml,
             createdAt: photo.createdAt,
-            likes: photo.likes,
+            likes,
             likedByUser,
           };
         }
@@ -72,15 +67,12 @@ export default function photoReducer(
             userName: photo.userName,
             userLinksHtml: photo.userLinksHtml,
             createdAt: photo.createdAt,
-            likes: photo.likes,
+            likes,
             likedByUser,
           };
         }
         return photo;
       });
-
-    case GET_LIKES:
-      return [...state];
 
     default:
       return state;

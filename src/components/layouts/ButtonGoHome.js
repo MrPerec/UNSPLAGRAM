@@ -6,12 +6,12 @@ import '../../styles/button.css';
 
 export default function ButtonGoHome() {
   const history = useHistory();
-  const ButtonGoHome = () => history.push(`/`);
+  const buttonGoHome = () => history.push(`/`);
 
   return (
     <div className='button_container'>
-      <button className='button button__style' onClick={ButtonGoHome}>
-        Go Home
+      <button className='button button__style' onClick={buttonGoHome}>
+        Back to home
       </button>
     </div>
   );

@@ -7,7 +7,12 @@ import { AUTH_URL } from '../../constants/constants.js';
 
 export default function Header({ auth, logoutAction }) {
   const { login, userName, profileImage } = auth;
-  const onLogout = () => logoutAction();
+  // const onLogout = () => logoutAction();
+  const onLogout = () => {
+    logoutAction();
+    history.push(`/`);
+    window.location.reload();
+  };
 
   const avatarAuthState = userName ? (
     <div>

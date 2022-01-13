@@ -41,6 +41,7 @@ const getAuthUser = (userData) => {
 
 export function logoutAction() {
   localStorage.clear();
+  // window.location.reload();
   return {
     type: LOGOUT,
   };

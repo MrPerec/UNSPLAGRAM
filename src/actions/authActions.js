@@ -1,6 +1,7 @@
 `use strict`;
 
-import { LOGIN, LOGOUT, GET_USER, GET_LIKES } from '../constants/types.js';
+import requestFetch from '../utils/requestFetch';
+import { LOGIN, LOGOUT, GET_USER } from '../constants/types.js';
 import {
   ACCESS_KEY,
   SECRET_KEY,
@@ -15,7 +16,8 @@ import {
   USER_URL,
   USER_NAME,
   PROFILE_IMAGE,
-  BEARER,
+  // BEARER,
+  ERROR,
 } from '../constants/constants.js';
 
 const login = (token) => {
@@ -66,13 +68,13 @@ export function loginAction() {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.error) return alert(`error: ${data.error_description}`);
+        if (data.error) return alert(`${ERROR} ${data.error_description}`);
         dispatch(login(data.access_token));
       });
   };
 }
 
-export function getAuthUserAction() {
+/* export function getAuthUserAction() {
   const token = localStorage.getItem(TOKEN);
   const headersList = {
     Accept: APPLICATION_JSON,
@@ -87,5 +89,13 @@ export function getAuthUserAction() {
     })
       .then((response) => response.json())
       .then((data) => dispatch(getAuthUser(data)));
+  };
+} */
+
+export function getAuthUserAction() {
+  return (dispatch) => {
+    requestFetch(USER_URL, GET).then((response) =>
+      dispatch(getAuthUser(response))
+    );
   };
 }

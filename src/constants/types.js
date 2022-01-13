@@ -6,4 +6,3 @@ export const UNLIKE_PHOTO = `UNLIKE_PHOTO`;
 export const LOGIN = `LOGIN`;
 export const LOGOUT = `LOGOUT`;
 export const GET_USER = `GET_USER`;
-export const GET_LIKES = `GET_LIKES`;

@@ -8,7 +8,6 @@ import {
 } from '../constants/constants.js';
 
 export default function requestFetch(urlArgument, method) {
-  // console.log(localStorage);
   const token = localStorage.getItem(TOKEN);
   const headersList = {
     Accept: APPLICATION_JSON,
@@ -20,7 +19,6 @@ export default function requestFetch(urlArgument, method) {
     method,
     headers: headersList,
   }).then((response) => {
-    // console.log(response);
     if (!response.ok)
       return alert(`${ERROR} ${response.status} ${response.statusText}`);
     return response.json();

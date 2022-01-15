@@ -2,9 +2,25 @@
   position: relative;
   width: max-content;
   height: max-content;
+  padding: 5px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .post_container {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
+
+/* .post_container {
+  position: relative;
+  width: max-content;
+  height: max-content;
   margin: 10px auto;
   box-shadow: 0 0 10px rgb(0 0 0 / 50%);
-}
+} */
 
 .image {
   display: block;

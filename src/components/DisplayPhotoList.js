@@ -48,6 +48,7 @@ export default function DisplayPhotoList({
 }
 
 DisplayPhotoList.propTypes = {
+  auth: PropTypes.object.isRequired,
   photoList: PropTypes.array.isRequired,
   addNoAuthPhotoAction: PropTypes.func.isRequired,
   addAuthPhotoAction: PropTypes.func.isRequired,

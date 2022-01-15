@@ -1,16 +1,15 @@
 `use strict`;
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../../styles/header.css';
 import '../../styles/auth.css';
 import { AUTH_URL } from '../../constants/constants.js';
 
 export default function Header({ auth, logoutAction }) {
   const { login, userName, profileImage } = auth;
-  // const onLogout = () => logoutAction();
   const onLogout = () => {
     logoutAction();
-    history.push(`/`);
     window.location.reload();
   };
 
@@ -51,3 +50,8 @@ export default function Header({ auth, logoutAction }) {
     </header>
   );
 }
+
+Header.propTypes = {
+  auth: PropTypes.object.isRequired,
+  logoutAction: PropTypes.func.isRequired,
+};

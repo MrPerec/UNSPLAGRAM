@@ -82,7 +82,10 @@ export default function BigPhotoPage({
 }
 
 BigPhotoPage.propTypes = {
+  auth: PropTypes.object.isRequired,
+
   photoList: PropTypes.array.isRequired,
   likePhotoAction: PropTypes.func.isRequired,
+  unLikePhotoAction: PropTypes.func.isRequired,
   match: PropTypes.object.isRequired,
 };

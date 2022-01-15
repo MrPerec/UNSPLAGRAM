@@ -14,7 +14,9 @@ export default function AuthPage({ auth, loginAction, getAuthUserAction }) {
 
   const logIn = (loginAuth, userNameAuth) => {
     if (!loginAuth) loginAction();
-    if (!userNameAuth) getAuthUserAction();
+    setTimeout(() => {
+      if (!userNameAuth) getAuthUserAction();
+    }, 1000);
   };
 
   logIn(login, userName);

@@ -8,32 +8,16 @@ import '../../styles/button.css';
 export default function AuthPage({ auth, loginAction, getAuthUserAction }) {
   const { login, userName } = auth;
 
-  const logIn = (loginAuth, userNameAuth) => {
-    if (!loginAuth) loginAction();
-    if (!userNameAuth) getAuthUserAction();
-  };
-  /* const logIn = (loginAuth, userNameAuth) => {
-    if (!loginAuth)
-      loginAction().onload = () => {
-        if (!userNameAuth) getAuthUserAction();
-      };
-  }; */
-  /*  const logIn = (loginAuth, userNameAuth) => {
-    // if (!loginAuth) loginAction().then(getAuthUserAction());
-    // if (!loginAuth) loginAction().finally(() => alert('Промис завершён'));
-    if (!loginAuth) loginAction();
-  }; */
-  // const logIn = (action, callbackAction) => {
-  //   action.onload = () => callbackAction();
-  // };
-
   const authStatus = !login
     ? `You are not authorized`
     : `Greating you ${userName}!`;
 
+  const logIn = (loginAuth, userNameAuth) => {
+    if (!loginAuth) loginAction();
+    if (!userNameAuth) getAuthUserAction();
+  };
+
   logIn(login, userName);
-  // logIn(loginAction, getAuthUserAction);
-  // loginAction.onload = () => getAuthUserAction();
 
   return (
     <div>

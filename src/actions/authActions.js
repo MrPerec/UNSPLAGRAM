@@ -16,7 +16,6 @@ import {
   USER_URL,
   USER_NAME,
   PROFILE_IMAGE,
-  // BEARER,
   ERROR,
 } from '../constants/constants.js';
 
@@ -41,7 +40,6 @@ const getAuthUser = (userData) => {
 
 export function logoutAction() {
   localStorage.clear();
-  // window.location.reload();
   return {
     type: LOGOUT,
   };
@@ -74,24 +72,6 @@ export function loginAction() {
       });
   };
 }
-
-/* export function getAuthUserAction() {
-  const token = localStorage.getItem(TOKEN);
-  const headersList = {
-    Accept: APPLICATION_JSON,
-    CONTENT_TYPE: APPLICATION_JSON,
-    Authorization: BEARER + token,
-  };
-
-  return (dispatch) => {
-    fetch(USER_URL, {
-      method: GET,
-      headers: headersList,
-    })
-      .then((response) => response.json())
-      .then((data) => dispatch(getAuthUser(data)));
-  };
-} */
 
 export function getAuthUserAction() {
   return (dispatch) => {

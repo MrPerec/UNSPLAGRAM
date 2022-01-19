@@ -39,7 +39,6 @@ export default function DisplayPhotoList({
       dataLength={photoList.length}
       next={addPhoto}
       hasMore={true}
-      loader={<h4 className='post_list_container'>Loading...</h4>}
     >
       <div className='post_list_container'>{displayPhotoList}</div>
       <ButtonUp />

@@ -11,12 +11,10 @@ import {
   TOKEN_URL,
   GET,
   POST,
-  APPLICATION_JSON,
   SEPARATOR_CODE,
   USER_URL,
   USER_NAME,
   PROFILE_IMAGE,
-  ERROR,
 } from '../constants/constants.js';
 
 const login = (token) => {
@@ -47,29 +45,18 @@ export function logoutAction() {
 
 export function loginAction() {
   const code = window.location.search.split(SEPARATOR_CODE)[1];
-
-  const configObj = {
+  const bodyConfig = JSON.stringify({
     client_id: ACCESS_KEY,
     client_secret: SECRET_KEY,
     redirect_uri: REDIRECT_URI,
     code,
     grant_type: AUTHORIZATION_CODE,
-  };
+  });
 
   return (dispatch) => {
-    fetch(TOKEN_URL, {
-      method: POST,
-      headers: {
-        Accept: APPLICATION_JSON,
-        'Content-Type': APPLICATION_JSON,
-      },
-      body: JSON.stringify(configObj),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.error) return alert(`${ERROR} ${data.error_description}`);
-        dispatch(login(data.access_token));
-      });
+    requestFetch(TOKEN_URL, POST, bodyConfig).then((response) =>
+      dispatch(login(response.access_token))
+    );
   };
 }
 

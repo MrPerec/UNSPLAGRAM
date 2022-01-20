@@ -13,7 +13,7 @@ import {
   addNoAuthPhotoAction,
   addAuthPhotoAction,
   likePhotoAction,
-  unLikePhotoAction,
+  removeLikePhotoAction,
 } from '../actions/photoActions';
 import {
   loginAction,
@@ -29,7 +29,7 @@ export default function App({
   addNoAuthPhotoAction,
   addAuthPhotoAction,
   likePhotoAction,
-  unLikePhotoAction,
+  removeLikePhotoAction,
   loginAction,
   logoutAction,
   getAuthUserAction,
@@ -54,7 +54,7 @@ export default function App({
               auth={auth}
               photoList={photoList}
               likePhotoAction={likePhotoAction}
-              unLikePhotoAction={unLikePhotoAction}
+              removeLikePhotoAction={removeLikePhotoAction}
             />
           )}
         />
@@ -87,7 +87,7 @@ const mapDispatchToProps = (dispatch) => {
     addNoAuthPhotoAction: () => dispatch(addNoAuthPhotoAction()),
     addAuthPhotoAction: () => dispatch(addAuthPhotoAction()),
     likePhotoAction: (id) => dispatch(likePhotoAction(id)),
-    unLikePhotoAction: (id) => dispatch(unLikePhotoAction(id)),
+    removeLikePhotoAction: (id) => dispatch(removeLikePhotoAction(id)),
     loginAction: () => dispatch(loginAction()),
     logoutAction: () => dispatch(logoutAction()),
     getAuthUserAction: () => dispatch(getAuthUserAction()),

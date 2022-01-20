@@ -83,7 +83,7 @@ export function likePhotoAction(photoId) {
   };
 }
 
-export function unLikePhotoAction(photoId) {
+export function removeLikePhotoAction(photoId) {
   const url = `${PHOTOS_URL}${photoId}${LIKE}`;
   return (dispatch) => {
     requestFetch(url, DELETE).then((response) =>

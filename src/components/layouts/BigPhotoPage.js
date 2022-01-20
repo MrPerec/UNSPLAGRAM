@@ -10,7 +10,7 @@ export default function BigPhotoPage({
   auth,
   photoList,
   likePhotoAction,
-  unLikePhotoAction,
+  removeLikePhotoAction,
   match,
 }) {
   const currentPhotoId = match.params.id;
@@ -30,7 +30,7 @@ export default function BigPhotoPage({
       const { login } = auth;
 
       const onLike = likedByUser
-        ? () => unLikePhotoAction(currentPhotoId)
+        ? () => removeLikePhotoAction(currentPhotoId)
         : () => likePhotoAction(currentPhotoId);
 
       const like = likedByUser
@@ -86,6 +86,6 @@ BigPhotoPage.propTypes = {
 
   photoList: PropTypes.array.isRequired,
   likePhotoAction: PropTypes.func.isRequired,
-  unLikePhotoAction: PropTypes.func.isRequired,
+  removeLikePhotoAction: PropTypes.func.isRequired,
   match: PropTypes.object.isRequired,
 };

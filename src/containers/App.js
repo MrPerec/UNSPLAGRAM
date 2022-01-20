@@ -15,11 +15,7 @@ import {
   likePhotoAction,
   removeLikePhotoAction,
 } from '../actions/photoActions';
-import {
-  loginAction,
-  logoutAction,
-  getAuthUserAction,
-} from '../actions/authActions';
+import { loginAction, logoutAction } from '../actions/authActions';
 
 import '../styles/app.css';
 
@@ -32,7 +28,6 @@ export default function App({
   removeLikePhotoAction,
   loginAction,
   logoutAction,
-  getAuthUserAction,
 }) {
   return (
     <div>
@@ -61,12 +56,7 @@ export default function App({
         <Route
           path='/authPage'
           render={(props) => (
-            <AuthPage
-              {...props}
-              auth={auth}
-              loginAction={loginAction}
-              getAuthUserAction={getAuthUserAction}
-            />
+            <AuthPage {...props} auth={auth} loginAction={loginAction} />
           )}
         />
         <Redirect to='/' />
@@ -90,7 +80,6 @@ const mapDispatchToProps = (dispatch) => {
     removeLikePhotoAction: (id) => dispatch(removeLikePhotoAction(id)),
     loginAction: () => dispatch(loginAction()),
     logoutAction: () => dispatch(logoutAction()),
-    getAuthUserAction: () => dispatch(getAuthUserAction()),
   };
 };
 

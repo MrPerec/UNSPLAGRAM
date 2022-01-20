@@ -1,7 +1,7 @@
 `use strict`;
 
 import requestFetch from '../utils/requestFetch';
-import { LOGIN, LOGOUT, GET_USER } from '../constants/types.js';
+import { LOGIN, LOGOUT } from '../constants/types.js';
 import {
   ACCESS_KEY,
   SECRET_KEY,
@@ -17,31 +17,13 @@ import {
   PROFILE_IMAGE,
 } from '../constants/constants.js';
 
-const login = (token) => {
-  localStorage.setItem(TOKEN, token);
-
+const login = (userData) => {
   return {
     type: LOGIN,
-  };
-};
-
-const getAuthUser = (userData) => {
-  localStorage.setItem(USER_NAME, userData.username);
-  localStorage.setItem(PROFILE_IMAGE, userData.profile_image.small);
-
-  return {
-    type: GET_USER,
     userName: userData.username,
     profileImage: userData.profile_image.small,
   };
 };
-
-export function logoutAction() {
-  localStorage.clear();
-  return {
-    type: LOGOUT,
-  };
-}
 
 export function loginAction() {
   const code = window.location.search.split(SEPARATOR_CODE)[1];
@@ -54,16 +36,20 @@ export function loginAction() {
   });
 
   return (dispatch) => {
-    requestFetch(TOKEN_URL, POST, bodyConfig).then((response) =>
-      dispatch(login(response.access_token))
-    );
+    requestFetch(TOKEN_URL, POST, bodyConfig).then((response) => {
+      localStorage.setItem(TOKEN, response.access_token);
+      requestFetch(USER_URL, GET).then((response) => {
+        localStorage.setItem(USER_NAME, response.username);
+        localStorage.setItem(PROFILE_IMAGE, response.profile_image.small);
+        dispatch(login(response));
+      });
+    });
   };
 }
 
-export function getAuthUserAction() {
-  return (dispatch) => {
-    requestFetch(USER_URL, GET).then((response) =>
-      dispatch(getAuthUser(response))
-    );
+export function logoutAction() {
+  localStorage.clear();
+  return {
+    type: LOGOUT,
   };
 }

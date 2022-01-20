@@ -1,6 +1,6 @@
 `use strict`;
 
-import { LOGIN, LOGOUT, GET_USER } from '../constants/types.js';
+import { LOGIN, LOGOUT } from '../constants/types.js';
 import { TOKEN, USER_NAME, PROFILE_IMAGE } from '../constants/constants.js';
 
 const accessToken = localStorage.getItem(TOKEN);
@@ -17,13 +17,10 @@ export default function loginReducer(
 ) {
   switch (type) {
     case LOGIN:
-      return { ...state, login: true };
+      return { ...state, login: true, userName, profileImage };
 
     case LOGOUT:
       return { ...state, login: false, userName: null, profileImage: null };
-
-    case GET_USER:
-      return { ...state, userName, profileImage };
 
     default:
       return state;

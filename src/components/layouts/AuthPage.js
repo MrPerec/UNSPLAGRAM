@@ -5,21 +5,14 @@ import PropTypes from 'prop-types';
 import ButtonGoHome from './ButtonGoHome';
 import '../../styles/button.css';
 
-export default function AuthPage({ auth, loginAction, getAuthUserAction }) {
+export default function AuthPage({ auth, loginAction }) {
   const { login, userName } = auth;
 
   const authStatus = !login
     ? `You are not authorized`
     : `Greating you ${userName}!`;
 
-  const logIn = (loginAuth, userNameAuth) => {
-    if (!loginAuth) loginAction();
-    setTimeout(() => {
-      if (!userNameAuth) getAuthUserAction();
-    }, 1000);
-  };
-
-  logIn(login, userName);
+  if (!login) loginAction();
 
   return (
     <div>
@@ -32,5 +25,4 @@ export default function AuthPage({ auth, loginAction, getAuthUserAction }) {
 AuthPage.propTypes = {
   auth: PropTypes.object.isRequired,
   loginAction: PropTypes.func.isRequired,
-  getAuthUserAction: PropTypes.func.isRequired,
 };

@@ -4,7 +4,7 @@ import getUuid from '../utils/getUuid';
 import requestFetch from '../utils/requestFetch';
 import { ADD_PHOTO, LIKE_PHOTO, UNLIKE_PHOTO } from '../constants/types.js';
 import {
-  START_POSITION,
+  ZERO,
   CHARACTERS_NUMBER,
   SYMBOL_T,
   SYMBOL_SPACE,
@@ -20,7 +20,7 @@ import {
 const addPhoto = (photo) => {
   const uuid = getUuid();
   const createdAt = photo.created_at
-    .substring(START_POSITION, CHARACTERS_NUMBER)
+    .substring(ZERO, CHARACTERS_NUMBER)
     .replace(SYMBOL_T, SYMBOL_SPACE);
 
   return {

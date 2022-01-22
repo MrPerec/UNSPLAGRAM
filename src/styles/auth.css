@@ -25,6 +25,7 @@
   text-decoration: none;
   display: inline-block;
   -webkit-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
   transition-duration: 0.4s;
   cursor: pointer;
   border: 2px solid #e7e7e7;

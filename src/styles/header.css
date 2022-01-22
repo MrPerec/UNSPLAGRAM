@@ -1,4 +1,6 @@
 .header__container {
+  height: -webkit-max-content;
+  height: -moz-max-content;
   height: max-content;
 }
 
@@ -8,6 +10,8 @@
 
 .header_h3__text-style {
   margin: 0 auto;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   font-family: Raleway;
   font-style: normal;

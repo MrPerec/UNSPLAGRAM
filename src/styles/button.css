@@ -1,4 +1,6 @@
 .button_container {
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   margin: 30px auto;
   padding-bottom: 30px;
@@ -18,6 +20,7 @@
   display: inline-block;
   margin: 4px 2px;
   -webkit-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
   transition-duration: 0.4s;
   cursor: pointer;
 }

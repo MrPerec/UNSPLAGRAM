@@ -1,7 +1,8 @@
 .header__container {
   height: -webkit-max-content;
   height: -moz-max-content;
-  height: max-content;
+  /* height: max-content; */
+  max-height: 90px;
 }
 
 .gray__block {
@@ -16,6 +17,18 @@
   font-family: Raleway;
   font-style: normal;
   font-weight: 600;
-  font-size: calc(1rem + 10vw);
+  font-size: calc(1rem + 4vw);
   color: white;
+}
+
+@media (min-width: 1600px) {
+  .header_h3__text-style {
+    font-size: calc(1rem + 3vw);
+  }
+}
+
+@media (min-width: 2100px) {
+  .header_h3__text-style {
+    font-size: calc(1rem + 2vw);
+  }
 }

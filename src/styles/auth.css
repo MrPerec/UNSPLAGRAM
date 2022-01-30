@@ -1,7 +1,11 @@
 .auth_container_style {
   float: right;
-  margin: 1%;
+  margin: 1% auto;
+  /* margin: 10px; */
+  /* width: 150px; */
   text-align: center;
+  display: flex;
+  justify-content: space-between;
 }
 
 .auth_text_style {
@@ -19,8 +23,10 @@
 }
 
 .button-sign-in__style {
+  height: max-content;
+  margin: 5% 1em;
   padding: 5px;
-  margin-top: 10%;
+  /* margin-top: 5%; */
   text-align: center;
   text-decoration: none;
   display: inline-block;

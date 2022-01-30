@@ -19,12 +19,14 @@ export default function Header({ auth, logoutAction }) {
 
   const authState = login ? (
     <div className='auth_container auth_container_style'>
-      <img
-        className='avatar avatar_style auth_text_style'
-        src={profileImage}
-        alt={userName}
-      />
-      <div className='user-name auth_text_style'>{userName}</div>
+      <div>
+        <img
+          className='avatar avatar_style auth_text_style'
+          src={profileImage}
+          alt={userName}
+        />
+        <div className='user-name auth_text_style'>{userName}</div>
+      </div>
       <button
         className='button-sign-in button-sign-in__style auth_text_style'
         onClick={onLogout}

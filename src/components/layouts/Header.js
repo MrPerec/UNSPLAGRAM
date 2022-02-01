@@ -18,17 +18,17 @@ export default function Header({ auth, logoutAction }) {
   };
 
   const authState = login ? (
-    <div className='auth_container auth_container_style'>
+    <div className='auth_logined_container auth_logined_container_style'>
       <div>
         <img
-          className='avatar avatar_style auth_text_style'
+          className='avatar avatar_style'
           src={profileImage}
           alt={userName}
         />
         <div className='user-name auth_text_style'>{userName}</div>
       </div>
       <button
-        className='button-sign-in button-sign-in__style auth_text_style'
+        className='button-logout button-logout__style auth_text_style'
         onClick={onLogout}
       >
         Log Out

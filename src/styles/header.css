@@ -1,7 +1,6 @@
 .header__container {
   height: -webkit-max-content;
   height: -moz-max-content;
-  /* height: max-content; */
   max-height: 90px;
 }
 
@@ -19,16 +18,33 @@
   font-weight: 600;
   font-size: calc(1rem + 4vw);
   color: white;
-}
-
-@media (min-width: 1600px) {
-  .header_h3__text-style {
-    font-size: calc(1rem + 3vw);
-  }
+  letter-spacing: 3vw;
 }
 
 @media (min-width: 2100px) {
   .header_h3__text-style {
     font-size: calc(1rem + 2vw);
+  }
+}
+
+@media (min-width: 1761px) {
+  .header_h3__text-style {
+    font-size: calc(1rem + 3vw);
+  }
+}
+
+@media (max-width: 900px) {
+  .header__container {
+    height: 60px;
+  }
+  .header_h3__text-style {
+    letter-spacing: 2vw;
+  }
+}
+
+@media (max-width: 572px) {
+  .header_h3__text-style {
+    letter-spacing: 0;
+    padding-top: 1.5vw;
   }
 }

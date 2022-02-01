@@ -39,6 +39,8 @@ export default function App({
             photoList={photoList}
             addNoAuthPhotoAction={addNoAuthPhotoAction}
             addAuthPhotoAction={addAuthPhotoAction}
+            likePhotoAction={likePhotoAction}
+            removeLikePhotoAction={removeLikePhotoAction}
           />
         </Route>
         <Route

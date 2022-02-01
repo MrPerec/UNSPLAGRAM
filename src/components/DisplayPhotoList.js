@@ -14,6 +14,8 @@ export default function DisplayPhotoList({
   photoList,
   addNoAuthPhotoAction,
   addAuthPhotoAction,
+  likePhotoAction,
+  removeLikePhotoAction,
 }) {
   const { login } = auth;
   const addPhoto = () =>
@@ -28,7 +30,15 @@ export default function DisplayPhotoList({
     for (const prop in photo) propContent += photo[prop];
     if (propContent !== ``) {
       const { uuid } = photo;
-      return <DisplayPhoto key={uuid} photo={photo} />;
+      return (
+        <DisplayPhoto
+          key={uuid}
+          photo={photo}
+          auth={auth}
+          likePhotoAction={likePhotoAction}
+          removeLikePhotoAction={removeLikePhotoAction}
+        />
+      );
     }
   });
 
@@ -51,4 +61,6 @@ DisplayPhotoList.propTypes = {
   photoList: PropTypes.array.isRequired,
   addNoAuthPhotoAction: PropTypes.func.isRequired,
   addAuthPhotoAction: PropTypes.func.isRequired,
+  likePhotoAction: PropTypes.func.isRequired,
+  removeLikePhotoAction: PropTypes.func.isRequired,
 };

@@ -8,6 +8,7 @@ export const CHARACTERS_NUMBER = 16;
 export const INITIAL_STATE_LENGTH = 1;
 export const VERTICAL_OFFSET = -100;
 export const TIMER = 5000;
+export const MARGIN_BOTTOM = 85;
 
 export const SYMBOL_T = `T`;
 export const SYMBOL_SPACE = ` `;
@@ -36,6 +37,6 @@ export const DELETE = `DELETE`;
 export const USER_URL = `https://api.unsplash.com/me`;
 export const TOKEN_URL = `https://unsplash.com/oauth/token`;
 export const PHOTOS_URL = `https://api.unsplash.com/photos/`;
-export const REDIRECT_URI = `http://unsplagram.website/authPage`;
+export const REDIRECT_URI = `https://unsplagram.website/authPage`;
 export const NO_AUTH_PHOTOS_URL = `https://api.unsplash.com/photos/?client_id=${ACCESS_KEY}&page=`;
 export const AUTH_URL = `https://unsplash.com/oauth/authorize?client_id=${ACCESS_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code&scope=public+write_likes+read_user`;

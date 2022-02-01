@@ -3,6 +3,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ButtonGoBack from './ButtonGoBack';
+import { MARGIN_BOTTOM } from '../../constants/constants';
+
 import '../../styles/post.css';
 import '../../styles/fonts/iconfont/flaticon.css';
 
@@ -43,10 +45,16 @@ export default function BigPhotoPage({
         <i className={like} onClick={onLike}></i>
       );
 
+      const documentHeight = document.documentElement.clientHeight;
+      const headerHeight = document.querySelector(`.header`).clientHeight;
+      const imageHeight = documentHeight - (headerHeight + MARGIN_BOTTOM);
+      const imageHeightSyle = { height: imageHeight };
+
       return (
         <div className='post_full-size_container' key={currentPhotoId}>
           <div className='post_container'>
             <img
+              style={imageHeightSyle}
               className='image image-full-size'
               src={urlsRegular}
               alt={altDescription}
@@ -78,12 +86,11 @@ export default function BigPhotoPage({
     }
   });
 
-  return <div>{bigPhoto};</div>;
+  return <div>{bigPhoto}</div>;
 }
 
 BigPhotoPage.propTypes = {
   auth: PropTypes.object.isRequired,
-
   photoList: PropTypes.array.isRequired,
   likePhotoAction: PropTypes.func.isRequired,
   removeLikePhotoAction: PropTypes.func.isRequired,

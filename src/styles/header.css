@@ -1,50 +1,46 @@
-.header__container {
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  max-height: 90px;
-}
-
-.gray__block {
+.header_bg_gray {
   background-color: #3b3b3b;
 }
 
-.header_h3__text-style {
-  margin: 0 auto;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  font-family: Raleway;
-  font-style: normal;
-  font-weight: 600;
+.header__h3_text-style {
+  width: -webkit-fill-available;
+  text-align: center;
   font-size: calc(1rem + 4vw);
-  color: white;
   letter-spacing: 3vw;
+  color: white;
 }
 
-@media (min-width: 2100px) {
-  .header_h3__text-style {
-    font-size: calc(1rem + 2vw);
-  }
+.header__button_style {
+  width: max-content;
+  height: fit-content;
+
+  margin: auto 10px;
+  padding: 0.5vw;
+
+  cursor: pointer;
+  text-decoration: none;
+  transition-duration: 0.4s;
+  border: 2px solid #e7e7e7;
+  background-color: transparent;
+  font-size: calc(0.1rem + 1vw);
+  color: white;
 }
 
-@media (min-width: 1761px) {
-  .header_h3__text-style {
-    font-size: calc(1rem + 3vw);
-  }
+.header__auth_container {
+  display: flex;
+  justify-content: space-between;
+}
+.header__user-container_style {
+  margin: auto;
+  text-align: center;
 }
 
-@media (max-width: 900px) {
-  .header__container {
-    height: 60px;
-  }
-  .header_h3__text-style {
-    letter-spacing: 2vw;
-  }
+.header__avatar_container {
+  border: 2px solid #e7e7e7;
+  border-radius: 50px;
 }
 
-@media (max-width: 572px) {
-  .header_h3__text-style {
-    letter-spacing: 0;
-    padding-top: 1.5vw;
-  }
+.header__user-name_text {
+  font-size: calc(0.1rem + 1vw);
+  color: white;
 }

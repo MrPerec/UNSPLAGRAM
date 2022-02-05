@@ -19,5 +19,5 @@ render(
   <Router>
     <App store={store} />
   </Router>,
-  document.querySelector(`.js-root`)
+  document.querySelector(`.js-page`)
 );

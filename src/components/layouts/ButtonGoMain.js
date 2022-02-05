@@ -9,10 +9,10 @@ export default function ButtonGoMain() {
   const buttonGoMain = () => history.push(`/`);
 
   return (
-    <div className='button_container'>
+    <section className='section button_container'>
       <button className='button button__style' onClick={buttonGoMain}>
         Go back to the main page
       </button>
-    </div>
+    </section>
   );
 }

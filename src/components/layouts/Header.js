@@ -4,9 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { AUTH_URL } from '../../constants/constants.js';
-
 import '../../styles/header.css';
-import '../../styles/auth.css';
 
 export default function Header({ auth, logoutAction }) {
   const { login, userName, profileImage } = auth;
@@ -18,37 +16,40 @@ export default function Header({ auth, logoutAction }) {
   };
 
   const authState = login ? (
-    <div className='auth_logined_container auth_logined_container_style'>
-      <div>
+    <div className='header__auth header__auth_container'>
+      <div className='header__user-container header__user-container_style'>
         <img
-          className='avatar avatar_style'
+          className='header__avatar header__avatar_container'
           src={profileImage}
           alt={userName}
         />
-        <div className='user-name auth_text_style'>{userName}</div>
+        <div className='header__user-name header__user-name_text'>
+          {userName}
+        </div>
       </div>
       <button
-        className='button-logout button-logout__style auth_text_style'
+        className='header__button header__button_style'
         onClick={onLogout}
       >
         Log Out
       </button>
     </div>
   ) : (
-    <div className='auth_container auth_container_style'>
-      <a
-        href={AUTH_URL}
-        className='button-sign-in button-sign-in__style auth_text_style'
-      >
+    <div className='header__auth header__auth_container'>
+      <a href={AUTH_URL} className='header__button header__button_style'>
         Log In
       </a>
     </div>
   );
 
   return (
-    <header className='header header__container gray__block'>
-      {authState}
-      <h3 className='h3 header_h3__text-style'>UNSPLAGRAM</h3>
+    <header className='header js-header header_bg_gray'>
+      <div className='fixed__container fixed__container_size'>
+        <div className='flex-container flex-container_padding'>
+          <h3 className='header__h3_text-style'>UNSPLAGRAM</h3>
+          {authState}
+        </div>
+      </div>
     </header>
   );
 }

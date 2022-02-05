@@ -46,13 +46,13 @@ export default function BigPhotoPage({
       );
 
       const documentHeight = document.documentElement.clientHeight;
-      const headerHeight = document.querySelector(`.header`).clientHeight;
+      const headerHeight = document.querySelector(`.js-header`).clientHeight;
       const imageHeight = documentHeight - (headerHeight + MARGIN_BOTTOM);
       const imageHeightSyle = { height: imageHeight };
 
       return (
-        <div className='post_full-size_container' key={currentPhotoId}>
-          <div className='post_container'>
+        <main className='main post_full-size_container' key={currentPhotoId}>
+          <article className='article post_container'>
             <img
               style={imageHeightSyle}
               className='image image-full-size'
@@ -60,7 +60,7 @@ export default function BigPhotoPage({
               alt={altDescription}
               title={altDescription}
             />
-            <div className='post_text_container'>
+            <section className='section post_text_container'>
               <div className='post_name_piblish_container'>
                 <a
                   href={userLinksHtml}
@@ -78,10 +78,10 @@ export default function BigPhotoPage({
                 {likeDisplay}
                 {likes}
               </div>
-            </div>
-          </div>
+            </section>
+          </article>
           <ButtonGoBack />
-        </div>
+        </main>
       );
     }
   });

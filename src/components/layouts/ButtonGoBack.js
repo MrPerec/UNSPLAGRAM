@@ -9,10 +9,10 @@ export default function ButtonGoBack() {
   const onButtonBack = () => history.goBack();
 
   return (
-    <div className='button_container'>
+    <section className='section button_container'>
       <button className='button button__style' onClick={onButtonBack}>
         Go Back
       </button>
-    </div>
+    </section>
   );
 }

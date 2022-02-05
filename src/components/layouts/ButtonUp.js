@@ -14,8 +14,8 @@ export default function ButtonUp() {
   };
 
   return (
-    <a className='button-up button-up__style' onClick={onUp}>
+    <button className='button-up button-up__style' onClick={onUp}>
       <i className='flaticon-up-arrow'></i>
-    </a>
+    </button>
   );
 }

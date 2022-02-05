@@ -29,46 +29,41 @@ export default function DisplayPhoto({
     ? () => removeLikePhotoAction(id)
     : () => likePhotoAction(id);
 
-  const like = likedByUser
-    ? 'flaticon-like flaticon_style flaticon_style_cursor flaticon-like_style'
-    : 'flaticon-heart flaticon_style flaticon_style_cursor';
+  const likeClass = likedByUser
+    ? 'flaticon-like flaticon-like_font_18 flaticon-like_cursor flaticon-like_color_red'
+    : 'flaticon-heart flaticon-like_font_18 flaticon-like_cursor';
 
   const likeDisplay = !login ? (
-    <i className='flaticon-heart flaticon_style'></i>
+    <i className='flaticon-heart flaticon-like_font_18'></i>
   ) : (
-    <i className={like} onClick={onLike}></i>
+    <i className={likeClass} onClick={onLike}></i>
   );
 
   return (
-    <div className='post_container'>
+    <article className='post post_container'>
       <Link to={{ pathname: `/bigPhoto/${id}` }}>
-        <img
-          className='image'
-          src={urlsSmall}
-          alt={altDescription}
-          title={altDescription}
-        />
+        <img src={urlsSmall} alt={altDescription} title={altDescription} />
       </Link>
-      <div className='post_text_container'>
-        <div className='post_name_piblish_container'>
+      <div className='post__text post__text_container'>
+        <div className='post__piblish'>
           <a
             href={userLinksHtml}
             target='_blank'
             rel='noopener noreferrer'
-            className='user_link'
+            className='post__link post__link_text'
           >
             {userName}
           </a>
-          <time dateTime={createdAt} className='publish_style'>
+          <time dateTime={createdAt} className='post__date post__date_text'>
             Published on {createdAt}
           </time>
         </div>
-        <div className='like_container'>
+        <div className='flex-container flex-container_padding'>
           {likeDisplay}
-          {likes}
+          <span className='post__like-text post__like-text_size'>{likes}</span>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 

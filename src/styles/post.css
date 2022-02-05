@@ -10,6 +10,50 @@
   margin: 0 auto;
 }
 
+.post__text_container {
+  position: absolute;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+
+  width: 100%;
+  bottom: 0;
+  padding: 10px 0;
+
+  color: #767676;
+  background-color: hsla(0, 0%, 100%, 0.9);
+  cursor: default;
+}
+
+.post__link_text {
+  display: block;
+  color: #3b3b3b;
+  text-decoration: none;
+  font-size: 18px;
+}
+.post__date_text {
+  display: block;
+  color: #3b3b3b;
+  font-size: 12px;
+}
+
+.post__like-text_size {
+  font-size: 12px;
+  margin: 2px 1vw;
+}
+
+.flaticon-like_font_18 {
+  font-size: 18px;
+}
+
+.flaticon-like_cursor {
+  cursor: pointer;
+}
+
+.flaticon-like_color_red {
+  color: red;
+}
+
 @media (min-width: 768px) {
   .post_container {
     -webkit-column-break-inside: avoid;
@@ -17,73 +61,4 @@
     -moz-column-break-inside: avoid;
     break-inside: avoid;
   }
-}
-
-.image {
-  display: block;
-}
-
-.post_text_container {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  width: 100%;
-  bottom: 0;
-  padding: 10px 0;
-  color: #767676;
-  background-color: hsla(0, 0%, 100%, 0.9);
-  cursor: default;
-}
-
-.user_link {
-  display: block;
-  font-family: Raleway;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 21px;
-  color: #3b3b3b;
-  text-decoration: none;
-}
-
-.publish_style {
-  display: block;
-  font-family: Raleway;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 14px;
-  color: #3b3b3b;
-  text-decoration: none;
-}
-
-.like_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 16px;
-  margin: 9px 0;
-
-  font-family: Raleway;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 21px;
-}
-
-.flaticon_style {
-  display: inline;
-  margin-right: 5px;
-  font-size: 18px;
-}
-
-.flaticon_style_cursor {
-  cursor: pointer;
-}
-
-.flaticon-like_style {
-  color: red;
 }

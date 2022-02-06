@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import ButtonGoMain from './ButtonGoMain';
 import { TIMER } from '../../constants/constants.js';
 
-import '../../styles/authPage.css';
-
 export default function AuthPage({ auth, loginAction }) {
   const { login, userName } = auth;
   const authStatus = !login

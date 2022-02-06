@@ -1,12 +1,11 @@
-.post_padding-top_10 {
+.post_position {
   position: relative;
-  padding-top: 10px;
 }
 
 .post__publish_container {
   position: absolute;
   width: 100%;
-  bottom: 0;
+  bottom: 4px;
   background-color: hsla(0, 0%, 100%, 0.9);
   cursor: default;
   text-align: left;

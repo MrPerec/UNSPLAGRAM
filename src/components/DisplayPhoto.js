@@ -41,44 +41,46 @@ export default function DisplayPhoto({
   );
 
   return (
-    <article className='post post_padding-top_10'>
-      <Link to={{ pathname: `/bigPhoto/${id}` }}>
-        <img
-          className='post__image'
-          src={urlsSmall}
-          alt={altDescription}
-          title={altDescription}
-        />
-      </Link>
-      <div className='post__publish post__publish_container'>
-        <div className='flex-container flex-container_padding'>
-          <div className='post__publish-author'>
-            <a
-              href={userLinksHtml}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='post_text post_text_style post_text_size_18'
-            >
-              {userName}
-            </a>
-            <time
-              dateTime={createdAt}
-              className='post_text post_text_style post_text_size_12'
-            >
-              Published on {createdAt}
-            </time>
-          </div>
-          <div className='post_text post_text_style'>
-            <div className='flex-container flex-container_padding'>
-              {likeDisplay}
-              <span className='post_text post_text_size_12 post_text_margin'>
-                {likes}
-              </span>
+    <div className='center center_container'>
+      <article className='post post_position'>
+        <Link to={{ pathname: `/bigPhoto/${id}` }}>
+          <img
+            className='post__image'
+            src={urlsSmall}
+            alt={altDescription}
+            title={altDescription}
+          />
+        </Link>
+        <div className='post__publish post__publish_container'>
+          <div className='flex-container flex-container_padding'>
+            <div className='post__publish-author'>
+              <a
+                href={userLinksHtml}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='post_text post_text_style post_text_size_18'
+              >
+                {userName}
+              </a>
+              <time
+                dateTime={createdAt}
+                className='post_text post_text_style post_text_size_12'
+              >
+                Published on {createdAt}
+              </time>
+            </div>
+            <div className='post_text post_text_style'>
+              <div className='flex-container flex-container_padding'>
+                {likeDisplay}
+                <span className='post_text post_text_size_12 post_text_margin'>
+                  {likes}
+                </span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </article>
+      </article>
+    </div>
   );
 }
 

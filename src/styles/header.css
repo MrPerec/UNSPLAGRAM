@@ -1,11 +1,12 @@
-.header_bg_gray {
+.header_decor {
+  margin-bottom: 10px;
   background-color: #3b3b3b;
 }
 
 .header__h3_text-style {
   width: -webkit-fill-available;
   text-align: center;
-  font-size: calc(1rem + 4vw);
+  font-size: calc(1rem + 3vw);
   letter-spacing: 3vw;
   color: white;
 }

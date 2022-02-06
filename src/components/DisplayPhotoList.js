@@ -56,8 +56,8 @@ export default function DisplayPhotoList({
             {displayPhotoList}
           </div>
         </div>
+        <ButtonUp />
       </main>
-      <ButtonUp />
     </InfiniteScroll>
   );
 }

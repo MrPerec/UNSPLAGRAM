@@ -8,7 +8,7 @@ export const CHARACTERS_NUMBER = 16;
 export const INITIAL_STATE_LENGTH = 1;
 export const VERTICAL_OFFSET = -100;
 export const TIMER = 5000;
-export const MARGIN_BOTTOM = 71;
+export const MARGIN_BOTTOM = 81;
 
 export const SYMBOL_T = `T`;
 export const SYMBOL_SPACE = ` `;

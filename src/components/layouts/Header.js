@@ -43,7 +43,7 @@ export default function Header({ auth, logoutAction }) {
   );
 
   return (
-    <header className='header js-header header_bg_gray'>
+    <header className='header js-header header_decor'>
       <div className='fixed__container fixed__container_size'>
         <div className='flex-container flex-container_padding'>
           <h3 className='header__h3_text-style'>UNSPLAGRAM</h3>

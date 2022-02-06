@@ -54,7 +54,7 @@ export default function BigPhotoPage({
         <main className='main' key={currentPhotoId}>
           <div className='fixed__container fixed__container_size'>
             <div className='center center_container'>
-              <article className='post post_padding-top_10'>
+              <article className='post post_position'>
                 <img
                   style={imageHeightSyle}
                   className='post__image'

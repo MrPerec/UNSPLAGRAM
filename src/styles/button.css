@@ -1,3 +1,7 @@
+.button_margin-top_10 {
+  margin-top: 10px;
+}
+
 .button_decor {
   color: #3b3b3b;
   -webkit-transition-duration: 0.4s;

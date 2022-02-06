@@ -15,9 +15,9 @@ export default function AuthPage({ auth, loginAction }) {
 
   if (!login) loginAction();
 
-  /* setTimeout(() => {
+  setTimeout(() => {
     window.location.href = '/';
-  }, TIMER); */
+  }, TIMER);
 
   return (
     <main className='main'>

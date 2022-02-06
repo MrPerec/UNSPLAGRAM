@@ -35,14 +35,14 @@ export default function BigPhotoPage({
         ? () => removeLikePhotoAction(currentPhotoId)
         : () => likePhotoAction(currentPhotoId);
 
-      const like = likedByUser
-        ? 'flaticon-like flaticon_style flaticon_style_cursor flaticon-like_style'
-        : 'flaticon-heart flaticon_style flaticon_style_cursor';
+      const likeClass = likedByUser
+        ? 'flaticon-like flaticon-like_font_18 flaticon-like_cursor flaticon-like_color_red'
+        : 'flaticon-heart flaticon-like_font_18 flaticon-like_cursor';
 
       const likeDisplay = !login ? (
-        <i className='flaticon-heart flaticon_style'></i>
+        <i className='flaticon-heart flaticon-like_font_18'></i>
       ) : (
-        <i className={like} onClick={onLike}></i>
+        <i className={likeClass} onClick={onLike}></i>
       );
 
       const documentHeight = document.documentElement.clientHeight;
@@ -51,36 +51,49 @@ export default function BigPhotoPage({
       const imageHeightSyle = { height: imageHeight };
 
       return (
-        <main className='main post_full-size_container' key={currentPhotoId}>
-          <article className='article post_container'>
-            <img
-              style={imageHeightSyle}
-              className='image image-full-size'
-              src={urlsRegular}
-              alt={altDescription}
-              title={altDescription}
-            />
-            <section className='section post_text_container'>
-              <div className='post_name_piblish_container'>
-                <a
-                  href={userLinksHtml}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='user_link'
-                >
-                  {userName}
-                </a>
-                <time dateTime={createdAt} className='publish_style'>
-                  Published on {createdAt}
-                </time>
-              </div>
-              <div className='like_container'>
-                {likeDisplay}
-                {likes}
-              </div>
-            </section>
-          </article>
-          <ButtonGoBack />
+        <main className='main' key={currentPhotoId}>
+          <div className='fixed__container fixed__container_size'>
+            <div className='center center_container'>
+              <article className='post post_padding-top_10'>
+                <img
+                  style={imageHeightSyle}
+                  className='post__image'
+                  src={urlsRegular}
+                  alt={altDescription}
+                  title={altDescription}
+                />
+                <div className='post__publish post__publish_container'>
+                  <div className='flex-container flex-container_padding'>
+                    <div className='post__publish-author'>
+                      <a
+                        href={userLinksHtml}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='post_text post_text_style post_text_size_18'
+                      >
+                        {userName}
+                      </a>
+                      <time
+                        dateTime={createdAt}
+                        className='post_text post_text_style post_text_size_12'
+                      >
+                        Published on {createdAt}
+                      </time>
+                    </div>
+                    <div className='post_text post_text_style'>
+                      <div className='flex-container flex-container_padding'>
+                        {likeDisplay}
+                        <span className='post_text post_text_size_12 post_text_margin'>
+                          {likes}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <ButtonGoBack />
+            </div>
+          </div>
         </main>
       );
     }

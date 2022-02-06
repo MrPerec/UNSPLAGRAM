@@ -29,6 +29,14 @@
 
 .flex-container_padding {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 5px 0;
+}
+
+.center_container {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+  text-align: center;
 }

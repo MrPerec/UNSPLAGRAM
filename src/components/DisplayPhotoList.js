@@ -50,8 +50,12 @@ export default function DisplayPhotoList({
       next={addPhoto}
       hasMore={true}
     >
-      <main className='main fixed__container fixed__container_size'>
-        <div className='post-list post-list_container'>{displayPhotoList}</div>
+      <main className='main'>
+        <div className='fixed__container fixed__container_size'>
+          <div className='post-list post-list_container'>
+            {displayPhotoList}
+          </div>
+        </div>
       </main>
       <ButtonUp />
     </InfiniteScroll>

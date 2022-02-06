@@ -1,44 +1,31 @@
-.post_container {
+.post_padding-top_10 {
   position: relative;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  padding: 10px 0 0;
-  margin: 0 auto;
+  padding-top: 10px;
 }
 
-.post__text_container {
+.post__publish_container {
   position: absolute;
-  display: flex;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-
   width: 100%;
   bottom: 0;
-  padding: 10px 0;
-
-  color: #767676;
   background-color: hsla(0, 0%, 100%, 0.9);
   cursor: default;
+  text-align: left;
 }
 
-.post__link_text {
+.post_text_style {
   display: block;
   color: #3b3b3b;
   text-decoration: none;
+}
+
+.post_text_size_18 {
   font-size: 18px;
 }
-.post__date_text {
-  display: block;
-  color: #3b3b3b;
+.post_text_size_12 {
   font-size: 12px;
 }
 
-.post__like-text_size {
-  font-size: 12px;
+.post_text_margin {
   margin: 2px 1vw;
 }
 

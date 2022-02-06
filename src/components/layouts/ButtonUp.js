@@ -3,7 +3,6 @@
 import React from 'react';
 import { ZERO, VERTICAL_OFFSET } from '../../constants/constants.js';
 import '../../styles/button.css';
-import '../../styles/buttonUp.css';
 
 export default function ButtonUp() {
   const onUp = () => {
@@ -14,8 +13,13 @@ export default function ButtonUp() {
   };
 
   return (
-    <button className='button-up button-up__style' onClick={onUp}>
-      <i className='flaticon-up-arrow'></i>
-    </button>
+    <div className='button'>
+      <button
+        className='button__up button__up_style button_decor'
+        onClick={onUp}
+      >
+        <i className='flaticon-up-arrow'></i>
+      </button>
+    </div>
   );
 }

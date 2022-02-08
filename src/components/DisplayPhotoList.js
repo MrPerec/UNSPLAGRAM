@@ -50,16 +50,16 @@ export default function DisplayPhotoList({
       next={addPhoto}
       hasMore={true}
     >
-      <ResponsiveMasonry
-        columnsCountBreakPoints={{ 320: 1, 820: 2, 1220: 3, 1620: 4 }}
-      >
-        <main className='main'>
-          <div className='fixed__container fixed__container_size'>
+      <main className='main'>
+        <div className='fixed__container fixed__container_size'>
+          <ResponsiveMasonry
+            columnsCountBreakPoints={{ 478: 1, 840: 2, 1240: 3, 1640: 4 }}
+          >
             <Masonry>{displayPhotoList}</Masonry>
             <ButtonUp />
-          </div>
-        </main>
-      </ResponsiveMasonry>
+          </ResponsiveMasonry>
+        </div>
+      </main>
     </InfiniteScroll>
   );
 }

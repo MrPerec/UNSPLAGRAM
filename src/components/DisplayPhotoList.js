@@ -3,11 +3,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
 import { INITIAL_STATE_LENGTH } from '../constants/constants.js';
 import DisplayPhoto from './DisplayPhoto';
 import ButtonUp from './layouts/ButtonUp';
-import '../styles/postList.css';
 
 export default function DisplayPhotoList({
   auth,
@@ -50,14 +50,16 @@ export default function DisplayPhotoList({
       next={addPhoto}
       hasMore={true}
     >
-      <main className='main'>
-        <div className='fixed__container fixed__container_size'>
-          <div className='post-list post-list_container'>
-            {displayPhotoList}
+      <ResponsiveMasonry
+        columnsCountBreakPoints={{ 320: 1, 820: 2, 1220: 3, 1620: 4 }}
+      >
+        <main className='main'>
+          <div className='fixed__container fixed__container_size'>
+            <Masonry>{displayPhotoList}</Masonry>
+            <ButtonUp />
           </div>
-        </div>
-        <ButtonUp />
-      </main>
+        </main>
+      </ResponsiveMasonry>
     </InfiniteScroll>
   );
 }

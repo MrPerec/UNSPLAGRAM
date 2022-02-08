@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
@@ -16,8 +16,8 @@ const store = createStore(
 );
 
 render(
-  <Router>
+  <BrowserRouter>
     <App store={store} />
-  </Router>,
+  </BrowserRouter>,
   document.querySelector(`.js-page`)
 );

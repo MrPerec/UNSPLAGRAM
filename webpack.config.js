@@ -10,8 +10,8 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: './index.js',
   output: {
-    filename: 'main.js',
     path: path.resolve(__dirname, 'build'),
+    filename: 'main.js',
     publicPath: '/',
   },
   devServer: {
@@ -20,6 +20,7 @@ module.exports = {
     compress: true,
     port: 3000,
     historyApiFallback: true,
+    hot: true,
   },
   optimization: {
     minimizer: [

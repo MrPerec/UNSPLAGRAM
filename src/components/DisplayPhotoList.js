@@ -21,8 +21,11 @@ export default function DisplayPhotoList({
   const addPhoto = () =>
     !login ? addNoAuthPhotoAction() : addAuthPhotoAction();
 
+  // console.log(photoList);
   const DisplayFirstPhotoList = () => {
-    if (photoList.length === INITIAL_STATE_LENGTH) addPhoto();
+    // if (photoList.length === INITIAL_STATE_LENGTH) addPhoto();
+    // if (photoList.length == 0) addPhoto();
+    if (photoList.length <= 1) addPhoto();
   };
 
   const displayPhotoList = photoList.map((photo) => {

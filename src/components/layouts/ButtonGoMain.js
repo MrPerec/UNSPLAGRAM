@@ -14,7 +14,7 @@ export default function ButtonGoMain() {
         className='button__back button__back_style button_decor'
         onClick={buttonGoMain}
       >
-        Go back to the main page
+        Go to the main page
       </button>
     </div>
   );

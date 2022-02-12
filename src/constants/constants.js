@@ -25,6 +25,7 @@ export const APPLICATION_JSON = `application/json`;
 export const TOKEN = `TOKEN`;
 
 export const SEPARATOR_CODE = `?code=`;
+export const CLIENT_ID = `?client_id=${ACCESS_KEY}&page=`;
 export const BEARER = `Bearer `;
 
 export const USER_NAME = `USER_NAME`;
@@ -38,5 +39,4 @@ export const USER_URL = `https://api.unsplash.com/me`;
 export const TOKEN_URL = `https://unsplash.com/oauth/token`;
 export const PHOTOS_URL = `https://api.unsplash.com/photos/`;
 export const REDIRECT_URI = `https://unsplagram.website/authPage`;
-export const NO_AUTH_PHOTOS_URL = `https://api.unsplash.com/photos/?client_id=${ACCESS_KEY}&page=`;
 export const AUTH_URL = `https://unsplash.com/oauth/authorize?client_id=${ACCESS_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code&scope=public+write_likes+read_user`;

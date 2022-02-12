@@ -1,9 +1,13 @@
 `use strict`;
 
-import { ADD_PHOTO, LIKE_PHOTO, UNLIKE_PHOTO } from '../constants/types.js';
+import {
+  ADD_PHOTO,
+  LIKE_PHOTO,
+  REMOVE_LIKE_PHOTO,
+} from '../constants/types.js';
 
 export default function photoReducer(
-  state = [{}],
+  state = [],
   {
     type,
     id,
@@ -35,6 +39,26 @@ export default function photoReducer(
           likedByUser,
         },
       ];
+    /* return state.map((photo) => {
+        if (photo.id != id) {
+          return [
+            ...state,
+            {
+              id,
+              uuid,
+              urlsRegular,
+              urlsSmall,
+              altDescription,
+              userName,
+              userLinksHtml,
+              createdAt,
+              likes,
+              likedByUser,
+            },
+          ];
+        }
+        return;
+      }); */
 
     case LIKE_PHOTO:
       return state.map((photo) => {
@@ -55,7 +79,7 @@ export default function photoReducer(
         return photo;
       });
 
-    case UNLIKE_PHOTO:
+    case REMOVE_LIKE_PHOTO:
       return state.map((photo) => {
         if (photo.id === id) {
           return {

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import ButtonGoBack from './ButtonGoBack';
+import ButtonGoMain from './ButtonGoMain';
 import { MARGIN_BOTTOM } from '../../constants/constants';
 
 import '../../styles/post.css';
@@ -11,11 +11,16 @@ import '../../styles/fonts/iconfont/flaticon.css';
 export default function BigPhotoPage({
   auth,
   photoList,
+  addPhotoByIdAction,
   likePhotoAction,
   removeLikePhotoAction,
   match,
 }) {
   const currentPhotoId = match.params.id;
+  const { login } = auth;
+
+  // console.log(photoList);
+  if (photoList.length == 0) addPhotoByIdAction(currentPhotoId);
 
   const bigPhoto = photoList.map((photo) => {
     if (photo.id === currentPhotoId) {
@@ -28,8 +33,6 @@ export default function BigPhotoPage({
         likes,
         likedByUser,
       } = photo;
-
-      const { login } = auth;
 
       const onLike = likedByUser
         ? () => removeLikePhotoAction(currentPhotoId)
@@ -91,7 +94,7 @@ export default function BigPhotoPage({
                   </div>
                 </div>
               </article>
-              <ButtonGoBack />
+              <ButtonGoMain />
             </div>
           </div>
         </main>

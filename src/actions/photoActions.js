@@ -2,7 +2,11 @@
 
 import getUuid from '../utils/getUuid';
 import requestFetch from '../utils/requestFetch';
-import { ADD_PHOTO, LIKE_PHOTO, UNLIKE_PHOTO } from '../constants/types.js';
+import {
+  ADD_PHOTO,
+  LIKE_PHOTO,
+  REMOVE_LIKE_PHOTO,
+} from '../constants/types.js';
 import {
   ZERO,
   CHARACTERS_NUMBER,
@@ -12,7 +16,7 @@ import {
   DELETE,
   GET,
   PHOTOS_URL,
-  NO_AUTH_PHOTOS_URL,
+  CLIENT_ID,
   PAGE,
   LIKE,
 } from '../constants/constants.js';
@@ -47,9 +51,9 @@ const likePhoto = ({ photo }) => {
   };
 };
 
-const unLikePhoto = ({ photo }) => {
+const removeLikePhoto = ({ photo }) => {
   return {
-    type: UNLIKE_PHOTO,
+    type: REMOVE_LIKE_PHOTO,
     id: photo.id,
     likedByUser: photo.liked_by_user,
     likes: photo.likes,
@@ -59,7 +63,7 @@ const unLikePhoto = ({ photo }) => {
 let pageNumber = 1;
 
 export function addNoAuthPhotoAction() {
-  const url = `${NO_AUTH_PHOTOS_URL}${pageNumber++}`;
+  const url = `${PHOTOS_URL}${CLIENT_ID}${pageNumber++}`;
   return (dispatch) => {
     requestFetch(url, GET).then((response) =>
       response.forEach((photo) => dispatch(addPhoto(photo)))
@@ -76,6 +80,13 @@ export function addAuthPhotoAction() {
   };
 }
 
+export function addPhotoByIdAction(photoId) {
+  const url = `${PHOTOS_URL}${photoId}${CLIENT_ID}`;
+  return (dispatch) => {
+    requestFetch(url, GET).then((response) => dispatch(addPhoto(response)));
+  };
+}
+
 export function likePhotoAction(photoId) {
   const url = `${PHOTOS_URL}${photoId}${LIKE}`;
   return (dispatch) => {
@@ -87,7 +98,7 @@ export function removeLikePhotoAction(photoId) {
   const url = `${PHOTOS_URL}${photoId}${LIKE}`;
   return (dispatch) => {
     requestFetch(url, DELETE).then((response) =>
-      dispatch(unLikePhoto(response))
+      dispatch(removeLikePhoto(response))
     );
   };
 }

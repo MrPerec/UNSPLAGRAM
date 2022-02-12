@@ -24,6 +24,25 @@ export default function photoReducer(
 ) {
   switch (type) {
     case ADD_PHOTO:
+      console.log(state);
+      /* const newState = state.map((photo) => {
+        if (photo.id == id) {
+          return {
+            id,
+            uuid: null,
+            urlsRegular: null,
+            urlsSmall: null,
+            altDescription: null,
+            userName: null,
+            userLinksHtml: null,
+            createdAt: null,
+            likes: null,
+            likedByUser: null,
+          };
+        }
+        return photo;
+      });
+      console.log(newState); */
       return [
         ...state,
         {
@@ -39,26 +58,6 @@ export default function photoReducer(
           likedByUser,
         },
       ];
-    /* return state.map((photo) => {
-        if (photo.id != id) {
-          return [
-            ...state,
-            {
-              id,
-              uuid,
-              urlsRegular,
-              urlsSmall,
-              altDescription,
-              userName,
-              userLinksHtml,
-              createdAt,
-              likes,
-              likedByUser,
-            },
-          ];
-        }
-        return;
-      }); */
 
     case LIKE_PHOTO:
       return state.map((photo) => {

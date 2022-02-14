@@ -5,7 +5,6 @@ export const FIELD_WIDTH = 50;
 export const FIELD_HEIGHT = 5;
 export const ZERO = 0;
 export const CHARACTERS_NUMBER = 16;
-export const INITIAL_STATE_LENGTH = 1;
 export const VERTICAL_OFFSET = -100;
 export const TIMER = 5000;
 export const MARGIN_BOTTOM = 81;

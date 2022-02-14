@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
-import { INITIAL_STATE_LENGTH } from '../constants/constants.js';
 import DisplayPhoto from './DisplayPhoto';
 import ButtonUp from './layouts/ButtonUp';
 
@@ -23,26 +22,20 @@ export default function DisplayPhotoList({
 
   // console.log(photoList);
   const DisplayFirstPhotoList = () => {
-    // if (photoList.length === INITIAL_STATE_LENGTH) addPhoto();
-    // if (photoList.length == 0) addPhoto();
     if (photoList.length <= 1) addPhoto();
   };
 
   const displayPhotoList = photoList.map((photo) => {
-    let propContent = ``;
-    for (const prop in photo) propContent += photo[prop];
-    if (propContent !== ``) {
-      const { uuid } = photo;
-      return (
-        <DisplayPhoto
-          key={uuid}
-          photo={photo}
-          auth={auth}
-          likePhotoAction={likePhotoAction}
-          removeLikePhotoAction={removeLikePhotoAction}
-        />
-      );
-    }
+    const { uuid } = photo;
+    return (
+      <DisplayPhoto
+        key={uuid}
+        photo={photo}
+        auth={auth}
+        likePhotoAction={likePhotoAction}
+        removeLikePhotoAction={removeLikePhotoAction}
+      />
+    );
   });
 
   DisplayFirstPhotoList();

@@ -8,6 +8,9 @@ import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import DisplayPhoto from './DisplayPhoto';
 import ButtonUp from './layouts/ButtonUp';
 
+import removeDuplicates from '../utils/removeDuplicates';
+import getUuid from '../utils/getUuid';
+
 export default function DisplayPhotoList({
   auth,
   photoList,
@@ -16,17 +19,17 @@ export default function DisplayPhotoList({
   likePhotoAction,
   removeLikePhotoAction,
 }) {
+  console.log(photoList.length);
   const { login } = auth;
   const addPhoto = () =>
     !login ? addNoAuthPhotoAction() : addAuthPhotoAction();
 
-  // console.log(photoList);
   const DisplayFirstPhotoList = () => {
     if (photoList.length <= 1) addPhoto();
   };
 
-  const displayPhotoList = photoList.map((photo) => {
-    const { uuid } = photo;
+  const displayPhotoList = removeDuplicates(photoList).map((photo) => {
+    const uuid = getUuid();
     return (
       <DisplayPhoto
         key={uuid}

@@ -6,7 +6,6 @@ import ButtonGoMain from './ButtonGoMain';
 import { MARGIN_BOTTOM } from '../../constants/constants';
 
 import '../../styles/post.css';
-import '../../styles/fonts/iconfont/flaticon.css';
 
 export default function BigPhotoPage({
   auth,
@@ -17,13 +16,11 @@ export default function BigPhotoPage({
   match,
 }) {
   const currentPhotoId = match.params.id;
-  const { login } = auth;
-
-  // console.log(photoList);
   if (photoList.length == 0) addPhotoByIdAction(currentPhotoId);
 
   const bigPhoto = photoList.map((photo) => {
     if (photo.id === currentPhotoId) {
+      const { login } = auth;
       const {
         urlsRegular,
         altDescription,

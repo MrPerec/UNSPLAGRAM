@@ -11,7 +11,6 @@ export default function photoReducer(
   {
     type,
     id,
-    uuid,
     urlsRegular,
     urlsSmall,
     altDescription,
@@ -24,12 +23,10 @@ export default function photoReducer(
 ) {
   switch (type) {
     case ADD_PHOTO:
-      console.log(state);
-      state = [
+      return [
         ...state,
         {
           id,
-          uuid,
           urlsRegular,
           urlsSmall,
           altDescription,
@@ -40,15 +37,12 @@ export default function photoReducer(
           likedByUser,
         },
       ];
-      console.log(state);
-      return state;
 
     case LIKE_PHOTO:
       return state.map((photo) => {
         if (photo.id === id) {
           return {
             id,
-            uuid: photo.uuid,
             urlsRegular: photo.urlsRegular,
             urlsSmall: photo.urlsSmall,
             altDescription: photo.altDescription,
@@ -67,7 +61,6 @@ export default function photoReducer(
         if (photo.id === id) {
           return {
             id,
-            uuid: photo.uuid,
             urlsRegular: photo.urlsRegular,
             urlsSmall: photo.urlsSmall,
             altDescription: photo.altDescription,

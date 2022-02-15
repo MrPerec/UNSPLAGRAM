@@ -1,12 +1,12 @@
 `use strict`;
 
-import getUuid from '../utils/getUuid';
 import requestFetch from '../utils/requestFetch';
 import {
   ADD_PHOTO,
   LIKE_PHOTO,
   REMOVE_LIKE_PHOTO,
 } from '../constants/types.js';
+
 import {
   ZERO,
   CHARACTERS_NUMBER,
@@ -22,7 +22,6 @@ import {
 } from '../constants/constants.js';
 
 const addPhoto = (photo) => {
-  const uuid = getUuid();
   const createdAt = photo.created_at
     .substring(ZERO, CHARACTERS_NUMBER)
     .replace(SYMBOL_T, SYMBOL_SPACE);
@@ -30,7 +29,6 @@ const addPhoto = (photo) => {
   return {
     type: ADD_PHOTO,
     id: photo.id,
-    uuid,
     urlsRegular: photo.urls.regular,
     urlsSmall: photo.urls.small,
     altDescription: photo.alt_description,

@@ -1,3 +1,34 @@
+@font-face {
+  font-family: 'flaticon';
+  src: url('./fonts/iconfont/flaticon.woff?04469ced138bf45659298d562066cdb1')
+    format('woff');
+}
+
+i[class^='flaticon-']:before,
+i[class*=' flaticon-']:before {
+  font-family: flaticon !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-heart:before {
+  content: '\f101';
+}
+.flaticon-like:before {
+  content: '\f102';
+}
+.flaticon-loupe:before {
+  content: '\f103';
+}
+.flaticon-up-arrow:before {
+  content: '\f104';
+}
+
 .post_position {
   position: relative;
 }

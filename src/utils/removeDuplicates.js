@@ -5,8 +5,7 @@ export default function removeDuplicates(arr) {
   const duplicatesIndices = [];
 
   arr.forEach((current, index) => {
-    if (duplicatesIndices.includes(index)) return;
-    result.push(current);
+    if (!duplicatesIndices.includes(index)) result.push(current);
 
     for (
       let comparisonIndex = index + 1;

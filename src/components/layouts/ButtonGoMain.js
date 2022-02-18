@@ -15,7 +15,6 @@ export default function ButtonGoMain() {
         onClick={buttonGoMain}
       >
         Go to the main page
-        {/* Go back to the main page */}
       </button>
     </div>
   );

@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ButtonGoMain from './ButtonGoMain';
-import { TIMER } from '../../constants/constants.js';
+import { TIMER_SLOW } from '../../constants/constants.js';
 
 export default function AuthPage({ auth, loginAction }) {
   const { login, userName } = auth;
@@ -15,7 +15,7 @@ export default function AuthPage({ auth, loginAction }) {
 
   setTimeout(() => {
     window.location.href = '/';
-  }, TIMER);
+  }, TIMER_SLOW);
 
   return (
     <main className='main'>

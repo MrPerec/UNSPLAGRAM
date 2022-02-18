@@ -3,11 +3,15 @@
 export const BOX_WIDTH = 48;
 export const FIELD_WIDTH = 50;
 export const FIELD_HEIGHT = 5;
-export const ZERO = 0;
-export const CHARACTERS_NUMBER = 16;
+export const INDEX_START_DATE = 0;
+export const INDEX_END_DATE = 16;
 export const VERTICAL_OFFSET = -100;
-export const TIMER = 5000;
+export const TIMER_SLOW = 5000;
+export const TIMER_FAST = 0;
 export const MARGIN_BOTTOM = 81;
+export const INITIAL_LENGTH_STATE_PHOTO = 0;
+export const INITIAL_LENGTH_STATE_LIST = 1;
+export const INITIAL_VERTICAL_POSITION = 0;
 
 export const SYMBOL_T = `T`;
 export const SYMBOL_SPACE = ` `;

@@ -8,8 +8,8 @@ import {
 } from '../constants/types.js';
 
 import {
-  ZERO,
-  CHARACTERS_NUMBER,
+  INDEX_START_DATE,
+  INDEX_END_DATE,
   SYMBOL_T,
   SYMBOL_SPACE,
   POST,
@@ -23,7 +23,7 @@ import {
 
 const addPhoto = (photo) => {
   const createdAt = photo.created_at
-    .substring(ZERO, CHARACTERS_NUMBER)
+    .substring(INDEX_START_DATE, INDEX_END_DATE)
     .replace(SYMBOL_T, SYMBOL_SPACE);
 
   return {

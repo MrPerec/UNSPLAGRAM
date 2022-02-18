@@ -3,8 +3,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ButtonGoMain from './ButtonGoMain';
-import { MARGIN_BOTTOM } from '../../constants/constants';
-
+import {
+  MARGIN_BOTTOM,
+  INITIAL_LENGTH_STATE_PHOTO,
+} from '../../constants/constants';
 import '../../styles/post.css';
 
 export default function BigPhotoPage({
@@ -16,11 +18,11 @@ export default function BigPhotoPage({
   match,
 }) {
   const currentPhotoId = match.params.id;
-  if (photoList.length == 0) addPhotoByIdAction(currentPhotoId);
+  if (photoList.length == INITIAL_LENGTH_STATE_PHOTO)
+    addPhotoByIdAction(currentPhotoId);
 
   const bigPhoto = photoList.map((photo) => {
     if (photo.id === currentPhotoId) {
-      const { login } = auth;
       const {
         urlsRegular,
         altDescription,
@@ -30,6 +32,8 @@ export default function BigPhotoPage({
         likes,
         likedByUser,
       } = photo;
+
+      const { login } = auth;
 
       const onLike = likedByUser
         ? () => removeLikePhotoAction(currentPhotoId)

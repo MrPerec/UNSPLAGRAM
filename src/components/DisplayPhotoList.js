@@ -7,7 +7,7 @@ import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
 import DisplayPhoto from './DisplayPhoto';
 import ButtonUp from './layouts/ButtonUp';
-
+import { INITIAL_LENGTH_STATE_LIST } from '../constants/constants.js';
 import removeDuplicates from '../utils/removeDuplicates';
 import getUuid from '../utils/getUuid';
 
@@ -19,14 +19,11 @@ export default function DisplayPhotoList({
   likePhotoAction,
   removeLikePhotoAction,
 }) {
-  console.log(photoList.length);
   const { login } = auth;
   const addPhoto = () =>
     !login ? addNoAuthPhotoAction() : addAuthPhotoAction();
 
-  const DisplayFirstPhotoList = () => {
-    if (photoList.length <= 1) addPhoto();
-  };
+  if (photoList.length <= INITIAL_LENGTH_STATE_LIST) addPhoto();
 
   const displayPhotoList = removeDuplicates(photoList).map((photo) => {
     const uuid = getUuid();
@@ -40,8 +37,6 @@ export default function DisplayPhotoList({
       />
     );
   });
-
-  DisplayFirstPhotoList();
 
   return (
     <InfiniteScroll

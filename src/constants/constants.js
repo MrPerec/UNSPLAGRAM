@@ -20,8 +20,8 @@ export const ERROR = `Error occurred:`;
 export const PAGE = `?page=`;
 export const LIKE = `/like`;
 
-export const SECRET_KEY = `3bb-ZjMm_DeThkQSR9975k1KQPg56J_xUk5SpU1X6Sk`;
-export const ACCESS_KEY = `_JCTLXIriKQH3zfw4IPJa7c4uUf-KBTJbCqNHGAvXFc`;
+export const SECRET_KEY = process.env.SECRET_KEY;
+export const ACCESS_KEY = process.env.ACCESS_KEY;
 
 export const AUTHORIZATION_CODE = `authorization_code`;
 export const APPLICATION_JSON = `application/json`;
@@ -41,5 +41,5 @@ export const DELETE = `DELETE`;
 export const USER_URL = `https://api.unsplash.com/me`;
 export const TOKEN_URL = `https://unsplash.com/oauth/token`;
 export const PHOTOS_URL = `https://api.unsplash.com/photos/`;
-export const REDIRECT_URI = `https://unsplagram.website/authPage`;
+export const REDIRECT_URI = process.env.REDIRECT_URI;
 export const AUTH_URL = `https://unsplash.com/oauth/authorize?client_id=${ACCESS_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code&scope=public+write_likes+read_user`;

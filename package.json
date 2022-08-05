@@ -1,7 +1,7 @@
 {
-  "name": "diplom_java_script",
+  "name": "UNSPLAGRAM",
   "version": "1.0.0",
-  "description": "Diplom of JavaScript",
+  "description": "SPA for viewing photos",
   "private": true,
   "scripts": {
     "start": "webpack serve --stats-children",
@@ -9,12 +9,12 @@
     "build": "webpack --mode=production --config webpack.config.js"
   },
   "browserslist": "> 0.25%, not dead",
-  "author": "Ilya Makshanov <mrperec@ya.ru>",
+  "author": "Ilya Makshanov <mrperec@yandex.com>",
   "license": "ISC",
   "keywords": [
     "webpack",
     "javascript",
-    "learning"
+    "react-redux"
   ],
   "devDependencies": {
     "@babel/core": "^7.14.0",
@@ -25,6 +25,7 @@
     "css-loader": "^5.2.4",
     "css-minimizer-webpack-plugin": "^3.0.1",
     "css-what": "^5.0.1",
+    "dotenv-webpack": "^8.0.0",
     "glob-parent": "^6.0.0",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.1",

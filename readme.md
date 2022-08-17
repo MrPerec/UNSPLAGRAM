@@ -1,6 +1,6 @@
-<p align="center"># UNSPLAGRAM
+<p align="center"># UNSPLAGRAM</p>
 
-<img src="https://media.giphy.com/media/lyA06NQPPiEsmjXLkT/giphy.gif" width="80%"></p>
+<p align="center"><img src="https://media.giphy.com/media/lyA06NQPPiEsmjXLkT/giphy.gif" width="80%"></p>
 
 SPA for viewing photos.
 
